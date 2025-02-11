@@ -66,10 +66,10 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="flex items-center justify-center flex-col min-h-screen p-6">
+    <section id="projetos" className="flex items-center justify-center flex-col min-h-screen p-6">
       <div className="max-w-7xl backdrop-blur rounded-2xl p-8 md:p-12 max-sm:place-items-center">
         <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-          Featured Projects
+          Projetos em destaque
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-sm:w-[280px]">
           {projects.map((project, index) => (
@@ -129,13 +129,6 @@ export function Projects() {
           ))}
         </div>
       </div>
-      <Link href="/projects-en" className='mb-12'>
-        <button
-          className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
-        >
-          See more projects
-        </button>
-      </Link>
     </section>
   );
 };

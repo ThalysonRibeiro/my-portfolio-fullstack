@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Linkedin, Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import LanguageSwitcher from '../language';
 
 export function Header() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -46,7 +48,7 @@ export function Header() {
           )}
 
           <nav className="hidden md:flex items-center space-x-8">
-            {['Home', 'About Me', 'Projects', 'Contact'].map((item) => (
+            {['Inicio', 'Sobre mim', 'Projetos', 'Contato'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -55,14 +57,16 @@ export function Header() {
                 {item}
               </button>
             ))}
-            <a
+            <LanguageSwitcher />
+            <Link
               href="https://www.linkedin.com/in/thalyson-ribeiro-978b682a0/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-purple-500 transition-colors"
             >
               <Linkedin size={24} />
-            </a>
+            </Link>
+
           </nav>
 
           <button
@@ -90,14 +94,15 @@ export function Header() {
                   {item}
                 </button>
               ))}
-              <a
+              <Link
                 href="https://linkedin.com/in/thalysonrafael"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-purple-500 transition-colors"
               >
                 <Linkedin size={24} />
-              </a>
+              </Link>
+              <LanguageSwitcher />
             </nav>
           </div>
         </div>

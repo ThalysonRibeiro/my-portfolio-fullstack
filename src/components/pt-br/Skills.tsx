@@ -29,7 +29,7 @@ const Skills = () => {
     <section id="skills" className="flex items-center justify-center p-6">
       <div className="max-w-7xl">
         <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-          Skills & Technologies
+          Habilidades e Tecnologias
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (

@@ -24,11 +24,11 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#0a0118]/50 flex items-center justify-center">
+    <section id="contato" className="bg-[#0a0118]/50 flex items-center justify-center">
 
       <div className="max-w-7xl w-full p-8 md:p-12">
         <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-          Get in Touch
+          Entre em contato
         </h2>
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="">
@@ -42,7 +42,7 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6 text-start">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Name
+                    Nome
                   </label>
                   <input
                     type="text"
@@ -70,7 +70,7 @@ export function Contact() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message
+                    Mensagem
                   </label>
                   <textarea
                     id="message"
@@ -86,7 +86,7 @@ export function Contact() {
                   type="submit"
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
                 >
-                  Send Message
+                  Enviar mensagem
                 </button>
               </form>
             </motion.div>
@@ -100,7 +100,7 @@ export function Contact() {
           >
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+                <h3 className="text-xl font-semibold mb-4">Informações de contato</h3>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Mail size={20} className="text-purple-400" />
                   <a href="mailto:rafinha.head@gmail.com" className="hover:text-purple-400 transition-colors">
@@ -110,7 +110,7 @@ export function Contact() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Social Media</h3>
+                <h3 className="text-xl font-semibold mb-4">Mídias sociais</h3>
                 <div className="flex space-x-6">
                   <a
                     href="https://linkedin.com/in/thalysonrafael"

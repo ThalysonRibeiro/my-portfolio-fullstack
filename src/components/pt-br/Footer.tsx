@@ -34,7 +34,7 @@ export function Footer() {
             </Link>
           </div>
           <p className="mt-6 text-center text-sm text-muted-foreground md:mt-0">
-            © {new Date().getFullYear()} Thalyson Rafael. All rights reserved.
+            © {new Date().getFullYear()} Thalyson Rafael. Todos os direitos reservados.
           </p>
         </div>
       </div>
