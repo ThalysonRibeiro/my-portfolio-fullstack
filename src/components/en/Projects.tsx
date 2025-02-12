@@ -129,13 +129,6 @@ export function Projects() {
           ))}
         </div>
       </div>
-      <Link href="/projects-en" className='mb-12'>
-        <button
-          className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
-        >
-          See more projects
-        </button>
-      </Link>
     </section>
   );
 };
