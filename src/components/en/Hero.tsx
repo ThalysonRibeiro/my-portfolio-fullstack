@@ -17,9 +17,9 @@ export function Hero() {
     }
   };
   return (
-    <section id="home" className="h-screen flex items-center">
+    <section id="home" className="h-screen flex items-center justify-center">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
-      <div className='absolute w-[900px] h-full -top-0 -z-10 '>
+      <div className='absolute w-[900px] h-full -top-0 -z-10'>
         <AnimatedBackground />
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32">
