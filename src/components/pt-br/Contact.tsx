@@ -12,8 +12,35 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
     console.log(formData);
+
+    fetch('https://api-email-topaz.vercel.app/api/send', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => {
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+          throw new Error('Erro ao enviar e-mail');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Success:', data);
+        window.location.href = "../obrigado";
+      })
+      .catch((error) => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao enviar o e-mail. Tente novamente.');
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

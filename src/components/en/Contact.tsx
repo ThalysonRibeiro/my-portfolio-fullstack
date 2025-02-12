@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import React, { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 
+
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,8 +13,37 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
     console.log(formData);
+
+    fetch('https://api-email-topaz.vercel.app/api/send', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => {
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+          throw new Error('Erro ao enviar e-mail');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Success:', data);
+        window.location.href = "../thanks";
+      })
+      .catch((error) => {
+        console.error('Erro:', error);
+        alert('There was an error sending the email. Please try again.');
+      });
+
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
