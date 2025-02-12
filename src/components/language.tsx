@@ -33,7 +33,7 @@ const LanguageSwitcher = () => {
 
   return (
     <select
-      className="bg-transparent"
+      className="bg-transparent  hover:text-purple-500"
       onChange={handleLanguageChange}
       value={selectedLanguage} // Atualiza o select com base no idioma atual
     >
