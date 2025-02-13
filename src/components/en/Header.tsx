@@ -59,7 +59,7 @@ export function Header() {
             ))}
             <LanguageSwitcher />
             <Link
-              href="https://www.linkedin.com/in/thalyson-ribeiro-978b682a0/"
+              href="https://www.linkedin.com/in/thalyson-ribeiro-978b682a0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-purple-500 transition-colors"
@@ -94,7 +94,7 @@ export function Header() {
                 </button>
               ))}
               <Link
-                href="https://linkedin.com/in/thalysonrafael"
+                href="https://www.linkedin.com/in/thalyson-ribeiro-978b682a0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-purple-500 transition-colors"

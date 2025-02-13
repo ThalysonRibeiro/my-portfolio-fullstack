@@ -1,7 +1,7 @@
 "use client"
 import { motion } from 'framer-motion'
 import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, ArrowBigLeft, ArrowBigDown } from 'lucide-react';
 import Link from 'next/link';
 import { Carousel } from './Carousel';
 
@@ -9,79 +9,183 @@ import { Carousel } from './Carousel';
 export function Projects() {
   const projects = [
     {
-      title: 'E-commerce Platform',
-      description: 'A full-featured e-commerce platform with real-time inventory management and payment processing.',
-      tech: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
-      github: 'https://github.com/thalysonrafael/ecommerce',
-      live: 'https://ecommerce.thalyson.dev',
+      id: '01',
+      title: 'BarberPro 💈',
+      projectType: 'Fullstack',
+      app: '',
+      description: 'BarberHub is a complete web system for barbershop management, offering comprehensive features for managing clients, services and plans.',
+      tech: ['Next.js', 'React', 'Chakra UI', 'TypeScript', 'JWTdecode', 'Nookies', 'Axios', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Stripe', 'Bcrypt',],
+      github: 'https://github.com/ThalysonRibeiro/barberpro-web',
+      githubBackend: 'https://github.com/ThalysonRibeiro/barberpro-backend',
+      appLink: '',
+      live: 'https://barberpro-web.vercel.app/',
       images: [
         {
-          title: "imgame 1 projeto",
-          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1738510759/conta_t0wvk6.webp"
+          title: "photo-barberpro-1",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399212/home_zzdju9.png"
         },
         {
-          title: "imgame 2 projeto",
-          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1738510759/finalizar_xfvxvm.webp"
+          title: "photo-barberpro-2",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399212/login_cwd82h.png"
         },
         {
-          title: "imgame 2 projeto",
-          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1737505109/ptwry2qefkmigjqwghcw.jpg"
+          title: "photo-barberpro-3",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399211/register_sxgovy.png"
+        },
+        {
+          title: "photo-barberpro-4",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399211/conta_avm8ry.png"
+        },
+        {
+          title: "photo-barberpro-5",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399211/cel-inicio_ukivog.png"
+        },
+        {
+          title: "photo-barberpro-6",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399210/logado_ov38cb.png"
         },
       ]
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative task management application with real-time updates and team features.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      github: 'https://github.com/thalysonrafael/taskmanager',
-      live: 'https://tasks.thalyson.dev',
+      id: '02',
+      title: 'Goal List ',
+      projectType: 'Fullstack',
+      app: '',
+      description: 'A modern web application for goal and objective management, allowing you to organize your daily or weekly tasks efficiently.',
+      tech: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'React Hook Form', 'Zod', 'Axios', 'JWT Decode', 'Radix UI', 'Node.js', 'API RESTful', 'Date-fns', 'Fastify', 'Prisma', 'PostgreSQL', 'BCrypt',],
+      github: 'https://github.com/ThalysonRibeiro/goal.list-web',
+      githubBackend: 'https://github.com/ThalysonRibeiro/goallist-backend',
+      appLink: '',
+      live: 'https://goal-list-web.vercel.app/',
       images: [
         {
-          title: "imgame 1 projeto",
-          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1738510759/conta_t0wvk6.webp"
+          title: "photo-goallist-1",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409341/home_qzyca9.png"
         },
         {
-          title: "imgame 2 projeto",
-          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1738510759/finalizar_xfvxvm.webp"
+          title: "photo-goallist-2",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409341/login_ptmx41.png"
+        },
+        {
+          title: "photo-goallist-3",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409340/register_zmm1zi.png"
+        },
+        {
+          title: "photo-goallist-4",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409339/dashboard_vrilru.png"
+        },
+        {
+          title: "photo-goallist-5",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409338/criar-meta_m5g7dv.png"
+        },
+        {
+          title: "photo-goallist-6",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409339/moile-home_yvbqlj.png"
+        },
+        {
+          title: "photo-goallist-7",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409339/mobile-dashboard_yklrfh.png"
         },
       ]
     },
     {
-      title: 'Recipe Sharing Platform',
-      description: 'A platform for chefs and food enthusiasts to share and discover recipes.',
-      tech: ['React', 'Firebase', 'TailwindCSS'],
-      github: 'https://github.com/thalysonrafael/recipes',
-      live: 'https://recipes.thalyson.dev',
+      id: '03',
+      title: 'Blend House',
+      projectType: "Fullstack",
+      app: 'Mobile',
+      description: 'Modern web application to manage restaurant orders efficiently. Backend API built with Node.js, Express and Prisma. Mobile application for servers to place orders.',
+      tech: ['Next.js', 'React ', 'TypeScript', 'Axios', 'Sass', 'Sonner', 'Lucide React', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'Cloudinary', 'bcryptjs', 'React Native', 'Expo', 'React Navigation', 'AsyncStorage'],
+      github: 'https://github.com/ThalysonRibeiro/blend-house-frontend',
+      githubBackend: 'https://github.com/ThalysonRibeiro/blend-house-backend',
+      appLink: 'https://expo.dev/accounts/thalysonribeiro/projects/mobile-blend-house/builds/0aa905a2-8928-47e5-b17f-506de0310bba',
+      live: 'https://blend-house.vercel.app',
       images: [
         {
-          title: "imgame 1 projeto",
-          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1738510759/conta_t0wvk6.webp"
+          title: "photo-blend-house-1",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418251/bh-login_toxxlh.png"
         },
         {
-          title: "imgame 2 projeto",
-          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1738510759/finalizar_xfvxvm.webp"
+          title: "photo-blend-house-2",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418251/bh-register_s1j7ks.png"
+        },
+        {
+          title: "photo-blend-house-3",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418250/bh-dashboard_dzpw5b.png"
+        },
+        {
+          title: "photo-blend-house-4",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418250/bh-modal_ipmmsn.png"
+        },
+        {
+          title: "photo-blend-house-5",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418249/bh-categoria_gn24qb.png"
+        },
+        {
+          title: "photo-blend-house-6",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418249/bh-produto_ty6snf.png"
+        },
+        {
+          title: "photo-blend-house-7",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418252/bh-mobile_mr4gmb.png"
         },
       ]
     },
+    // {
+    //   id: '04',
+    //   title: '',
+    //   projectType: "Fullstack",
+    //   app:'',
+    //   description: '',
+    //   tech: ['','','','','','','','','',],
+    //   github: '',
+    //   githubBackend:'',
+    //   live: '',
+    //   images: [
+    //     {
+    //       title: "photo-1",
+    //       image: ""
+    //     },
+    //     {
+    //       title: "photo-2",
+    //       image: ""
+    //     },
+    //     {
+    //       title: "photo-3",
+    //       image: ""
+    //     },
+    //     {
+    //       title: "photo-4",
+    //       image: ""
+    //     },
+    //     {
+    //       title: "photo-5",
+    //       image: ""
+    //     },
+    //     {
+    //       title: "photo-6",
+    //       image: ""
+    //     },
+    //   ]
+    // },
   ];
 
   return (
-    <section id="projects" className="flex items-center justify-center flex-col min-h-screen p-6">
+    <section id="projetos" className="flex items-center justify-center flex-col min-h-screen p-6">
       <div className="max-w-7xl backdrop-blur rounded-2xl p-8 md:p-12 max-sm:place-items-center">
         <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
           Featured Projects
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-sm:w-[280px]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:w-[280px]">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div
-                key={project.title}
+                key={project.id}
                 className="relative group"
               >
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
@@ -92,6 +196,7 @@ export function Projects() {
                   </div>
 
                   <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                  <p className="text-purple-400 rounded text-md">{project.projectType}</p>
                   <p className="text-gray-400 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech) => (
@@ -103,7 +208,7 @@ export function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex space-x-4">
+                  <div className="flex flex-wrap gap-2 space-x-4">
                     <Link
                       href={project.github}
                       target="_blank"
@@ -113,6 +218,28 @@ export function Projects() {
                       <Github size={20} className="mr-1" />
                       Code
                     </Link>
+                    {project.projectType === 'Fullstack' && (
+                      <Link
+                        href={project.githubBackend}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
+                      >
+                        <Github size={20} className="mr-1" />
+                        Backend
+                      </Link>
+                    )}
+                    {project.app === 'Mobile' && (
+                      <Link
+                        href={project.appLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
+                      >
+                        <ArrowBigDown size={20} className="mr-1" />
+                        App
+                      </Link>
+                    )}
                     <Link
                       href={project.live}
                       target="_blank"
@@ -120,7 +247,7 @@ export function Projects() {
                       className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
                     >
                       <ExternalLink size={20} className="mr-1" />
-                      Live Demo
+                      Demo
                     </Link>
                   </div>
                 </div>

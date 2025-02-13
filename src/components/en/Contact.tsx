@@ -1,7 +1,8 @@
 "use client"
 import { motion } from 'framer-motion'
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Phone } from 'lucide-react';
+import Link from 'next/link';
 
 
 export function Contact() {
@@ -142,22 +143,33 @@ export function Contact() {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Social Media</h3>
                 <div className="flex space-x-6">
-                  <a
-                    href="https://linkedin.com/in/thalysonrafael"
+                  <Link
+                    href="https://www.linkedin.com/in/thalyson-ribeiro-978b682a0"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title='Linkedin'
                     className="text-gray-300 hover:text-purple-400 transition-colors"
                   >
                     <Linkedin size={24} />
-                  </a>
-                  <a
-                    href="https://github.com/thalysonrafael"
+                  </Link>
+                  <Link
+                    href="https://github.com/ThalysonRibeiro"
                     target="_blank"
                     rel="noopener noreferrer"
+                    title='GitHub'
                     className="text-gray-300 hover:text-purple-400 transition-colors"
                   >
                     <Github size={24} />
-                  </a>
+                  </Link>
+                  <Link
+                    href="https://wa.me/65981278291?text=Oi! Deixe sua mensagem que respondo assim que puder."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title='WhatsApp'
+                    className="text-gray-300 hover:text-purple-400 transition-colors"
+                  >
+                    <Phone size={24} />
+                  </Link>
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ import Skills from './Skills';
 
 export function About() {
   return (
-    <section id="about-me" className=" min-h-screen bg-[#0a0118]/50 p-6 flex items-center justify-center">
+    <section id="sobre-mim" className=" min-h-screen bg-[#0a0118]/50 p-6 flex items-center justify-center">
       <div className="max-w-7xl w-full h-full flex flex-col">
         <div className="flex flex-col lg:flex-row p-6 justify-items-center items-center mt-12 gap-6">
           <div className='flex-1 lg:mr-8'>
