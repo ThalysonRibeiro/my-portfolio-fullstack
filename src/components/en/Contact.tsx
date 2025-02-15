@@ -144,7 +144,7 @@ export function Contact() {
                 <h3 className="text-xl font-semibold mb-4">Social Media</h3>
                 <div className="flex space-x-6">
                   <Link
-                    href="https://www.linkedin.com/in/thalyson-ribeiro-978b682a0"
+                    href="https://www.linkedin.com/in/thalyson-rafael/"
                     target="_blank"
                     rel="noopener noreferrer"
                     title='Linkedin'
