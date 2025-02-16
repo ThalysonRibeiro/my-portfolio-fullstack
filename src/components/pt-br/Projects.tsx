@@ -52,7 +52,7 @@ export function Projects() {
       projectType: 'Fullstack',
       app: '',
       description: 'Uma aplicação web moderna para gerenciamento de metas e objetivos, permitindo que você organize suas tarefas diárias ou semanais de forma eficiente.',
-      tech: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'React Hook Form', 'Zod', 'Axios', 'JWT Decode', 'Radix UI', 'Node.js', 'API RESTful', 'Date-fns', 'Fastify', 'Prisma', 'PostgreSQL', 'BCrypt',],
+      tech: ['Next.js', 'React', 'TypeScript', 'TailwindCSS', 'React Hook Form', 'Zod', 'Axios', 'JWT Decode', 'Radix UI', 'Node.js', 'Date-fns', 'Fastify', 'Prisma', 'PostgreSQL', 'BCrypt',],
       github: 'https://github.com/ThalysonRibeiro/goal.list-web',
       githubBackend: 'https://github.com/ThalysonRibeiro/goallist-backend',
       appLink: '',
