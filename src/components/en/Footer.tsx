@@ -17,7 +17,7 @@ export function Footer() {
               <Github className="h-6 w-6" />
             </Link>
             <Link
-              href="https://www.linkedin.com/in/thalyson-ribeiro-978b682a0"
+              href="https://www.linkedin.com/in/thalyson-rafael/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
