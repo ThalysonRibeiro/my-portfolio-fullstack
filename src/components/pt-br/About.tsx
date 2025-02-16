@@ -29,7 +29,7 @@ export function About() {
                 transition={{ duration: 0.7 }}
               >
                 <p className="text-gray-300 leading-relaxed">
-                  Hoje, sou especialista em criar interfaces front-end intuitivas, mantendo um profundo entendimento da arquitetura back-end. Minha experiência em ambientes de alta pressão aprimorou minha capacidade de entregar soluções eficientes, mantendo a qualidade do código e a experiência do usuário.
+                  Atualmente, crio interfaces front-end intuitivas, enquanto expando meus conhecimentos em arquitetura back-end. Minha experiência em ambientes de alta pressão aprimorou minha capacidade de entregar soluções eficientes, mantendo a qualidade do código e garantindo uma excelente experiência ao usuário.
                 </p>
               </motion.div>
               <motion.div
