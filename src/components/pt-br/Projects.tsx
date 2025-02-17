@@ -210,13 +210,22 @@ export function Projects() {
                   </div>
                   <div className="flex flex-wrap gap-2 space-x-4">
                     <Link
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
+                    >
+                      <ExternalLink size={20} className="mr-1" />
+                      Live Demo
+                    </Link>
+                    <Link
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
                     >
                       <Github size={20} className="mr-1" />
-                      Code
+                      Code web
                     </Link>
                     {project.projectType === 'Fullstack' && (
                       <Link
@@ -237,18 +246,9 @@ export function Projects() {
                         className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
                       >
                         <ArrowBigDown size={20} className="mr-1" />
-                        App
+                        App mobile
                       </Link>
                     )}
-                    <Link
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
-                    >
-                      <ExternalLink size={20} className="mr-1" />
-                      Demo
-                    </Link>
                   </div>
                 </div>
               </div>
