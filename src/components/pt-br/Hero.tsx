@@ -1,7 +1,7 @@
 "use client"
 import { AnimatedBackground } from '@/AnimatedBackground/AnimatedBackground';
 import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, CircleCheck } from 'lucide-react';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section id="inicio" className="h-screen flex items-center justify-center">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
-      <div className='max-w-[900px] w-full absolute top-10'>
+      <div className='max-w-[900px] w-full absolute top-10 -z-10'>
         <AnimatedBackground />
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32">
@@ -29,6 +29,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <div className='flex items-center'>
+              <CircleCheck className='text-violet-500 size-4 mr-1' />
+              Disponível para freelancer
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold">
               Olá, eu sou{' '}
               <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
@@ -46,21 +50,22 @@ export function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
+            className="flex gap-4 mt-4"
           >
-            <div className="flex gap-4 mt-4">
-              <button
-                onClick={scrollToProjects}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
-              >
-                Veja meu trabalho
-              </button>
-              <button
-                onClick={scrollToContac}
-                className="border border-purple-500 text-purple-400 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300"
-              >
-                Entre em contato
-              </button>
-            </div>
+            {/* <div className="flex gap-4 mt-4"> */}
+            <button
+              onClick={scrollToProjects}
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
+            >
+              Veja meu trabalho
+            </button>
+            <button
+              onClick={scrollToContac}
+              className="border border-purple-500 text-purple-400 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300"
+            >
+              Entre em contato
+            </button>
+            {/* </div> */}
           </motion.div>
         </div>
       </div>

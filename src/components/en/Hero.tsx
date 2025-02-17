@@ -1,7 +1,7 @@
 "use client"
 import { AnimatedBackground } from '@/AnimatedBackground/AnimatedBackground';
 import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, CircleCheck } from 'lucide-react';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section id="home" className="h-screen flex items-center justify-center">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
-      <div className='max-w-[900px] w-full absolute top-10'>
+      <div className='max-w-[900px] w-full absolute top-10 -z-10'>
         <AnimatedBackground />
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32">
@@ -29,6 +29,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <div className='flex items-center'>
+              <CircleCheck className='text-violet-500 size-4 mr-1' />
+              Available for freelance
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold">
               Hi, I&apos;m{' '}
               <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
