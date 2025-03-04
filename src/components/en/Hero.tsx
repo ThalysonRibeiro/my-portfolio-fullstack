@@ -52,26 +52,28 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="flex gap-4 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
               <button
                 onClick={scrollToProjects}
                 className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
               >
                 View My Work
               </button>
-              <button
-                onClick={scrollToContac}
-                className="border border-purple-500 text-purple-400 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300"
-              >
-                Contact Me
-              </button>
-              <a href="/Thalyson.pdf"
-                download="Thalyson.pdf"
-                className="flex gap-3 border border-purple-500 text-purple-400 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300"
-              >
-                Curriculum
-                <Download />
-              </a>
+              <div className='w-full flex max-xs:flex-col'>
+                <button
+                  onClick={scrollToContac}
+                  className="text-purple-400 px-8 py-3 rounded-lg font-semibold  hover:text-white transition-all duration-300"
+                >
+                  Contact Me
+                </button>
+                <a href="/Thalyson.pdf"
+                  download="Thalyson.pdf"
+                  className="flex gap-3 text-purple-400 px-8 py-3 rounded-lg font-semibold  hover:text-white transition-all duration-300"
+                >
+                  Curriculum
+                  <Download />
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
