@@ -7,3 +7,25 @@ body {
   background: #0a0a0a;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7F22FE;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4F39F6;
+}
