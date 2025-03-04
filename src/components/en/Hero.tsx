@@ -1,7 +1,8 @@
 "use client"
 import { AnimatedBackground } from '@/AnimatedBackground/AnimatedBackground';
 import { motion } from 'framer-motion'
-import { ChevronDown, CircleCheck } from 'lucide-react';
+import { ChevronDown, CircleCheck, Download } from 'lucide-react';
+import Link from 'next/link';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -64,6 +65,13 @@ export function Hero() {
               >
                 Contact Me
               </button>
+              <a href="/Thalyson.pdf"
+                download="Thalyson.pdf"
+                className="flex gap-3 border border-purple-500 text-purple-400 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300"
+              >
+                Curriculum
+                <Download />
+              </a>
             </div>
           </motion.div>
         </div>

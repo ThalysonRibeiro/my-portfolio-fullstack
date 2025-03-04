@@ -1,7 +1,7 @@
 "use client"
 import { AnimatedBackground } from '@/AnimatedBackground/AnimatedBackground';
 import { motion } from 'framer-motion'
-import { ChevronDown, CircleCheck } from 'lucide-react';
+import { ChevronDown, CircleCheck, Download } from 'lucide-react';
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -52,7 +52,7 @@ export function Hero() {
             transition={{ duration: 0.7 }}
             className="flex gap-4 mt-4"
           >
-            {/* <div className="flex gap-4 mt-4"> */}
+
             <button
               onClick={scrollToProjects}
               className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
@@ -65,7 +65,13 @@ export function Hero() {
             >
               Entre em contato
             </button>
-            {/* </div> */}
+            <a href="/Thalyson.pdf"
+              download="Thalyson.pdf"
+              className="flex gap-3 border border-purple-500 text-purple-400 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 hover:text-white transition-all duration-300"
+            >
+              Curriculo
+              <Download />
+            </a>
           </motion.div>
         </div>
       </div>
