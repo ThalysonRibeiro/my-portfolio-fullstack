@@ -4,10 +4,11 @@ import React from 'react';
 import { Github, ExternalLink, ArrowBigLeft, ArrowBigDown } from 'lucide-react';
 import Link from 'next/link';
 import { Carousel } from './Carousel';
+import { ProjectProps } from '../pt-br/Projects';
 
 
 export function Projects() {
-  const projects = [
+  const projects: ProjectProps[] = [
     {
       id: '01',
       title: 'BarberPro 💈',
@@ -127,6 +128,56 @@ export function Projects() {
         {
           title: "photo-blend-house-7",
           image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418252/bh-mobile_mr4gmb.png"
+        },
+      ]
+    },
+    {
+      id: '04',
+      title: 'TicketFlow',
+      projectType: '',
+      app: '',
+      description: 'Call management, register customers, track calls from each one of them. Intuitive interface, the system makes it easier to control the service flow.',
+      tech: ['Next.js', 'React 19', 'TypeScript', 'Prisma', 'Mongodb', 'NextAuth', 'Tailwind CSS', 'Zod', 'React Hook Form',],
+      github: 'https://github.com/ThalysonRibeiro/TicketFlow-g3',
+      githubBackend: '',
+      appLink: '',
+      live: 'https://ticketflow-g3.vercel.app/',
+      images: [
+        {
+          title: "TicketFlow-photo-1",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-home_uzjd1n.png"
+        },
+        {
+          title: "TicketFlow-photo-2",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-clientes_a7cifm.png"
+        },
+        {
+          title: "TicketFlow-photo-3",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-chamado-aberto_knzuy6.png"
+        },
+        {
+          title: "TicketFlow-photo-4",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-abrirchamado_aiinq9.png"
+        },
+        {
+          title: "TicketFlow-photo-5",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-chamado-fechados_kzbynh.png"
+        },
+        {
+          title: "TicketFlow-photo-6",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-novo-cliente_vanztr.png"
+        },
+        {
+          title: "TicketFlow-photo-7",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-novo-chamado_mjiscu.png"
+        },
+        {
+          title: "TicketFlow-photo-8",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-mobile-1_y0mjq6.png"
+        },
+        {
+          title: "TicketFlow-photo-9",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-mobile-2_qg4tzq.png"
         },
       ]
     },
