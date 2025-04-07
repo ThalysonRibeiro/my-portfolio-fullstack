@@ -1,7 +1,7 @@
 "use client"
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import prolifeImg from "@/assets/profile.png";
+import prolifeImg from "@/assets/profile.jpg";
 import Skills from './Skills';
 
 export function About() {

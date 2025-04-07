@@ -51,29 +51,28 @@ export function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
+            className='w-full'
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div className="w-full flex flex-wrap mt-4">
               <button
                 onClick={scrollToProjects}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
+                className="w-full sm:w-fit bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
               >
                 View My Work
               </button>
-              <div className='w-full flex max-xs:flex-col'>
-                <button
-                  onClick={scrollToContac}
-                  className="text-purple-400 px-8 py-3 rounded-lg font-semibold  hover:text-white transition-all duration-300"
-                >
-                  Contact Me
-                </button>
-                <a href="/Thalyson.pdf"
-                  download="Thalyson.pdf"
-                  className="flex gap-3 text-purple-400 px-8 py-3 rounded-lg font-semibold  hover:text-white transition-all duration-300"
-                >
-                  Curriculum
-                  <Download />
-                </a>
-              </div>
+              <button
+                onClick={scrollToContac}
+                className="text-purple-400 px-8 py-3 rounded-lg font-semibold  hover:text-white transition-all duration-300"
+              >
+                Contact Me
+              </button>
+              <a href="/Thalyson.pdf"
+                download="Thalyson.pdf"
+                className="flex gap-3 text-purple-400 px-8 py-3 rounded-lg font-semibold  hover:text-white transition-all duration-300"
+              >
+                Curriculum
+                <Download />
+              </a>
             </div>
           </motion.div>
         </div>
