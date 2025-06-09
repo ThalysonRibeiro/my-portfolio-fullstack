@@ -29,10 +29,6 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className='flex items-center'>
-              <CircleCheck className='text-violet-500 size-4 mr-1' />
-              Disponível para freelancer
-            </div>
             <h1 className="text-5xl md:text-7xl font-bold">
               Olá, eu sou{' '}
               <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">

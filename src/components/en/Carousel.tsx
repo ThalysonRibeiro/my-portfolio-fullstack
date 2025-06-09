@@ -28,7 +28,7 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-md mx-auto">
+    <div className="relative w-full mx-auto">
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500"

@@ -11,12 +11,12 @@ const Skills = () => {
     {
       title: 'Frontend',
       icon: <Layout className="w-6 h-6" />,
-      skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'TypeScript', 'Next.js', 'TailwindCSS', 'SASS', 'Chakra UI']
+      skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'TypeScript', 'Next.js', 'TailwindCSS', 'SASS', 'Chakra UI', 'shadcn']
     },
     {
       title: 'Backend',
       icon: <Server className="w-6 h-6" />,
-      skills: ['Node.js', 'TypeScript', 'Express.js', 'Fastify', 'NestJS', 'Prisma', 'MongoDB', 'PostgreSQL', 'Firebase']
+      skills: ['Node.js', 'TypeScript', 'Express.js', 'Fastify', 'NestJS', 'Prisma', 'PostgreSQL']
     },
     {
       title: 'Tools',

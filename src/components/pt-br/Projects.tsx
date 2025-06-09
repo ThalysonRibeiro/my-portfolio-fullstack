@@ -28,6 +28,40 @@ export function Projects() {
   const projects: ProjectProps[] = [
     {
       id: '01',
+      title: 'Equilibrium Center',
+      projectType: "Fullstack",
+      app: '',
+      description: 'A plataforma de gestão completa projetada especificamente para massoterapeutas. Agende consultas, gerencie clientes e expanda seus negócios com facilidade',
+      tech: ['Next.js', 'PostgreSQL (Neon)', 'Prisma', 'Vercel', 'Docker', 'CSS Modules', 'Tailwind CSS', 'shadcn', 'Stripe',],
+      github: '',
+      githubBackend: '',
+      appLink: '',
+      live: 'https://equilibrium-center.vercel.app',
+      images: [
+        {
+          title: "photo-1",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499280/4_knwlte.png"
+        },
+        {
+          title: "photo-2",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499280/3_u0yzn0.png"
+        },
+        {
+          title: "photo-3",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499280/5_kwaxhq.png"
+        },
+        {
+          title: "photo-4",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499279/2_mpewtr.png"
+        },
+        {
+          title: "photo-5",
+          image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499279/1_bqqekv.png"
+        }
+      ]
+    },
+    {
+      id: '02',
       title: 'BarberPro 💈',
       projectType: 'Fullstack',
       app: '',
@@ -65,7 +99,7 @@ export function Projects() {
       ]
     },
     {
-      id: '02',
+      id: '03',
       title: 'Goal List ',
       projectType: 'Fullstack',
       app: '',
@@ -107,7 +141,7 @@ export function Projects() {
       ]
     },
     {
-      id: '03',
+      id: '04',
       title: 'Blend House',
       projectType: "Fullstack",
       app: 'Mobile',
@@ -149,7 +183,7 @@ export function Projects() {
       ]
     },
     {
-      id: '04',
+      id: '05',
       title: 'TicketFlow',
       projectType: '',
       app: '',
@@ -244,7 +278,7 @@ export function Projects() {
         <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
           Featured Projects
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-sm:w-[280px]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -260,7 +294,7 @@ export function Projects() {
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
                 <div className="w-full relative bg-gray-950/50 backdrop-blur rounded-lg p-4 border border-gray-800/50 hover:border-purple-500/50 transition-colors">
 
-                  <div className='min-md:w-96 max-sm:w-64'>
+                  <div>
                     <Carousel images={project.images} />
                   </div>
 
