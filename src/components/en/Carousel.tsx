@@ -35,7 +35,7 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((item) => (
-            <div key={item.image} className="w-full flex-shrink-0">
+            <div key={item.image} className="w-full shrink-0">
               <Image
                 width={500}
                 height={500}
@@ -49,13 +49,13 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
       </div>
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow-sm"
       >
         &#10094;
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded-full shadow-sm"
       >
         &#10095;
       </button>

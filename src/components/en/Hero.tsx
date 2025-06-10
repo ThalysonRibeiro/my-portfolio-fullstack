@@ -19,7 +19,7 @@ export function Hero() {
   };
   return (
     <section id="home" className="h-screen flex items-center justify-center">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]" />
       <div className='max-w-[900px] w-full absolute top-10 -z-10'>
         <AnimatedBackground />
       </div>
@@ -32,7 +32,7 @@ export function Hero() {
           >
             <h1 className="text-5xl md:text-7xl font-bold">
               Hi, I&apos;m{' '}
-              <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Thalyson Rafael
               </span>
             </h1>
@@ -52,7 +52,7 @@ export function Hero() {
             <div className="w-full flex flex-wrap mt-4">
               <button
                 onClick={scrollToProjects}
-                className="w-full sm:w-fit bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
+                className="w-full sm:w-fit bg-linear-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg"
               >
                 View My Work
               </button>

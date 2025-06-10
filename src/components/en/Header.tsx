@@ -38,11 +38,11 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950/80 backdrop-blur-xs shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center h-20 md:justify-end justify-between">
           {mounted && isLargeScreen && (
-            <h1 className="text-2xl font-bold bg-gradient-to-tr from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-linear-to-tr from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
               TR
             </h1>
           )}
@@ -80,7 +80,7 @@ export function Header() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div
-          className={`md:hidden fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950 backdrop-blur-sm shadow-lg' : 'bg-zinc-950/90'}`}
+          className={`md:hidden fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-zinc-950 backdrop-blur-xs shadow-lg' : 'bg-zinc-950/90'}`}
         >
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">

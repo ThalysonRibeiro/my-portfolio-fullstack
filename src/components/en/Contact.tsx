@@ -58,7 +58,7 @@ export function Contact() {
     <section id="contact" className="bg-[#0a0118]/50 flex items-center justify-center">
 
       <div className="max-w-7xl w-full p-8 md:p-12">
-        <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold mb-12 text-center bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
           Get in Touch
         </h2>
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -95,7 +95,7 @@ export function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-gray-950/50 backdrop-blur border border-gray-800/50 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-2 bg-gray-950/50 backdrop-blur-sm border border-gray-800/50 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -115,7 +115,7 @@ export function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
+                  className="w-full bg-linear-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
                 >
                   Send Message
                 </button>

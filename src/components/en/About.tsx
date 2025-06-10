@@ -10,7 +10,7 @@ export function About() {
       <div className="max-w-7xl w-full h-full flex flex-col">
         <div className="flex flex-col lg:flex-row p-6 justify-items-center items-center mt-12 gap-6">
           <div className='flex-1 lg:mr-8'>
-            <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">About Me</h2>
+            <h2 className="text-3xl font-bold mb-6 bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">About Me</h2>
             <div className="space-y-4">
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
