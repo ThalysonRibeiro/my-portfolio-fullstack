@@ -53,8 +53,8 @@ export function Hero() {
               Entre em contato
             </Button>
             <Button variant={'outline'} className='cursor-pointer'>
-              <a href="/Thalyson-Ribeiro-Curriculo.pdf"
-                download="Thalyson-Ribeiro-Curriculo.pdf"
+              <a href="/Curriculo_Thalyson_Ribeiro.pdf"
+                download="Curriculo_Thalyson_Ribeiro.pdf"
                 className='flex gap-1.5'
               >
                 Curriculo
