@@ -1,21 +1,21 @@
-import { Hero } from "@/components/en/Hero";
-import { About } from "@/components/en/About";
-import { Projects } from "@/components/en/Projects";
-import { Contact } from "@/components/en/Contact";
-import { Header } from "@/components/en/Header";
-import { Footer } from "@/components/en/Footer";
-
-
+import { About } from "@/components/about";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
+import { Projects } from "@/components/projects";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <main>
       <Header />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
+      <div className="space-y-6">
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </div>
       <Footer />
-    </div>
+    </main>
   );
 }
