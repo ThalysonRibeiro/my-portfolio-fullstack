@@ -53,7 +53,7 @@ export function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
+                    className="flex items-center hover:text-purple-400 transition-colors"
                   >
                     <ExternalLink size={20} className="mr-1" />
                     Live Demo
@@ -62,7 +62,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
+                    className="flex items-center hover:text-purple-400 transition-colors"
                   >
                     <Github size={20} className="mr-1" />
                     Code web
@@ -72,7 +72,7 @@ export function Projects() {
                       href={project.githubBackend}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
+                      className="flex items-center hover:text-purple-400 transition-colors"
                     >
                       <Github size={20} className="mr-1" />
                       Backend
@@ -83,7 +83,7 @@ export function Projects() {
                       href={project.appLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-gray-300 hover:text-purple-400 transition-colors"
+                      className="flex items-center hover:text-purple-400 transition-colors"
                     >
                       <ArrowBigDown size={20} className="mr-1" />
                       App mobile
