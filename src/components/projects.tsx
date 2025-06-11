@@ -58,16 +58,18 @@ export function Projects() {
                     <ExternalLink size={20} className="mr-1" />
                     Live Demo
                   </Link>
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center hover:text-purple-400 transition-colors"
-                  >
-                    <Github size={20} className="mr-1" />
-                    Code web
-                  </Link>
-                  {project.projectType === 'Fullstack' && (
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center hover:text-purple-400 transition-colors"
+                    >
+                      <Github size={20} className="mr-1" />
+                      Code web
+                    </Link>
+                  )}
+                  {project.projectType === 'Fullstack' && project.githubBackend && (
                     <Link
                       href={project.githubBackend}
                       target="_blank"
