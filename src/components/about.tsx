@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import prolifeImg from "@/assets/12.30.11_00305ce8.jpg";
 import Skills from './skills';
+import { motion } from "framer-motion";
+import { about_me, courses_details } from '@/utils/contants';
 
 export function About() {
   return (
@@ -13,34 +15,65 @@ export function About() {
             <h2 className="text-3xl font-bold mb-6 bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Sobre mim
             </h2>
+
             <div className="space-y-4">
+              {about_me.map((item, i) => (
+                <motion.p
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="leading-relaxed"
+                >
+                  {item.description}
+                </motion.p>
+              ))}
+            </div>
 
-              <p className="leading-relaxed">
-                Minha jornada no desenvolvimento web começou com uma transição inesperada do mundo da gastronomia. A natureza rápida e detalhista das artes culinárias ajudou a moldar minha abordagem à codificação - onde precisão, criatividade e resolução de problemas são primordiais.
-              </p>
-
-              <p className="leading-relaxed">
-                Atualmente, crio interfaces front-end intuitivas, enquanto expando meus conhecimentos em arquitetura back-end. Minha experiência em ambientes de alta pressão aprimorou minha capacidade de entregar soluções eficientes, mantendo a qualidade do código e garantindo uma excelente experiência ao usuário.
-              </p>
-
-              <p className="leading-relaxed">
-                Meu objetivo é contribuir para projetos inovadores que expandam os limites da tecnologia web e, ao mesmo tempo, ofereçam soluções de alto impacto que façam a diferença.
-              </p>
+            <div className='mt-4'>
+              <h3 className='text-3xl font-bold mb-6 bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent'>
+                Cursos
+              </h3>
+              <ul className='pl-3.5 border-l border-foreground space-y-4'>
+                {courses_details.map((course, i) => (
+                  <motion.li
+                    key={course.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className='list-disc'
+                  >
+                    <p><span className='text-purple-500 font-semibold'>
+                      {course.title}
+                    </span>
+                      <br />
+                      {course.courses}
+                    </p>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
           </div>
-
           <div className='lg:w-1/2 w-full flex justify-center lg:justify-end'>
-            <div className='relative w-full md:w-140 h-120'>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className='relative w-full aspect-square'
+            >
               <Image
                 src={prolifeImg}
                 alt="Thalyson Rafael"
                 fill
                 quality={100}
                 priority={true}
-                className="rounded-lg shadow-2xl object-cover"
+                className="rounded-lg shadow-2xl object-contain"
                 sizes="(max-width:480px) 100vw (max-width: 1024px) 75vw, 60vw"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
         <Skills />

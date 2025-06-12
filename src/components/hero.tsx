@@ -1,8 +1,9 @@
 "use client"
 
-import { ChevronDown, Download } from 'lucide-react';
+import { ChevronsDown, Download } from 'lucide-react';
 import { AnimatedBackground } from './animatedBackground';
 import { Button } from './ui/button';
+import { motion } from "framer-motion";
 
 export function Hero() {
   const scrollToProjects = () => {
@@ -25,34 +26,60 @@ export function Hero() {
       </div>
       <div className="container mx-auto px-4 inset-0">
         <div className="w-full flex flex-col items-center justify-center space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-center flex gap-2 flex-col lg:flex-row">
+              Olá, eu sou{' '}
+              <span className="bg-linear-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                Thalyson Rafael
+              </span>
+            </h1>
+          </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-center flex gap-2 flex-col lg:flex-row">
-            Olá, eu sou{' '}
-            <span className="bg-linear-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-              Thalyson Rafael
-            </span>
-          </h1>
-          <h2 className="text-2xl md:text-3xl">
-            Um desenvolvedor fullstack
-          </h2>
-          <p className="text-lg md:text-xl max-w-2xl">
-            Transformo ideias em experiências digitais envolventes, com atenção aos detalhes no código e no que o usuário realmente precisa.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl md:text-3xl">
+              Um desenvolvedor fullstack
+            </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 w-full md:max-w-3xl gap-4">
+            <p className="text-lg md:text-xl max-w-2xl">
+              Transformo ideias em experiências digitais envolventes, com atenção aos detalhes no código e no que o usuário realmente precisa.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-3 w-full md:max-w-3xl gap-4"
+          >
             <Button
+              aria-label='scroll para projetos'
               onClick={scrollToProjects}
               className="cursor-pointer col-span-2 md:col-span-1 w-full bg-linear-to-bl from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-colors duration-300 shadow-lg"
             >
               Veja meu trabalho
             </Button>
             <Button
+              aria-label='scroll para contao'
               onClick={scrollToContac}
               className='cursor-pointer'
             >
               Entre em contato
             </Button>
-            <Button variant={'outline'} className='cursor-pointer'>
+            <Button
+              aria-label='baixar curriculo'
+              variant={'outline'}
+              className='cursor-pointer'>
               <a href="/Curriculo_Thalyson_Ribeiro.pdf"
                 download="Curriculo_Thalyson_Ribeiro.pdf"
                 className='flex gap-1.5'
@@ -61,11 +88,11 @@ export function Hero() {
                 <Download />
               </a>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown size={32} className="text-purple-400" />
+        <ChevronsDown aria-label='baixar curriculo' size={32} className="text-purple-400" />
       </div>
     </section>
   )

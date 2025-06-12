@@ -9,6 +9,7 @@ import {
   CardTitle
 } from "@/components/ui/card";
 import { Badge } from './ui/badge';
+import { motion } from "framer-motion";
 
 
 const Skills = () => {
@@ -36,20 +37,29 @@ const Skills = () => {
         Habilidades e Tecnologias
       </h2>
       <div className="grid grid-cols-1  md:grid-cols-3 gap-4 w-full">
-        {skillCategories.map((category) => (
-          <Card key={category.title} className='relative group hover:border-purple-500/50'>
-            <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
-            <CardHeader>
-              <CardTitle className='flex gap-1.5 items-center'>{category.icon} {category.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="relativ backdrop-blur-sm rounded-lg transition-colors duration-300">
-              <div className='flex gap-2 flex-wrap'>
-                {category.skills.map(skill => (
-                  <Badge key={skill} variant="default">{skill}</Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+        {skillCategories.map((category, i) => (
+          <motion.article
+            key={category.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
+            viewport={{ once: true }}
+            className='list-disc'
+          >
+            <Card key={category.title} className='relative group hover:border-purple-500/50'>
+              <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
+              <CardHeader>
+                <CardTitle className='flex gap-1.5 items-center'>{category.icon} {category.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="relativ backdrop-blur-sm rounded-lg transition-colors duration-300">
+                <div className='flex gap-2 flex-wrap'>
+                  {category.skills.map(skill => (
+                    <Badge key={skill} variant="default">{skill}</Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.article>
         ))}
       </div>
     </article>

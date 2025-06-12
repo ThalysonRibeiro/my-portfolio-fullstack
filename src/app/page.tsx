@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <div className="space-y-6">
+      <div className="space-y-6 mb-4">
         <Hero />
-        <About />
         <Projects />
+        <About />
         <Contact />
       </div>
       <Footer />

@@ -244,3 +244,42 @@ export const projects: ProjectProps[] = [
     ]
   },
 ];
+
+export interface AboutMeprops {
+  id: string;
+  description: string;
+}
+
+export const about_me: AboutMeprops[] = [
+  {
+    id: '01',
+    description: 'Minha jornada no desenvolvimento web começou com uma transição inesperada do mundo da gastronomia. A natureza rápida e detalhista das artes culinárias ajudou a moldar minha abordagem à codificação - onde precisão, criatividade e resolução de problemas são primordiais.'
+  },
+  {
+    id: '02',
+    description: 'Atualmente, crio interfaces front-end intuitivas, enquanto expando meus conhecimentos em arquitetura back-end. Minha experiência em ambientes de alta pressão aprimorou minha capacidade de entregar soluções eficientes, mantendo a qualidade do código e garantindo uma excelente experiência ao usuário.'
+  },
+  {
+    id: '03',
+    description: 'Meu objetivo é contribuir para projetos inovadores que expandam os limites da tecnologia web e, ao mesmo tempo, ofereçam soluções de alto impacto que façam a diferença.'
+  },
+];
+
+export interface CoursesProps {
+  id: string;
+  title: string;
+  courses: string;
+}
+
+export const courses_details: CoursesProps[] = [
+  {
+    id: '01',
+    title: 'FullStack Pro',
+    courses: 'Sujeito Programador (2024 - 2025)'
+  },
+  {
+    id: '02',
+    title: 'Introdução ao desenvolvimento Front-end',
+    courses: 'Ri HAppy (2023 - 2024)'
+  },
+]

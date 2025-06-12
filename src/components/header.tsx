@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { Linkedin, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import { FaLinkedinIn } from "react-icons/fa6";
 import Link from 'next/link';
 import {
   Sheet,
@@ -9,6 +10,7 @@ import {
   SheetTrigger
 } from "@/components/ui/sheet";
 import { ModeToggle } from '@/app/_components/modeToggle';
+
 
 export function Header() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -54,7 +56,7 @@ export function Header() {
           )}
 
           <nav className="hidden md:flex items-center space-x-8">
-            {['Inicio', 'Sobre mim', 'Projetos', 'Contato'].map((item) => (
+            {['Inicio', 'Projetos', 'Sobre mim', 'Contato'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -69,7 +71,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="hover:text-purple-500 transition-colors"
             >
-              <Linkedin size={24} />
+              <FaLinkedinIn size={24} />
             </Link>
             <ModeToggle />
 
@@ -92,7 +94,7 @@ export function Header() {
           <SheetHeader>
             <SheetTitle>Menu</SheetTitle>
           </SheetHeader>
-          {['Inicio', 'Sobre mim', 'Projetos', 'Contato'].map((item) => (
+          {['Inicio', 'Projetos', 'Sobre mim', 'Contato'].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
@@ -108,7 +110,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="hover:text-purple-500 transition-colors"
             >
-              <Linkedin size={24} />
+              <FaLinkedinIn size={24} />
             </Link>
             <ModeToggle />
           </div>
