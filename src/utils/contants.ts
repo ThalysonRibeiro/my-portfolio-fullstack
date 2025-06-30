@@ -112,40 +112,36 @@ export const projects: ProjectProps[] = [
   },
   {
     id: '03',
-    title: 'Goal List ',
+    title: 'Dev Tasks',
     projectType: 'Fullstack',
     category: 'Produtividade / Tarefas',
     app: '',
-    description: 'Uma aplicação web moderna para gerenciamento de metas e objetivos, permitindo que você organize suas tarefas diárias ou semanais de forma eficiente.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind', 'React Hook Form', 'Zod', 'Axios', 'Radix UI', 'Node.js', 'Fastify', 'Prisma', 'PostgreSQL (Neon)'],
-    github: 'https://github.com/ThalysonRibeiro/goal.list-web',
-    githubBackend: 'https://github.com/ThalysonRibeiro/goallist-backend',
+    description: 'Uma aplicação moderna de gerenciamento de tarefas para desenvolvedores, construída com Next.js 15 e as melhores práticas de desenvolvimento web.',
+    tech: ['Next.js', 'TypeScript', 'shadcn', 'Tailwind', 'React Hook Form', 'Zod', 'Radix UI', 'AuthJS', 'Prisma', 'PostgreSQL (Neon)'],
+    github: 'https://github.com/ThalysonRibeiro/dev-tasks',
+    githubBackend: '',
     appLink: '',
-    live: 'https://goal-list-web.vercel.app/',
+    live: 'https://dev-tasks-five.vercel.app',
     images: [
       {
         title: "photo-goallist-1",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409341/home_qzyca9.png"
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/1_mr1tmi.png"
       },
       {
         title: "photo-goallist-2",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409341/login_ptmx41.png"
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/2_rojul2.png"
       },
       {
         title: "photo-goallist-3",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409340/register_zmm1zi.png"
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/3_ocpbli.png"
       },
       {
         title: "photo-goallist-4",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409339/dashboard_vrilru.png"
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/4_hzawc7.png"
       },
       {
         title: "photo-goallist-5",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409338/criar-meta_m5g7dv.png"
-      },
-      {
-        title: "photo-goallist-6",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739409339/moile-home_yvbqlj.png"
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/5_htv0s8.png"
       },
     ]
   },
