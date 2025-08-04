@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import prolifeImg from "@/assets/12.30.11_00305ce8.jpg";
+import prolifeImg from "../../public/profile.png";
 import Skills from './skills';
 import { motion } from "framer-motion";
 import { about_me, courses_details } from '@/utils/contants';
@@ -70,7 +70,7 @@ export function About() {
                 fill
                 quality={100}
                 priority={true}
-                className="rounded-lg shadow-2xl object-contain"
+                className="rounded-lg shadow-2xl object-cover opacity-70 filter grayscale-25"
                 sizes="(max-width:480px) 100vw (max-width: 1024px) 75vw, 60vw"
               />
             </motion.div>
