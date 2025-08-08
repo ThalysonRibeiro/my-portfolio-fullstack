@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Thalyson Rafael
 
-## Getting Started
+**Full Stack Developer** | Gastronomia → Tech
 
-First, run the development server:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thalyson-ribeiro-978b682a0/)
+[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:rafinha.head@gmail.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Sobre
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Desenvolvedor full stack com background em gastronomia. Foco em criar soluções inovadoras combinando criatividade, atenção aos detalhes e capacidade de trabalhar sob pressão.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Objetivo:** Contribuir para projetos de alto impacto através de código limpo e experiências excepcionais.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack
 
-## Learn More
+**Frontend:** `JavaScript` `TypeScript` `React` `Next.js` `HTML` `CSS` `Tailwind` `SASS`
 
-To learn more about Next.js, take a look at the following resources:
+**Backend:** `Node.js` `Fastify` `Express` `NestJS` `Prisma`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Database:** `PostgreSQL` 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Tools:** `Docker` `Git`
 
-## Deploy on Vercel
+## Stats
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+  <img height="170em" src="https://github-readme-stats.vercel.app/api?username=ThalysonRibeiro&show_icons=true&theme=nord&include_all_commits=true&count_private=true"/>
+  <img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ThalysonRibeiro&layout=compact&langs_count=6&theme=nord"/>
+</div>
