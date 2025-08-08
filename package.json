@@ -17,6 +17,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.17.0",
+    "gtag": "^1.0.1",
     "lucide-react": "^0.514.0",
     "next": "15.3.3",
     "next-themes": "^0.4.6",
