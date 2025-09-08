@@ -20,7 +20,7 @@ export function Hero() {
   };
   return (
     <section id="inicio" className="h-screen flex items-center justify-center">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[44px_44px]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ff00000a_1px,transparent_1px),linear-gradient(to_bottom,#ff00000a_1px,transparent_1px)] bg-size-[44px_44px]" />
       <div className='max-w-[900px] w-full absolute top-10 -z-10'>
         <AnimatedBackground />
       </div>
@@ -34,7 +34,7 @@ export function Hero() {
           >
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-center flex gap-2 flex-col lg:flex-row">
               Olá, eu sou{' '}
-              <span className="bg-linear-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
                 Thalyson Rafael
               </span>
             </h1>
@@ -65,7 +65,7 @@ export function Hero() {
             <Button
               aria-label='scroll para projetos'
               onClick={scrollToProjects}
-              className="cursor-pointer col-span-2 md:col-span-1 w-full bg-linear-to-bl from-purple-600/0 to-blue-600/0 hover:from-blue-700 hover:to-purple-700 transition-colors duration-300"
+              className="cursor-pointer col-span-2 md:col-span-1 w-full bg-linear-to-bl from-red-600/0 to-orange-600/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300"
               variant={'outline'}
             >
               Veja meu trabalho
@@ -73,7 +73,7 @@ export function Hero() {
             <Button
               aria-label='scroll para contao'
               onClick={scrollToContac}
-              className='cursor-pointer bg-linear-to-bl from-purple-600/0 to-blue-600/0 hover:from-blue-700 hover:to-purple-700 transition-colors duration-300'
+              className='cursor-pointer bg-linear-to-bl from-red-600/0 to-orange-600/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300'
               variant={'outline'}
             >
               Entre em contato
@@ -81,7 +81,7 @@ export function Hero() {
             <Button
               aria-label='baixar curriculo'
               variant={'outline'}
-              className='cursor-pointer bg-linear-to-bl from-purple-600/0 to-blue-600/0 hover:from-blue-700 hover:to-purple-700 transition-colors duration-300'>
+              className='cursor-pointer bg-linear-to-bl from-red-600/0 to-orange-600/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300'>
               <a href="/Curriculo_Thalyson_Ribeiro.pdf"
                 download="Curriculo_Thalyson_Ribeiro.pdf"
                 className='flex gap-1.5'
@@ -94,7 +94,7 @@ export function Hero() {
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronsDown aria-label='baixar curriculo' size={32} className="text-purple-400" />
+        <ChevronsDown aria-label='baixar curriculo' size={32} className="text-red-400" />
       </div>
     </section>
   )

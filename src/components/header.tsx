@@ -46,11 +46,11 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-xs shadow-lg' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'border-b border-red-500/50 bg-background/80 backdrop-blur-xs shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
         <div className="h-15 flex items-center md:justify-end justify-between">
           {mounted && isLargeScreen && (
-            <h1 className="text-2xl font-bold bg-linear-to-tr from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-linear-to-tr from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
               TR
             </h1>
           )}
@@ -60,7 +60,7 @@ export function Header() {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                className="hover:text-purple-500 transition-colors"
+                className="hover:text-red-500 transition-colors cursor-pointer text-lg font-medium"
               >
                 {item}
               </button>
@@ -69,7 +69,7 @@ export function Header() {
               href="https://www.linkedin.com/in/thalyson-rafael/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-purple-500 transition-colors"
+              className="hover:text-red-500 transition-colors"
             >
               <FaLinkedinIn size={24} />
             </Link>
@@ -81,7 +81,7 @@ export function Header() {
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Menu size={24} className='hover:text-purple-500' />
+            <Menu size={24} className='hover:text-red-500' />
           </button>
         </div>
       </div>
@@ -98,7 +98,7 @@ export function Header() {
             <button
               key={item}
               onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-              className="hover:text-purple-500 transition-colors text-left"
+              className="hover:text-red-500 transition-colors text-left cursor-pointer"
             >
               {item}
             </button>
@@ -108,7 +108,7 @@ export function Header() {
               href="https://www.linkedin.com/in/thalyson-rafael/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-purple-500 transition-colors"
+              className="hover:text-red-500 transition-colors"
             >
               <FaLinkedinIn size={24} />
             </Link>

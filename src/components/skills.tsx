@@ -33,7 +33,7 @@ const Skills = () => {
 
   return (
     <article id="skills" className="flex flex-col items-center justify-center mt-10">
-      <h2 className="text-3xl font-bold mb-12 text-center bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+      <h2 className="text-3xl font-bold mb-12 text-center bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
         Habilidades e Tecnologias
       </h2>
       <div className="grid grid-cols-1  md:grid-cols-3 gap-4 w-full">
@@ -46,8 +46,8 @@ const Skills = () => {
             viewport={{ once: true }}
             className='list-disc'
           >
-            <Card key={category.title} className='relative group hover:border-purple-500/50 grayscale hover:grayscale-0 transition-all duration-300'>
-              <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
+            <Card key={category.title} className='relative group hover:border-red-500/50 grayscale hover:grayscale-0 transition-all duration-300'>
+              <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
               <CardHeader>
                 <CardTitle className='flex gap-1.5 items-center'>{category.icon} {category.title}</CardTitle>
               </CardHeader>
