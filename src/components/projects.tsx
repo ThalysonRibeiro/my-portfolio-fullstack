@@ -17,10 +17,10 @@ export function Projects() {
   return (
     <section id="projetos" className="flex items-center justify-center flex-col min-h-screen py-16">
       <div className="container mx-auto px-4 backdrop-blur-sm rounded-2xl">
-        <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
           Projetos em destaque
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
           {projects.map((project, i) => (
             <motion.article
               key={project.id}
@@ -30,8 +30,8 @@ export function Projects() {
               viewport={{ once: true }}
               className="h-full"
             >
-              <Card className="relative group hover:border-purple-500/50 h-full flex flex-col p-4 grayscale hover:grayscale-0 transition-all duration-300">
-                <div className="absolute -z-[1] -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
+              <Card className="relative group hover:border-red-500/50 h-full flex flex-col p-4 grayscale hover:grayscale-0 transition-all duration-300">
+                <div className="absolute -z-[1] -inset-2 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
 
                 <CardHeader className="p-0">
                   <CardTitle className="text-xl">{project.title}</CardTitle>
@@ -47,7 +47,7 @@ export function Projects() {
                   </div>
 
                   <div>
-                    <h3 className="text-purple-500 text-sm font-medium mb-2">
+                    <h3 className="text-red-500 text-sm font-medium mb-2">
                       {project.projectType}
                     </h3>
 
@@ -71,7 +71,7 @@ export function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm hover:text-purple-400 transition-colors"
+                      className="flex items-center gap-1 text-sm hover:text-red-400 transition-colors"
                     >
                       <ExternalLink size={16} />
                       Live Demo
@@ -82,7 +82,7 @@ export function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-sm hover:text-purple-400 transition-colors"
+                        className="flex items-center gap-1 text-sm hover:text-red-400 transition-colors"
                       >
                         <Github size={16} />
                         Frontend
@@ -94,7 +94,7 @@ export function Projects() {
                         href={project.githubBackend}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-sm hover:text-purple-400 transition-colors"
+                        className="flex items-center gap-1 text-sm hover:text-red-400 transition-colors"
                       >
                         <Github size={16} />
                         Backend
@@ -106,7 +106,7 @@ export function Projects() {
                         href={project.appLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-sm hover:text-purple-400 transition-colors"
+                        className="flex items-center gap-1 text-sm hover:text-red-400 transition-colors"
                       >
                         <ArrowBigDown size={16} />
                         App

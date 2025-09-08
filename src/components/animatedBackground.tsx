@@ -32,7 +32,7 @@ export const AnimatedBackground = () => {
           transform="translate(-295.027 -193.118)"
           rx="1.07306"
           ry="1.07433"
-          fill="#945DD6"
+          fill="#ef4444"
         >
           <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#path_2" />
@@ -84,7 +84,7 @@ export const AnimatedBackground = () => {
           rx="1.07433"
           ry="1.07306"
           transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-          fill="#945DD6"
+          fill="#ef4444"
         >
           <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#path_0" />
@@ -105,7 +105,7 @@ export const AnimatedBackground = () => {
           rx="1.07433"
           ry="1.07306"
           transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
-          fill="#945DD6"
+          fill="#ef4444"
         >
           <animateMotion
             dur="10s"
@@ -136,7 +136,7 @@ export const AnimatedBackground = () => {
           rx="1.07306"
           ry="1.07433"
           transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
-          fill="#945DD6"
+          fill="#ef4444"
         >
           <animateMotion
             dur="5s"
@@ -167,7 +167,7 @@ export const AnimatedBackground = () => {
           rx="1.07306"
           ry="1.07433"
           transform="translate(-165.524 -93.9596)"
-          fill="#945DD6"
+          fill="#ef4444"
         >
           <animateMotion
             dur="10s"
@@ -198,7 +198,7 @@ export const AnimatedBackground = () => {
           rx="1.07433"
           ry="1.07306"
           transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-          fill="#13ADC7"
+          fill="#f97316"
         >
           <animateMotion
             dur="12s"
@@ -232,7 +232,7 @@ export const AnimatedBackground = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(301 301) rotate(90) scale(300)"
           >
-            <stop offset="0.333333" stopColor="#7A0EBD" />
+            <stop offset="0.333333" stopColor="#fffff" />
             <stop offset="1" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <radialGradient
@@ -243,7 +243,7 @@ export const AnimatedBackground = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(301 301) rotate(90) scale(300)"
           >
-            <stop offset="0.333333" stopColor="#7A0EBD" />
+            <stop offset="0.333333" stopColor="#fffff" />
             <stop offset="1" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <radialGradient
@@ -254,7 +254,7 @@ export const AnimatedBackground = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(301 301) rotate(90) scale(300)"
           >
-            <stop offset="0.333333" stopColor="#7A0EBD" />
+            <stop offset="0.333333" stopColor="#fffff" />
             <stop offset="1" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <linearGradient
@@ -265,8 +265,8 @@ export const AnimatedBackground = () => {
             y2="218.154"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+            <stop stopColor="#ef4444" />
+            <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint4_linear"
@@ -276,8 +276,8 @@ export const AnimatedBackground = () => {
             y2="338.272"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+            <stop stopColor="#ef4444" />
+            <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint5_linear"
@@ -287,8 +287,8 @@ export const AnimatedBackground = () => {
             y2="129.989"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+            <stop stopColor="#ef4444" />
+            <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint6_linear"
@@ -298,8 +298,8 @@ export const AnimatedBackground = () => {
             y2="357.655"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+            <stop stopColor="#ef4444" />
+            <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint7_linear"
@@ -309,8 +309,8 @@ export const AnimatedBackground = () => {
             y2="118.996"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+            <stop stopColor="#ef4444" />
+            <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint8_linear"
@@ -320,8 +320,8 @@ export const AnimatedBackground = () => {
             y2="276.118"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#13ADC7" />
-            <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
+            <stop stopColor="#f97316" />
+            <stop offset="1" stopColor="#f97316" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint9_linear"
@@ -331,8 +331,8 @@ export const AnimatedBackground = () => {
             y2="291.454"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#13ADC7" />
-            <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
+            <stop stopColor="#f97316" />
+            <stop offset="1" stopColor="#f97316" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint10_linear"
@@ -342,8 +342,8 @@ export const AnimatedBackground = () => {
             y2="258.193"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#945DD6" />
-            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+            <stop stopColor="#ef4444" />
+            <stop offset="1" stopColor="#ef4444" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint11_linear"
@@ -353,8 +353,8 @@ export const AnimatedBackground = () => {
             y2="338.272"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#13ADC7" />
-            <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
+            <stop stopColor="#f97316" />
+            <stop offset="1" stopColor="#f97316" stopOpacity="0" />
           </linearGradient>
         </defs>
       </svg>

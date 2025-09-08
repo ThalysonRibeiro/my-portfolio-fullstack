@@ -86,7 +86,7 @@ export function Contact() {
     <section id="contato" className="flex items-center justify-center">
 
       <div className="container mx-auto px-4 w-full">
-        <h2 className="text-3xl font-bold mb-12 text-center bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold mb-12 text-center bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
           Entre em contato
         </h2>
         <div className="grid md:grid-cols-2 gap-12">
@@ -96,8 +96,8 @@ export function Contact() {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <Card className='relative group hover:border-purple-500/50'>
-              <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
+            <Card className='relative group hover:border-red-500/50'>
+              <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                   <CardContent>
@@ -157,9 +157,9 @@ export function Contact() {
                         aria-label='enviar mensagem'
                         type="submit" disabled={isLoading}
                         aria-busy={isLoading}
-                        className={`w-full cursor-pointer ${isLoading && "cursor-not-allowed"}`}>
+                        className={`w-full cursor-pointer ${isLoading && "cursor-not-allowed"} bg-linear-to-bl from-red-500/0 to-orange-500/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300`}>
                         {isLoading
-                          ? <div className="w-4 h-4 border border-white border-t-violet-500 rounded-full animate-spin" />
+                          ? <div className="w-4 h-4 border border-white border-t-red-500 rounded-full animate-spin" />
                           : "Enviar"}
                       </Button>
                     </div>
@@ -179,8 +179,8 @@ export function Contact() {
               <div>
                 <h3 className="text-xl font-semibold mb-4">Informações de contato</h3>
                 <div className="flex items-center space-x-3">
-                  <Mail aria-label='encaminhar email' size={20} className="text-purple-400" />
-                  <a href="mailto:rafinha.head@gmail.com" className="hover:text-purple-400 transition-colors">
+                  <Mail aria-label='encaminhar email' size={20} className="text-red-400" />
+                  <a href="mailto:rafinha.head@gmail.com" className="hover:text-red-400 transition-colors">
                     rafinha.head@gmail.com
                   </a>
                 </div>
@@ -194,7 +194,7 @@ export function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title='Linkedin'
-                    className="hover:text-purple-400 transition-colors"
+                    className="hover:text-red-400 transition-colors"
                   >
                     <FaLinkedinIn aria-label='ir para o linkedin' size={24} />
                   </Link>
@@ -203,7 +203,7 @@ export function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title='GitHub'
-                    className="hover:text-purple-400 transition-colors"
+                    className="hover:text-red-400 transition-colors"
                   >
                     <FaGithub aria-label='ir para o github' size={24} />
                   </Link>
@@ -212,7 +212,7 @@ export function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title='WhatsApp'
-                    className="hover:text-purple-400 transition-colors"
+                    className="hover:text-red-400 transition-colors"
                   >
                     <IoLogoWhatsapp aria-label='iniciar conversa no whatsapp' size={24} />
                   </Link>

@@ -12,7 +12,7 @@ export function About() {
         <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-4 mt-12">
 
           <div className='lg:w-1/2 w-full'>
-            <h2 className="text-3xl font-bold mb-6 bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold mb-6 bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
               Sobre mim
             </h2>
 
@@ -32,7 +32,7 @@ export function About() {
             </div>
 
             <div className='mt-4'>
-              <h3 className='text-3xl font-bold mb-6 bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent'>
+              <h3 className='text-3xl font-bold mb-6 bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent'>
                 Cursos
               </h3>
               <ul className='pl-3.5 border-l border-foreground space-y-4'>
@@ -45,7 +45,7 @@ export function About() {
                     viewport={{ once: true }}
                     className='list-disc'
                   >
-                    <p><span className='text-purple-500 font-semibold'>
+                    <p><span className='text-red-500 font-semibold'>
                       {course.title}
                     </span>
                       <br />
@@ -70,7 +70,7 @@ export function About() {
                 fill
                 quality={100}
                 priority={true}
-                className="rounded-lg shadow-2xl object-cover opacity-70 filter grayscale-25"
+                className="rounded-lg object-cover dark:opacity-70 filter grayscale-25"
                 sizes="(max-width:480px) 100vw (max-width: 1024px) 75vw, 60vw"
               />
             </motion.div>
