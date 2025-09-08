@@ -30,7 +30,7 @@ export function Projects() {
               viewport={{ once: true }}
               className="h-full"
             >
-              <Card className="relative group hover:border-purple-500/50 transition-all duration-300 h-full flex flex-col p-4">
+              <Card className="relative group hover:border-purple-500/50 h-full flex flex-col p-4 grayscale hover:grayscale-0 transition-all duration-300">
                 <div className="absolute -z-[1] -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
 
                 <CardHeader className="p-0">

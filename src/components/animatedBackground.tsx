@@ -105,7 +105,7 @@ export const AnimatedBackground = () => {
           rx="1.07433"
           ry="1.07306"
           transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
-          fill="#F46737"
+          fill="#945DD6"
         >
           <animateMotion
             dur="10s"
@@ -136,7 +136,7 @@ export const AnimatedBackground = () => {
           rx="1.07306"
           ry="1.07433"
           transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
-          fill="#F46737"
+          fill="#945DD6"
         >
           <animateMotion
             dur="5s"
@@ -167,7 +167,7 @@ export const AnimatedBackground = () => {
           rx="1.07306"
           ry="1.07433"
           transform="translate(-165.524 -93.9596)"
-          fill="#F46737"
+          fill="#945DD6"
         >
           <animateMotion
             dur="10s"
@@ -287,8 +287,8 @@ export const AnimatedBackground = () => {
             y2="129.989"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#F46737" />
-            <stop offset="1" stopColor="#F46737" stopOpacity="0" />
+            <stop stopColor="#945DD6" />
+            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint6_linear"
@@ -298,8 +298,8 @@ export const AnimatedBackground = () => {
             y2="357.655"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#F46737" />
-            <stop offset="1" stopColor="#F46737" stopOpacity="0" />
+            <stop stopColor="#945DD6" />
+            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint7_linear"
@@ -309,8 +309,8 @@ export const AnimatedBackground = () => {
             y2="118.996"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#F46737" />
-            <stop offset="1" stopColor="#F46737" stopOpacity="0" />
+            <stop stopColor="#945DD6" />
+            <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
           </linearGradient>
           <linearGradient
             id="paint8_linear"
