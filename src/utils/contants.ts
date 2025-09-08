@@ -38,6 +38,73 @@ type ProjectType =
 export const projects: ProjectProps[] = [
   {
     id: '01',
+    title: 'Dev Tasks',
+    projectType: 'Fullstack',
+    category: 'Produtividade / Tarefas',
+    app: '',
+    description: 'Uma aplicação moderna de gerenciamento para desenvolvedores, Clone parcial do Monday.com - Sistema de gestão de projetos e metas.',
+    tech: ['Next.js', 'TypeScript', 'shadcn', 'Tailwind', 'React Hook Form', 'Zod', 'Radix UI', 'AuthJS', 'Prisma', 'PostgreSQL (Neon)', 'Jest', 'Vercel', 'Docker', 'Cloudinary'],
+    github: 'https://github.com/ThalysonRibeiro/dev-tasks',
+    githubBackend: '',
+    appLink: '',
+    live: 'https://dev-tasks-five.vercel.app',
+    images: [
+      {
+        title: "photo-goallist-1",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297961/1_wjioku.png"
+      },
+      {
+        title: "photo-goallist-2",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297961/2_fiiks3.png"
+      },
+      {
+        title: "photo-goallist-3",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297961/3_d4jo5r.png"
+      },
+      {
+        title: "photo-goallist-4",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/4_twjcyo.png"
+      },
+      {
+        title: "photo-goallist-5",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/5_bp1lpj.png"
+      },
+      {
+        title: "photo-goallist-6",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/6_ksaihk.png"
+      },
+      {
+        title: "photo-goallist-7",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/8_l9pqer.png"
+      },
+      {
+        title: "photo-goallist-8",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/7_nviw8n.png"
+      },
+      {
+        title: "photo-goallist-9",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297964/11_lu1cro.png"
+      },
+      {
+        title: "photo-goallist-10",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297963/10_swyfbi.png"
+      },
+      {
+        title: "photo-goallist-11",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297963/9_ieu0fx.png"
+      },
+      {
+        title: "photo-goallist-12",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297965/13_qofdfi.png"
+      },
+      {
+        title: "photo-goallist-13",
+        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297964/12_fv0q2r.png"
+      },
+    ]
+  },
+  {
+    id: '02',
     title: 'Equilibrium Center',
     projectType: 'Fullstack',
     category: 'Gestão / Saúde',
@@ -72,7 +139,7 @@ export const projects: ProjectProps[] = [
     ]
   },
   {
-    id: '02',
+    id: '03',
     title: 'BarberPro 💈',
     projectType: 'Fullstack',
     category: 'Gestão / Negócios',
@@ -107,41 +174,6 @@ export const projects: ProjectProps[] = [
       {
         title: "photo-barberpro-6",
         image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399210/logado_ov38cb.png"
-      },
-    ]
-  },
-  {
-    id: '03',
-    title: 'Dev Tasks',
-    projectType: 'Fullstack',
-    category: 'Produtividade / Tarefas',
-    app: '',
-    description: 'Uma aplicação moderna de gerenciamento de tarefas para desenvolvedores, construída com Next.js 15 e as melhores práticas de desenvolvimento web.',
-    tech: ['Next.js', 'TypeScript', 'shadcn', 'Tailwind', 'React Hook Form', 'Zod', 'Radix UI', 'AuthJS', 'Prisma', 'PostgreSQL (Neon)'],
-    github: 'https://github.com/ThalysonRibeiro/dev-tasks',
-    githubBackend: '',
-    appLink: '',
-    live: 'https://dev-tasks-five.vercel.app',
-    images: [
-      {
-        title: "photo-goallist-1",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/1_mr1tmi.png"
-      },
-      {
-        title: "photo-goallist-2",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/2_rojul2.png"
-      },
-      {
-        title: "photo-goallist-3",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/3_ocpbli.png"
-      },
-      {
-        title: "photo-goallist-4",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/4_hzawc7.png"
-      },
-      {
-        title: "photo-goallist-5",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1751292652/5_htv0s8.png"
       },
     ]
   },

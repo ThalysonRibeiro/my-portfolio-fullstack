@@ -65,21 +65,23 @@ export function Hero() {
             <Button
               aria-label='scroll para projetos'
               onClick={scrollToProjects}
-              className="cursor-pointer col-span-2 md:col-span-1 w-full bg-linear-to-bl from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-colors duration-300 shadow-lg"
+              className="cursor-pointer col-span-2 md:col-span-1 w-full bg-linear-to-bl from-purple-600/0 to-blue-600/0 hover:from-blue-700 hover:to-purple-700 transition-colors duration-300"
+              variant={'outline'}
             >
               Veja meu trabalho
             </Button>
             <Button
               aria-label='scroll para contao'
               onClick={scrollToContac}
-              className='cursor-pointer'
+              className='cursor-pointer bg-linear-to-bl from-purple-600/0 to-blue-600/0 hover:from-blue-700 hover:to-purple-700 transition-colors duration-300'
+              variant={'outline'}
             >
               Entre em contato
             </Button>
             <Button
               aria-label='baixar curriculo'
               variant={'outline'}
-              className='cursor-pointer'>
+              className='cursor-pointer bg-linear-to-bl from-purple-600/0 to-blue-600/0 hover:from-blue-700 hover:to-purple-700 transition-colors duration-300'>
               <a href="/Curriculo_Thalyson_Ribeiro.pdf"
                 download="Curriculo_Thalyson_Ribeiro.pdf"
                 className='flex gap-1.5'

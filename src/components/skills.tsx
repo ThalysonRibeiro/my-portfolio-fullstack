@@ -46,7 +46,7 @@ const Skills = () => {
             viewport={{ once: true }}
             className='list-disc'
           >
-            <Card key={category.title} className='relative group hover:border-purple-500/50'>
+            <Card key={category.title} className='relative group hover:border-purple-500/50 grayscale hover:grayscale-0 transition-all duration-300'>
               <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-purple-600 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
               <CardHeader>
                 <CardTitle className='flex gap-1.5 items-center'>{category.icon} {category.title}</CardTitle>
