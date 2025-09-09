@@ -66,7 +66,7 @@ export function Header() {
               </button>
             ))}
             <Link
-              href="www.linkedin.com/in/thalyson-rafael-br"
+              href="https://www.linkedin.com/in/thalyson-rafael-br"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-500 transition-colors"
@@ -105,7 +105,7 @@ export function Header() {
           ))}
           <div className='flex justify-between'>
             <Link
-              href="www.linkedin.com/in/thalyson-rafael-br"
+              href="https://www.linkedin.com/in/thalyson-rafael-br"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-500 transition-colors"
