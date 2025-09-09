@@ -7,6 +7,14 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import React, { useState } from 'react';
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -33,6 +41,12 @@ const formContactSchema = z.object({
   message: z.string().min(1, { message: "A mensagem é obrigatório" })
 });
 
+const formMessageWhasapp = z.object({
+  message: z.string().min(1, { message: "A mensagem é obrigatório" }),
+});
+
+type FormMessageWhasappData = z.infer<typeof formMessageWhasapp>;
+
 type FormContactData = z.infer<typeof formContactSchema>;
 
 function useFormContact({ name, email, message }: UseFormContactProps) {
@@ -41,6 +55,15 @@ function useFormContact({ name, email, message }: UseFormContactProps) {
     defaultValues: {
       name: name || "",
       email: email || "",
+      message: message || ""
+    }
+  });
+}
+
+function useFormMessageWhasapp({ message }: FormMessageWhasappData) {
+  return useForm<FormMessageWhasappData>({
+    resolver: zodResolver(formMessageWhasapp),
+    defaultValues: {
       message: message || ""
     }
   });
@@ -56,7 +79,12 @@ export function Contact() {
     message: ""
   });
 
-  async function onSubmit(values: FormContactData): Promise<void> {
+  const formMessage = useFormMessageWhasapp({
+    message: ""
+  });
+
+
+  const onSubmit = async (values: FormContactData): Promise<void> => {
     setIsLoading(true);
     try {
       const response = await fetch('https://api-email-topaz.vercel.app/api/send', {
@@ -81,6 +109,13 @@ export function Contact() {
       setIsLoading(false);
     }
   }
+
+  const sendWhatsapp = (): void => {
+    window.open(`https://wa.me/65981278291?text=${formMessage.getValues().message}`, "_blank");
+    formMessage.reset();
+    toast.success("Enviado com sucesso!");
+  }
+
 
   return (
     <section id="contato" className="flex items-center justify-center">
@@ -190,7 +225,7 @@ export function Contact() {
                 <h3 className="text-xl font-semibold mb-4">Mídias sociais</h3>
                 <div className="flex space-x-6">
                   <Link
-                    href="https://www.linkedin.com/in/thalyson-rafael/"
+                    href="www.linkedin.com/in/thalyson-rafael-br"
                     target="_blank"
                     rel="noopener noreferrer"
                     title='Linkedin'
@@ -207,15 +242,60 @@ export function Contact() {
                   >
                     <FaGithub aria-label='ir para o github' size={24} />
                   </Link>
-                  <Link
-                    href="https://wa.me/65981278291?text=Oi! Deixe sua mensagem que respondo assim que puder."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title='WhatsApp'
-                    className="hover:text-red-400 transition-colors"
-                  >
-                    <IoLogoWhatsapp aria-label='iniciar conversa no whatsapp' size={24} />
-                  </Link>
+
+                  <Dialog>
+                    <DialogTrigger>
+                      <IoLogoWhatsapp aria-label='iniciar conversa no whatsapp'
+                        size={24}
+                        title='WhatsApp'
+                        className="hover:text-red-400 transition-colors cursor-pointer"
+                      />
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>
+                          Contato pelo WhatsApp
+                        </DialogTitle>
+                        <DialogDescription>
+                          Descreva sua mensagem.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <Form {...formMessage}>
+                        <form
+                          className="space-y-4"
+                          onSubmit={formMessage.handleSubmit(sendWhatsapp)}
+                        >
+                          <FormField
+                            control={formMessage.control}
+                            name="message"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormControl>
+                                  <Textarea
+                                    {...field}
+                                    placeholder="Descreva sua mensagem."
+                                    className="h-28 max-h-32"
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <Button
+                            className="w-full cursor-pointer bg-linear-to-bl from-red-500/0 to-orange-500/0"
+                            aria-label='enviar mensagem'
+                            type="submit"
+                            disabled={isLoading}
+                            aria-busy={isLoading}
+                          >
+                            Enviar
+                          </Button>
+                        </form>
+                      </Form>
+                    </DialogContent>
+                  </Dialog>
+
                 </div>
               </div>
             </div>
