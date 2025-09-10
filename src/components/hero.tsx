@@ -1,101 +1,249 @@
 "use client"
 
-import { ChevronsDown, Download } from 'lucide-react';
+import { ChevronsDown, Download, Eye, MessageCircle } from 'lucide-react';
 import { AnimatedBackground } from './animatedBackground';
 import { Button } from './ui/button';
 import { motion } from "framer-motion";
+import { useCallback, useEffect, useState } from 'react';
+
+const ANIMATION_CONFIG = {
+  container: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  },
+  item: {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100,
+        duration: 0.8
+      }
+    }
+  },
+  title: {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        type: "spring",
+        damping: 15,
+        stiffness: 100,
+        duration: 1
+      }
+    }
+  }
+} as const;
+
+type ActionButton = {
+  id: string;
+  label: string;
+  icon: typeof Eye;
+  targetId?: string;
+  variant: 'default' | 'outline';
+  className: string;
+  ariaLabel: string;
+  href?: string;
+  download?: string;
+};
+
+const ACTION_BUTTONS: readonly ActionButton[] = [
+  {
+    id: 'projects',
+    label: 'Veja meu trabalho',
+    icon: Eye,
+    targetId: 'projetos',
+    variant: 'default',
+    className: 'col-span-2 md:col-span-1',
+    ariaLabel: 'Ver meus projetos em destaque'
+  },
+  {
+    id: 'contact',
+    label: 'Entre em contato',
+    icon: MessageCircle,
+    targetId: 'contato',
+    variant: 'outline',
+    className: '',
+    ariaLabel: 'Ir para seção de contato'
+  },
+  {
+    id: 'resume',
+    label: 'Currículo',
+    icon: Download,
+    href: '/Curriculo_Thalyson_Ribeiro.pdf',
+    download: 'Curriculo_Thalyson_Ribeiro.pdf',
+    variant: 'outline',
+    className: '',
+    ariaLabel: 'Baixar currículo em PDF'
+  }
+] as const;
 
 export function Hero() {
-  const scrollToProjects = () => {
-    const element = document.getElementById('projetos');
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-  };
-  const scrollToContac = () => {
-    const element = document.getElementById('contato');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  }, []);
+
+  const scrollToProjects = useCallback(() => {
+    scrollToSection('projetos');
+  }, [scrollToSection]);
+
   return (
-    <section id="inicio" className="h-screen flex items-center justify-center">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ff00000a_1px,transparent_1px),linear-gradient(to_bottom,#ff00000a_1px,transparent_1px)] bg-size-[44px_44px]" />
-      <div className='max-w-[900px] w-full absolute top-10 -z-10'>
+    <section
+      id="inicio"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+      aria-labelledby="hero-heading"
+    >
+      <div className="max-w-[900px] w-full absolute top-10 -z-10">
         <AnimatedBackground />
       </div>
-      <div className="container mx-auto px-4 inset-0">
-        <div className="w-full flex flex-col items-center justify-center space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-center flex gap-2 flex-col lg:flex-row">
-              Olá, eu sou{' '}
-              <span className="bg-linear-to-r from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
+
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-background/20" />
+
+      <div className="container mx-auto px-4 z-10">
+        <motion.div
+          variants={ANIMATION_CONFIG.container}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          className="w-full flex flex-col items-center justify-center space-y-8 text-center"
+        >
+          <motion.header variants={ANIMATION_CONFIG.title}>
+            <h1
+              id="hero-heading"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center leading-tight"
+            >
+              <span className="block mb-2">Olá, eu sou</span>
+              <span className="block bg-gradient-to-r from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent animate-gradient-x bg-[length:200%_auto]">
                 Thalyson Rafael
               </span>
             </h1>
-          </motion.div>
+          </motion.header>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl md:text-3xl">
-              Um desenvolvedor fullstack
+          <motion.div variants={ANIMATION_CONFIG.item} className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground">
+              Desenvolvedor <span className="text-red-500">Full Stack</span>
             </h2>
 
-            <p className="text-lg md:text-xl max-w-2xl">
-              Transformo ideias em experiências digitais envolventes, com atenção aos detalhes no código e no que o usuário realmente precisa.
+            <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed text-muted-foreground">
+              Transformo ideias em{' '}
+              <span className="text-foreground font-medium">experiências digitais envolventes</span>
+              , com atenção aos detalhes no código e no que o usuário realmente precisa.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 w-full md:max-w-3xl gap-4"
+          <motion.nav
+            variants={ANIMATION_CONFIG.item}
+            className="grid grid-cols-2 md:grid-cols-3 w-full max-w-2xl gap-4"
+            aria-label="Ações principais"
           >
-            <Button
-              aria-label='scroll para projetos'
-              onClick={scrollToProjects}
-              className="cursor-pointer col-span-2 md:col-span-1 w-full bg-linear-to-bl from-red-600/0 to-orange-600/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300"
-              variant={'outline'}
-            >
-              Veja meu trabalho
-            </Button>
-            <Button
-              aria-label='scroll para contao'
-              onClick={scrollToContac}
-              className='cursor-pointer bg-linear-to-bl from-red-600/0 to-orange-600/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300'
-              variant={'outline'}
-            >
-              Entre em contato
-            </Button>
-            <Button
-              aria-label='baixar curriculo'
-              variant={'outline'}
-              className='cursor-pointer bg-linear-to-bl from-red-600/0 to-orange-600/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300'>
-              <a href="/Curriculo_Thalyson_Ribeiro.pdf"
-                download="Curriculo_Thalyson_Ribeiro.pdf"
-                className='flex gap-1.5'
-              >
-                Curriculo
-                <Download />
-              </a>
-            </Button>
+            {ACTION_BUTTONS.map((button) => {
+              const Icon = button.icon;
+
+              if (button.href) {
+                return (
+                  <Button
+                    key={button.id}
+                    asChild
+                    variant={button.variant}
+                    size="lg"
+                    className={`group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 ${button.className}`}
+                    aria-label={button.ariaLabel}
+                  >
+                    <a
+                      href={button.href}
+                      download={button.download}
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                      <span>{button.label}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                    </a>
+                  </Button>
+                );
+              }
+
+              return (
+                <Button
+                  key={button.id}
+                  onClick={() => button.targetId && scrollToSection(button.targetId)}
+                  variant={button.variant}
+                  size="lg"
+                  className={`group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 ${button.className}`}
+                  aria-label={button.ariaLabel}
+                >
+                  <Icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
+                  <span>{button.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                </Button>
+              );
+            })}
+          </motion.nav>
+
+          <motion.div
+            variants={ANIMATION_CONFIG.item}
+            className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-muted-foreground"
+          >
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span>Disponível para projetos</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full" />
+              <span>1+ anos de experiência</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-orange-500 rounded-full" />
+              <span>Brasil, RN</span>
+            </div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronsDown aria-label='baixar curriculo' size={32} className="text-red-400" />
-      </div>
+
+      <motion.button
+        onClick={scrollToProjects}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 p-2 hover:bg-red-500/10 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+        aria-label="Rolar para ver projetos"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 0.5 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <motion.div
+          animate={{ y: [0, 5, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            ease: "easeInOut"
+          }}
+        >
+          <ChevronsDown
+            size={32}
+            className="text-red-400 drop-shadow-lg"
+          />
+        </motion.div>
+      </motion.button>
     </section>
-  )
+  );
 }
