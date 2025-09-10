@@ -229,7 +229,7 @@ const ContactForm = memo(({
   isLoading: boolean;
 }) => (
   <motion.div variants={ANIMATION_CONFIG.item}>
-    <Card className="relative group hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
+    <Card className="bg-transparent relative group hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
 
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
@@ -339,7 +339,7 @@ const ContactInfo = memo(({
   setIsWhatsAppOpen: (open: boolean) => void;
 }) => (
   <motion.div variants={ANIMATION_CONFIG.item} className="space-y-8">
-    <Card className="hover:border-red-500/30 transition-colors duration-300">
+    <Card className="bg-transparent hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Mail className="w-5 h-5 text-red-500" />
@@ -375,7 +375,7 @@ const ContactInfo = memo(({
       </CardContent>
     </Card>
 
-    <Card className="hover:border-red-500/30 transition-colors duration-300">
+    <Card className="bg-transparent hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <ExternalLink className="w-5 h-5 text-red-500" />

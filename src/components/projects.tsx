@@ -139,9 +139,11 @@ const ProjectCard = memo(({ project }: ProjectCardProps) => {
       variants={ANIMATION_CONFIG.item}
       className="h-full group"
       role="article"
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", damping: 15 }}
       aria-labelledby={`project-title-${project.id}`}
     >
-      <Card className="hover:border-red-500/50 h-full flex flex-col p-6 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/10">
+      <Card className="bg-transparent hover:border-red-500/50 h-full flex flex-col p-6 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-1">
 
         <CardHeader className="p-0 mb-4">
           <div className="flex items-start justify-between gap-2 mb-2">
