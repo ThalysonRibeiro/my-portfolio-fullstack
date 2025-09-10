@@ -111,7 +111,7 @@ export const projects: ProjectProps[] = [
     app: '',
     description: 'A plataforma de gestão completa projetada especificamente para massoterapeutas. Agende consultas, gerencie clientes e expanda seus negócios com facilidade',
     tech: ['Next.js', 'TypeScript', 'shadcn', 'TailwindCSS', 'React Hook Form', 'Zod', 'PostgreSQL (Neon)', 'Prisma', 'Vercel', 'Docker', 'Tailwind', 'Stripe', 'Cloudinary', 'Auth.js'],
-    github: '',
+    github: 'https://github.com/ThalysonRibeiro/equilibrium-center',
     githubBackend: '',
     appLink: '',
     live: 'https://equilibrium-center.vercel.app',

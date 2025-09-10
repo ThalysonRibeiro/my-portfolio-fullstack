@@ -1,121 +1,158 @@
-"use client";
-import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
-import { FaLinkedinIn } from "react-icons/fa6";
-import Link from 'next/link';
-import {
-  Sheet,
-  SheetContent, SheetHeader,
-  SheetTitle,
-  SheetTrigger
-} from "@/components/ui/sheet";
-import { ModeToggle } from '@/app/_components/modeToggle';
+"use client"
 
+import { ModeToggle } from "@/app/_components/modeToggle";
+import { useMobile } from "@/app/hooks/useMobile";
+import { cn } from "@/utils/cn";
+import { scrollToSection } from "@/utils/scrollTosection";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import { FaLinkedinIn } from "react-icons/fa";
 
-export function Header() {
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
+// Constantes
+const SCROLL_THRESHOLD = 500;
+const MOBILE_BREAKPOINT = 768;
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    setIsLargeScreen(mediaQuery.matches);
-    const handleResize = () => setIsLargeScreen(mediaQuery.matches);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+const NAVIGATION_ITEMS = [
+  { label: 'Início', id: 'inicio' },
+  { label: 'Projetos', id: 'projetos' },
+  { label: 'Sobre', id: 'sobre' },
+  { label: 'Contato', id: 'contato' }
+] as const;
 
-  useEffect(() => {
-    setMounted(true);
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+interface NavProps {
+  className?: string;
+  activeSection?: string;
+}
 
-  const scrollToSection = (id: string) => {
-    if (typeof window !== 'undefined') {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+export function NavigationHeader() {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>('');
+  const isMobile = useMobile(MOBILE_BREAKPOINT);
+
+  // Throttle para melhor performance
+  const throttle = useCallback(<T extends (...args: unknown[]) => void>(
+    func: T,
+    limit: number
+  ): T => {
+    let inThrottle: boolean;
+    return ((...args: Parameters<T>): void => {
+      if (!inThrottle) {
+        func(...args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
       }
-      setIsMenuOpen(false);
-    }
-  };
+    }) as T;
+  }, []);
+
+  useEffect(() => {
+    const throttledScroll = throttle(() => {
+      const scrollY = window.scrollY;
+      setIsVisible(scrollY > SCROLL_THRESHOLD);
+
+      // Detecta seção ativa
+      const sections = NAVIGATION_ITEMS.map(item => item.id);
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    }, 16); // ~60fps
+
+    window.addEventListener('scroll', throttledScroll, { passive: true });
+    return () => window.removeEventListener('scroll', throttledScroll);
+  }, [throttle]);
+
+  if (!isVisible) return null;
+
+  return isMobile ? (
+    <MobileNavigation activeSection={activeSection} />
+  ) : (
+    <FloatingNavigation activeSection={activeSection} />
+  );
+}
+
+function Navigation({ className, activeSection }: NavProps) {
+  const handleNavClick = useCallback((sectionId: string) => {
+    scrollToSection(sectionId);
+  }, []);
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'border-b border-red-500/50 bg-background/80 backdrop-blur-xs shadow-lg' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4">
-        <div className="h-15 flex items-center md:justify-end justify-between">
-          {mounted && isLargeScreen && (
-            <h1 className="text-2xl font-bold bg-linear-to-tr from-red-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
-              TR
-            </h1>
+    <nav
+      className={cn("flex items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8", className)}
+      role="navigation"
+      aria-label="Navegação principal"
+    >
+      {NAVIGATION_ITEMS.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => handleNavClick(item.id)}
+          className={cn(
+            "hover:text-red-500 transition-all duration-200 cursor-pointer font-medium",
+            "text-xs sm:text-sm md:text-base lg:text-lg",
+            "focus:outline-none focus:ring-2 focus:ring-red-500 rounded-sm px-1",
+            activeSection === item.id && "text-red-500 font-semibold"
           )}
+          aria-current={activeSection === item.id ? "page" : undefined}
+          type="button"
+        >
+          {item.label}
+        </button>
+      ))}
 
-          <nav className="hidden md:flex items-center space-x-8">
-            {['Inicio', 'Projetos', 'Sobre mim', 'Contato'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-                className="hover:text-red-500 transition-colors cursor-pointer text-lg font-medium"
-              >
-                {item}
-              </button>
-            ))}
-            <Link
-              href="https://www.linkedin.com/in/thalyson-rafael-br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-red-500 transition-colors"
-            >
-              <FaLinkedinIn size={24} />
-            </Link>
-            <ModeToggle />
+      <Link
+        href="https://www.linkedin.com/in/thalyson-rafael-br"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "hover:text-red-500 transition-colors duration-200",
+          "focus:outline-none focus:ring-2 focus:ring-red-500 rounded-sm p-1"
+        )}
+        aria-label="Perfil do LinkedIn"
+      >
+        <FaLinkedinIn size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+      </Link>
 
-          </nav>
-
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <Menu size={24} className='hover:text-red-500' />
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-        <SheetTrigger className='hidden'>
-        </SheetTrigger>
-        <SheetContent className='px-6'>
-          <SheetHeader>
-            <SheetTitle>Menu</SheetTitle>
-          </SheetHeader>
-          {['Inicio', 'Projetos', 'Sobre mim', 'Contato'].map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
-              className="hover:text-red-500 transition-colors text-left cursor-pointer"
-            >
-              {item}
-            </button>
-          ))}
-          <div className='flex justify-between'>
-            <Link
-              href="https://www.linkedin.com/in/thalyson-rafael-br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-red-500 transition-colors"
-            >
-              <FaLinkedinIn size={24} />
-            </Link>
-            <ModeToggle />
-          </div>
-        </SheetContent>
-      </Sheet>
-    </header>
+      <ModeToggle />
+    </nav>
   );
-};
+}
+
+function FloatingNavigation({ activeSection }: { activeSection?: string }) {
+  return (
+    <div
+      className={cn(
+        "fixed top-4 left-1/2 transform -translate-x-1/2 z-50",
+        "bg-background/80 backdrop-blur-md border border-border/50",
+        "px-4 py-2 rounded-full shadow-lg",
+        "animate-in fade-in-0 slide-in-from-top-2 duration-200"
+      )}
+      role="banner"
+    >
+      <Navigation activeSection={activeSection} />
+    </div>
+  );
+}
+
+function MobileNavigation({ activeSection }: { activeSection?: string }) {
+  return (
+    <div
+      className={cn(
+        "fixed bottom-0 left-0 right-0 z-50",
+        "bg-background/90 backdrop-blur-md border-t border-border/50",
+        "px-4 py-3 shadow-lg",
+        "animate-in fade-in-0 slide-in-from-bottom-2 duration-200"
+      )}
+      role="banner"
+    >
+      <Navigation
+        className="justify-between items-center max-w-screen-sm mx-auto"
+        activeSection={activeSection}
+      />
+    </div>
+  );
+}

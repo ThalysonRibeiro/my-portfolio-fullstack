@@ -1,8 +1,10 @@
 "use client"
-import { Card, CardContent } from "./ui/card";
+
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import {
   Form,
-  FormControl, FormField,
+  FormControl,
+  FormField,
   FormItem,
   FormLabel,
   FormMessage
@@ -14,9 +16,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import React, { useState } from 'react';
-import { Mail } from 'lucide-react';
+} from "@/components/ui/dialog";
+import React, { useState, useCallback, memo } from 'react';
+import { Mail, Send, MessageSquare, ExternalLink, Loader2, MapPin } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import Link from 'next/link';
@@ -29,63 +31,105 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 
-interface UseFormContactProps {
-  name: string;
-  email: string;
-  message: string;
-}
-
 const formContactSchema = z.object({
-  name: z.string().min(1, { message: "O nome é obrigatório" }),
-  email: z.string().email({ message: "O email é obrigatório" }),
-  message: z.string().min(1, { message: "A mensagem é obrigatório" })
+  name: z
+    .string()
+    .min(2, { message: "Nome deve ter pelo menos 2 caracteres" })
+    .max(50, { message: "Nome deve ter no máximo 50 caracteres" })
+    .regex(/^[a-zA-ZÀ-ÿ\s]+$/, { message: "Nome deve conter apenas letras" }),
+  email: z
+    .string()
+    .email({ message: "Email inválido" })
+    .min(1, { message: "Email é obrigatório" }),
+  message: z
+    .string()
+    .min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" })
+    .max(500, { message: "Mensagem deve ter no máximo 500 caracteres" })
 });
 
-const formMessageWhasapp = z.object({
-  message: z.string().min(1, { message: "A mensagem é obrigatório" }),
+const formWhatsAppSchema = z.object({
+  message: z
+    .string()
+    .min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" })
+    .max(300, { message: "Mensagem deve ter no máximo 300 caracteres" })
 });
-
-type FormMessageWhasappData = z.infer<typeof formMessageWhasapp>;
 
 type FormContactData = z.infer<typeof formContactSchema>;
+type FormWhatsAppData = z.infer<typeof formWhatsAppSchema>;
 
-function useFormContact({ name, email, message }: UseFormContactProps) {
-  return useForm<FormContactData>({
-    resolver: zodResolver(formContactSchema),
-    defaultValues: {
-      name: name || "",
-      email: email || "",
-      message: message || ""
+const ANIMATION_CONFIG = {
+  container: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
     }
-  });
-}
+  },
+  item: {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100
+      }
+    }
+  }
+} as const;
 
-function useFormMessageWhasapp({ message }: FormMessageWhasappData) {
-  return useForm<FormMessageWhasappData>({
-    resolver: zodResolver(formMessageWhasapp),
-    defaultValues: {
-      message: message || ""
+const CONTACT_INFO = {
+  email: "rafinha.head@gmail.com",
+  phone: "+55 65 98127-8291",
+  location: "Natal, Rio Grande do Norte, Brasil",
+  socialLinks: [
+    {
+      id: 'linkedin',
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/thalyson-rafael-br',
+      icon: FaLinkedinIn,
+      color: 'hover:text-blue-400',
+      ariaLabel: 'Visitar perfil no LinkedIn'
+    },
+    {
+      id: 'github',
+      label: 'GitHub',
+      href: 'https://github.com/ThalysonRibeiro',
+      icon: FaGithub,
+      color: 'hover:text-gray-400',
+      ariaLabel: 'Visitar perfil no GitHub'
     }
-  });
-}
+  ]
+} as const;
+
 
 export function Contact() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isEmailLoading, setIsEmailLoading] = useState(false);
+  const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
 
-
-  const form = useFormContact({
-    name: "",
-    email: "",
-    message: ""
+  const emailForm = useForm<FormContactData>({
+    resolver: zodResolver(formContactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: ""
+    }
   });
 
-  const formMessage = useFormMessageWhasapp({
-    message: ""
+  const whatsAppForm = useForm<FormWhatsAppData>({
+    resolver: zodResolver(formWhatsAppSchema),
+    defaultValues: {
+      message: ""
+    }
   });
 
+  const handleEmailSubmit = useCallback(async (values: FormContactData) => {
+    setIsEmailLoading(true);
 
-  const onSubmit = async (values: FormContactData): Promise<void> => {
-    setIsLoading(true);
     try {
       const response = await fetch('https://api-email-topaz.vercel.app/api/send', {
         method: "POST",
@@ -96,212 +140,341 @@ export function Contact() {
       });
 
       if (!response.ok) {
-        throw new Error('Erro ao enviar e-mail');
+        throw new Error(`Erro ${response.status}: ${response.statusText}`);
       }
 
-      await response.json();
-      form.reset();
-      toast.success("Enviado com sucesso!");
-    } catch (error: unknown) {
-      console.log(error);
-      toast.error('Ocorreu um erro ao enviar. Tente novamente.');
+      emailForm.reset();
+      toast.success("✅ Mensagem enviada com sucesso! Responderei em breve.");
+
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      toast.error("❌ Erro ao enviar mensagem. Tente novamente ou use outro meio de contato.");
     } finally {
-      setIsLoading(false);
+      setIsEmailLoading(false);
     }
-  }
+  }, [emailForm]);
 
-  const sendWhatsapp = (): void => {
-    window.open(`https://wa.me/65981278291?text=${formMessage.getValues().message}`, "_blank");
-    formMessage.reset();
-    toast.success("Enviado com sucesso!");
-  }
+  const handleWhatsAppSubmit = useCallback((values: FormWhatsAppData) => {
+    const encodedMessage = encodeURIComponent(values.message);
+    const whatsappUrl = `https://wa.me/5565981278291?text=${encodedMessage}`;
 
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    whatsAppForm.reset();
+    setIsWhatsAppOpen(false);
+    toast.success("🔗 Redirecionando para o WhatsApp...");
+  }, [whatsAppForm]);
 
   return (
-    <section id="contato" className="flex items-center justify-center">
-
+    <section
+      id="contato"
+      className="min-h-screen flex items-center justify-center py-16 scroll-mt-20"
+      aria-labelledby="contact-heading"
+    >
       <div className="container mx-auto px-4 w-full">
-        <h2 className="text-3xl font-bold mb-12 text-center bg-linear-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-          Entre em contato
-        </h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <Card className='relative group hover:border-red-500/50'>
-              <div className="absolute -z-[1] -inset-2 bg-linear-to-r from-red-600 to-orange-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity blur-lg" />
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)}>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <FormField
-                        control={form.control}
-                        name="name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Nome</FormLabel>
-                            <FormControl>
-                              <Input
-                                {...field}
-                                placeholder="Digite seu nome."
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Email</FormLabel>
-                            <FormControl>
-                              <Input
-                                {...field}
-                                placeholder="Digite seu email."
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="message"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Mensagem</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                {...field}
-                                placeholder="Descreva sua mensagem."
-                                className="h-28 max-h-32"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <Button
-                        aria-label='enviar mensagem'
-                        type="submit" disabled={isLoading}
-                        aria-busy={isLoading}
-                        className={`w-full cursor-pointer ${isLoading && "cursor-not-allowed"} bg-linear-to-bl from-red-500/0 to-orange-500/0 hover:from-orange-600 hover:to-red-600 hover:text-white transition-colors duration-300`}>
-                        {isLoading
-                          ? <div className="w-4 h-4 border border-white border-t-red-500 rounded-full animate-spin" />
-                          : "Enviar"}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </form>
-              </Form>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Informações de contato</h3>
-                <div className="flex items-center space-x-3">
-                  <Mail aria-label='encaminhar email' size={20} className="text-red-400" />
-                  <a href="mailto:rafinha.head@gmail.com" className="hover:text-red-400 transition-colors">
-                    rafinha.head@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Mídias sociais</h3>
-                <div className="flex space-x-6">
-                  <Link
-                    href="https://www.linkedin.com/in/thalyson-rafael-br"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title='Linkedin'
-                    className="hover:text-red-400 transition-colors"
-                  >
-                    <FaLinkedinIn aria-label='ir para o linkedin' size={24} />
-                  </Link>
-                  <Link
-                    href="https://github.com/ThalysonRibeiro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title='GitHub'
-                    className="hover:text-red-400 transition-colors"
-                  >
-                    <FaGithub aria-label='ir para o github' size={24} />
-                  </Link>
-
-                  <Dialog>
-                    <DialogTrigger>
-                      <IoLogoWhatsapp aria-label='iniciar conversa no whatsapp'
-                        size={24}
-                        title='WhatsApp'
-                        className="hover:text-red-400 transition-colors cursor-pointer"
-                      />
-                    </DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
-                        <DialogTitle>
-                          Contato pelo WhatsApp
-                        </DialogTitle>
-                        <DialogDescription>
-                          Descreva sua mensagem.
-                        </DialogDescription>
-                      </DialogHeader>
-                      <Form {...formMessage}>
-                        <form
-                          className="space-y-4"
-                          onSubmit={formMessage.handleSubmit(sendWhatsapp)}
-                        >
-                          <FormField
-                            control={formMessage.control}
-                            name="message"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormControl>
-                                  <Textarea
-                                    {...field}
-                                    placeholder="Descreva sua mensagem."
-                                    className="h-28 max-h-32"
-                                  />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-
-                          <Button
-                            className="w-full cursor-pointer bg-linear-to-bl from-red-500/0 to-orange-500/0"
-                            aria-label='enviar mensagem'
-                            type="submit"
-                            disabled={isLoading}
-                            aria-busy={isLoading}
-                          >
-                            Enviar
-                          </Button>
-                        </form>
-                      </Form>
-                    </DialogContent>
-                  </Dialog>
-
-                </div>
-              </div>
+        <motion.header
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="p-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg">
+              <MessageSquare className="w-6 h-6 text-white" aria-hidden="true" />
             </div>
-          </motion.div>
-        </div>
+            <h2
+              id="contact-heading"
+              className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent"
+            >
+              Entre em contato
+            </h2>
+          </div>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Vamos conversar sobre seu próximo projeto! Estou sempre aberto a novas oportunidades e colaborações.
+          </p>
+        </motion.header>
+
+        <motion.div
+          variants={ANIMATION_CONFIG.container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto"
+        >
+          <ContactForm
+            form={emailForm}
+            onSubmit={handleEmailSubmit}
+            isLoading={isEmailLoading}
+          />
+
+          <ContactInfo
+            whatsAppForm={whatsAppForm}
+            onWhatsAppSubmit={handleWhatsAppSubmit}
+            isWhatsAppOpen={isWhatsAppOpen}
+            setIsWhatsAppOpen={setIsWhatsAppOpen}
+          />
+        </motion.div>
       </div>
     </section>
   );
-};
+}
+
+const ContactForm = memo(({
+  form,
+  onSubmit,
+  isLoading
+}: {
+  form: ReturnType<typeof useForm<FormContactData>>;
+  onSubmit: (values: FormContactData) => Promise<void>;
+  isLoading: boolean;
+}) => (
+  <motion.div variants={ANIMATION_CONFIG.item}>
+    <Card className="relative group hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
+
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <Send className="w-5 h-5 text-red-500" />
+          Envie uma mensagem
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm font-medium">Nome *</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      placeholder="Seu nome completo"
+                      className="focus:border-red-500 focus:ring-red-500"
+                      disabled={isLoading}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm font-medium">Email *</FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="email"
+                      placeholder="seu@email.com"
+                      className="focus:border-red-500 focus:ring-red-500"
+                      disabled={isLoading}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-sm font-medium">Mensagem *</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      {...field}
+                      placeholder="Conte-me sobre seu projeto ou como posso ajudá-lo..."
+                      className="min-h-[120px] max-h-40 focus:border-red-500 focus:ring-red-500 resize-none"
+                      disabled={isLoading}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                  <div className="text-xs text-muted-foreground text-right">
+                    {field.value?.length || 0}/500 caracteres
+                  </div>
+                </FormItem>
+              )}
+            />
+
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="w-full group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-red-500/25"
+              size="lg"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Enviando...
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                  Enviar mensagem
+                </>
+              )}
+            </Button>
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
+  </motion.div>
+));
+
+const ContactInfo = memo(({
+  whatsAppForm,
+  onWhatsAppSubmit,
+  isWhatsAppOpen,
+  setIsWhatsAppOpen
+}: {
+  whatsAppForm: ReturnType<typeof useForm<FormWhatsAppData>>;
+  onWhatsAppSubmit: (values: FormWhatsAppData) => void;
+  isWhatsAppOpen: boolean;
+  setIsWhatsAppOpen: (open: boolean) => void;
+}) => (
+  <motion.div variants={ANIMATION_CONFIG.item} className="space-y-8">
+    <Card className="hover:border-red-500/30 transition-colors duration-300">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <Mail className="w-5 h-5 text-red-500" />
+          Informações de contato
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+          <div className="p-2 bg-red-100 dark:bg-red-900/20 rounded-lg">
+            <Mail className="w-4 h-4 text-red-500" />
+          </div>
+          <div>
+            <p className="font-medium text-sm text-muted-foreground">Email</p>
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="text-foreground hover:text-red-500 transition-colors font-medium"
+              aria-label="Enviar email"
+            >
+              {CONTACT_INFO.email}
+            </a>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors">
+          <div className="p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+            <MapPin className="w-4 h-4 text-blue-500" />
+          </div>
+          <div>
+            <p className="font-medium text-sm text-muted-foreground">Localização</p>
+            <p className="text-foreground font-medium">{CONTACT_INFO.location}</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+
+    <Card className="hover:border-red-500/30 transition-colors duration-300">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <ExternalLink className="w-5 h-5 text-red-500" />
+          Redes sociais
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-4">
+          {CONTACT_INFO.socialLinks.map((social) => {
+            const Icon = social.icon;
+            return (
+              <Link
+                key={social.id}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-3 p-3 rounded-lg border hover:border-current transition-all duration-200 hover:scale-105 ${social.color} group`}
+                aria-label={social.ariaLabel}
+              >
+                <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="font-medium">{social.label}</span>
+              </Link>
+            );
+          })}
+
+          <Dialog open={isWhatsAppOpen} onOpenChange={setIsWhatsAppOpen}>
+            <DialogTrigger asChild>
+              <Button
+                variant="outline"
+                className="flex items-center gap-3 p-6 hover:text-green-500 hover:border-green-500 transition-all duration-200 hover:scale-105 group"
+                aria-label="Abrir conversa no WhatsApp"
+              >
+                <IoLogoWhatsapp className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span className="font-medium">WhatsApp</span>
+              </Button>
+            </DialogTrigger>
+
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle className="flex items-center gap-2">
+                  <IoLogoWhatsapp className="w-5 h-5 text-green-500" />
+                  Contato pelo WhatsApp
+                </DialogTitle>
+                <DialogDescription>
+                  Escreva sua mensagem e seja redirecionado para o WhatsApp.
+                </DialogDescription>
+              </DialogHeader>
+
+              <Form {...whatsAppForm}>
+                <form onSubmit={whatsAppForm.handleSubmit(onWhatsAppSubmit)} className="space-y-4">
+                  <FormField
+                    control={whatsAppForm.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea
+                            {...field}
+                            placeholder="Olá! Gostaria de conversar sobre..."
+                            className="min-h-[100px] focus:border-green-500 focus:ring-green-500"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                        <div className="text-xs text-muted-foreground text-right">
+                          {field.value?.length || 0}/300 caracteres
+                        </div>
+                      </FormItem>
+                    )}
+                  />
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                    size="lg"
+                  >
+                    <IoLogoWhatsapp className="w-4 h-4 mr-2" />
+                    Enviar no WhatsApp
+                  </Button>
+                </form>
+              </Form>
+            </DialogContent>
+          </Dialog>
+        </div>
+      </CardContent>
+    </Card>
+
+    <Card className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 border-red-200 dark:border-red-800">
+      <CardContent className="pt-6">
+        <div className="text-center">
+          <h3 className="font-bold text-lg mb-2">Pronto para começar?</h3>
+          <p className="text-muted-foreground text-sm">
+            Respondo todas as mensagens em até 24 horas. Vamos transformar sua ideia em realidade!
+          </p>
+        </div>
+      </CardContent>
+    </Card>
+  </motion.div>
+));
+
+// Display names
+ContactForm.displayName = "ContactForm";
+ContactInfo.displayName = "ContactInfo";
