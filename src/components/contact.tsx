@@ -403,14 +403,13 @@ const ContactInfo = memo(({
 
           <Dialog open={isWhatsAppOpen} onOpenChange={setIsWhatsAppOpen}>
             <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                className="flex items-center gap-3 p-6 hover:text-green-500 hover:border-green-500 transition-all duration-200 hover:scale-105 group"
+              <button
+                className="flex items-center gap-3 p-3 rounded-lg border hover:text-green-500 hover:border-green-500 transition-all duration-200 hover:scale-105 group cursor-pointer"
                 aria-label="Abrir conversa no WhatsApp"
               >
                 <IoLogoWhatsapp className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="font-medium">WhatsApp</span>
-              </Button>
+              </button>
             </DialogTrigger>
 
             <DialogContent className="sm:max-w-md">
@@ -463,7 +462,7 @@ const ContactInfo = memo(({
     </Card>
 
     <Card className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 border-red-200 dark:border-red-800">
-      <CardContent className="pt-6">
+      <CardContent>
         <div className="text-center">
           <h3 className="font-bold text-lg mb-2">Pronto para começar?</h3>
           <p className="text-muted-foreground text-sm">

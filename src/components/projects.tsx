@@ -139,7 +139,7 @@ const ProjectCard = memo(({ project }: ProjectCardProps) => {
       variants={ANIMATION_CONFIG.item}
       className="h-full group"
       role="article"
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ transform: "translateY(-5px)" }}
       transition={{ type: "spring", damping: 15 }}
       aria-labelledby={`project-title-${project.id}`}
     >
