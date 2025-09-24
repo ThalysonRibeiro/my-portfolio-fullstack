@@ -236,22 +236,22 @@ const SkillsCompactSection = memo(() => {
       title: 'Frontend',
       icon: Layout,
       skills: ['HTML5', 'CSS3', 'React', 'Next.js', 'JavaScript', 'TypeScript', 'TailwindCSS', 'SASS', 'shadcn'],
-      color: 'from-blue-500 to-cyan-500',
-      bgColor: 'from-blue-500/10 to-cyan-500/10'
+      color: 'bg-gradient-to-r from-red-500 to-orange-500',
+      bgColor: 'bg-card/60'
     },
     {
       title: 'Backend',
       icon: Server,
       skills: ['Node.js', 'Fastify', 'Express.js', 'NestJS', 'Prisma', 'PostgreSQL'],
-      color: 'from-green-500 to-emerald-500',
-      bgColor: 'from-green-500/10 to-emerald-500/10'
+      color: 'bg-gradient-to-r from-red-500 to-orange-500',
+      bgColor: 'bg-card/60'
     },
     {
       title: 'Ferramentas',
       icon: Settings,
       skills: ['Git', 'Docker', 'VS Code', 'Jest', 'Postman'],
-      color: 'from-purple-500 to-violet-500',
-      bgColor: 'from-purple-500/10 to-violet-500/10'
+      color: 'bg-gradient-to-r from-red-500 to-orange-500',
+      bgColor: 'bg-card/60'
     }
   ];
 
@@ -290,7 +290,7 @@ const SkillsCompactSection = memo(() => {
                   <div className={`p-2 bg-gradient-to-r ${category.color} rounded-lg shadow-md group-hover:scale-110 transition-transform duration-200`}>
                     <Icon className="w-5 h-5 text-white" aria-hidden="true" />
                   </div>
-                  <h4 className="font-bold text-lg text-foreground group-hover:text-red-500 transition-colors duration-300">
+                  <h4 className="font-bold text-lg text-red-500 transition-colors duration-300">
                     {category.title}
                   </h4>
                 </div>
