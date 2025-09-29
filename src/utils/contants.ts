@@ -49,58 +49,19 @@ export const projects: ProjectProps[] = [
     appLink: '',
     live: 'https://dev-tasks-five.vercel.app',
     images: [
-      {
-        title: "photo-goallist-1",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297961/1_wjioku.png"
-      },
-      {
-        title: "photo-goallist-2",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297961/2_fiiks3.png"
-      },
-      {
-        title: "photo-goallist-3",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297961/3_d4jo5r.png"
-      },
-      {
-        title: "photo-goallist-4",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/4_twjcyo.png"
-      },
-      {
-        title: "photo-goallist-5",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/5_bp1lpj.png"
-      },
-      {
-        title: "photo-goallist-6",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/6_ksaihk.png"
-      },
-      {
-        title: "photo-goallist-7",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/8_l9pqer.png"
-      },
-      {
-        title: "photo-goallist-8",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297962/7_nviw8n.png"
-      },
-      {
-        title: "photo-goallist-9",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297964/11_lu1cro.png"
-      },
-      {
-        title: "photo-goallist-10",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297963/10_swyfbi.png"
-      },
-      {
-        title: "photo-goallist-11",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297963/9_ieu0fx.png"
-      },
-      {
-        title: "photo-goallist-12",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297965/13_qofdfi.png"
-      },
-      {
-        title: "photo-goallist-13",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1757297964/12_fv0q2r.png"
-      },
+      { title: "photo-goallist-1", image: "/dev-tasks/1.png" },
+      { title: "photo-goallist-2", image: "/dev-tasks/2.png" },
+      { title: "photo-goallist-3", image: "/dev-tasks/3.png" },
+      { title: "photo-goallist-4", image: "/dev-tasks/4.png" },
+      { title: "photo-goallist-5", image: "/dev-tasks/5.png" },
+      { title: "photo-goallist-6", image: "/dev-tasks/6.png" },
+      { title: "photo-goallist-7", image: "/dev-tasks/7.png" },
+      { title: "photo-goallist-8", image: "/dev-tasks/8.png" },
+      { title: "photo-goallist-9", image: "/dev-tasks/9.png" },
+      { title: "photo-goallist-10", image: "/dev-tasks/10.png" },
+      { title: "photo-goallist-11", image: "/dev-tasks/11.png" },
+      { title: "photo-goallist-12", image: "/dev-tasks/12.png" },
+      { title: "photo-goallist-13", image: "/dev-tasks/13.png" },
     ]
   },
   {
@@ -116,26 +77,11 @@ export const projects: ProjectProps[] = [
     appLink: '',
     live: 'https://equilibrium-center.vercel.app',
     images: [
-      {
-        title: "photo-1",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499280/4_knwlte.png"
-      },
-      {
-        title: "photo-2",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499280/3_u0yzn0.png"
-      },
-      {
-        title: "photo-3",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499280/5_kwaxhq.png"
-      },
-      {
-        title: "photo-4",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499279/2_mpewtr.png"
-      },
-      {
-        title: "photo-5",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1749499279/1_bqqekv.png"
-      }
+      { title: "Equilibrium-Center-photo-1", image: "/eq-center/1.png" },
+      { title: "Equilibrium-Center-photo-2", image: "/eq-center/2.png" },
+      { title: "Equilibrium-Center-photo-3", image: "/eq-center/3.png" },
+      { title: "Equilibrium-Center-photo-4", image: "/eq-center/4.png" },
+      { title: "Equilibrium-Center-photo-5", image: "/eq-center/5.png" },
     ]
   },
   {
@@ -151,30 +97,12 @@ export const projects: ProjectProps[] = [
     appLink: '',
     live: 'https://barberpro-web.vercel.app/',
     images: [
-      {
-        title: "photo-barberpro-1",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399212/home_zzdju9.png"
-      },
-      {
-        title: "photo-barberpro-2",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399212/login_cwd82h.png"
-      },
-      {
-        title: "photo-barberpro-3",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399211/register_sxgovy.png"
-      },
-      {
-        title: "photo-barberpro-4",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399211/conta_avm8ry.png"
-      },
-      {
-        title: "photo-barberpro-5",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399211/cel-inicio_ukivog.png"
-      },
-      {
-        title: "photo-barberpro-6",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739399210/logado_ov38cb.png"
-      },
+      { title: "photo-barberpro-photo-1", image: "/barber-pro/1.png" },
+      { title: "photo-barberpro-photo-2", image: "/barber-pro/2.png" },
+      { title: "photo-barberpro-photo-3", image: "/barber-pro/3.png" },
+      { title: "photo-barberpro-photo-4", image: "/barber-pro/4.png" },
+      { title: "photo-barberpro-photo-5", image: "/barber-pro/5.png" },
+      { title: "photo-barberpro-photo-6", image: "/barber-pro/6.png" },
     ]
   },
   {
@@ -190,34 +118,13 @@ export const projects: ProjectProps[] = [
     appLink: 'https://expo.dev/accounts/thalysonribeiro/projects/mobile-blend-house/builds/0aa905a2-8928-47e5-b17f-506de0310bba',
     live: 'https://blend-house.vercel.app',
     images: [
-      {
-        title: "photo-blend-house-1",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418251/bh-login_toxxlh.png"
-      },
-      {
-        title: "photo-blend-house-2",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418251/bh-register_s1j7ks.png"
-      },
-      {
-        title: "photo-blend-house-3",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418250/bh-dashboard_dzpw5b.png"
-      },
-      {
-        title: "photo-blend-house-4",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418250/bh-modal_ipmmsn.png"
-      },
-      {
-        title: "photo-blend-house-5",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418249/bh-categoria_gn24qb.png"
-      },
-      {
-        title: "photo-blend-house-6",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418249/bh-produto_ty6snf.png"
-      },
-      {
-        title: "photo-blend-house-7",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1739418252/bh-mobile_mr4gmb.png"
-      },
+      { title: "photo-blend-house-photo-1", image: "/blend-house/1.png" },
+      { title: "photo-blend-house-photo-2", image: "/blend-house/2.png" },
+      { title: "photo-blend-house-photo-3", image: "/blend-house/3.png" },
+      { title: "photo-blend-house-photo-4", image: "/blend-house/4.png" },
+      { title: "photo-blend-house-photo-5", image: "/blend-house/5.png" },
+      { title: "photo-blend-house-photo-6", image: "/blend-house/6.png" },
+      { title: "photo-blend-house-photo-7", image: "/blend-house/7.png" },
     ]
   },
   {
@@ -233,42 +140,15 @@ export const projects: ProjectProps[] = [
     appLink: '',
     live: 'https://ticketflow-g3.vercel.app/',
     images: [
-      {
-        title: "TicketFlow-photo-1",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-home_uzjd1n.png"
-      },
-      {
-        title: "TicketFlow-photo-2",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-clientes_a7cifm.png"
-      },
-      {
-        title: "TicketFlow-photo-3",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-chamado-aberto_knzuy6.png"
-      },
-      {
-        title: "TicketFlow-photo-4",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-abrirchamado_aiinq9.png"
-      },
-      {
-        title: "TicketFlow-photo-5",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079051/tf-chamado-fechados_kzbynh.png"
-      },
-      {
-        title: "TicketFlow-photo-6",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-novo-cliente_vanztr.png"
-      },
-      {
-        title: "TicketFlow-photo-7",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-novo-chamado_mjiscu.png"
-      },
-      {
-        title: "TicketFlow-photo-8",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-mobile-1_y0mjq6.png"
-      },
-      {
-        title: "TicketFlow-photo-9",
-        image: "https://res.cloudinary.com/duxqtpghn/image/upload/v1741079050/tf-mobile-2_qg4tzq.png"
-      },
+      { title: "TicketFlow-photo-1", image: "/ticketflow/1.png" },
+      { title: "TicketFlow-photo-2", image: "/ticketflow/2.png" },
+      { title: "TicketFlow-photo-3", image: "/ticketflow/3.png" },
+      { title: "TicketFlow-photo-4", image: "/ticketflow/4.png" },
+      { title: "TicketFlow-photo-5", image: "/ticketflow/5.png" },
+      { title: "TicketFlow-photo-6", image: "/ticketflow/6.png" },
+      { title: "TicketFlow-photo-7", image: "/ticketflow/7.png" },
+      { title: "TicketFlow-photo-8", image: "/ticketflow/8.png" },
+      { title: "TicketFlow-photo-9", image: "/ticketflow/9.png" },
     ]
   },
 ];

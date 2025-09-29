@@ -211,8 +211,8 @@ const ProfileImage = memo(() => (
     <div className="relative w-full max-w-sm group">
       <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
 
-      <div className="relative bg-gradient-to-br from-card to-card/80 backdrop-blur-sm rounded-3xl border border-border/50 p-4 group-hover:border-red-500/30 transition-all duration-500">
-        <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-muted/50 to-muted">
+      <div className="relative bg-gradient-to-br from-card to-card/80 backdrop-blur-sm rounded-3xl border border-border/50 group-hover:border-red-500/30 transition-all duration-500">
+        <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
           <Image
             src="/profile.png"
             alt="Foto de perfil de Thalyson Rafael - Desenvolvedor Full Stack"
