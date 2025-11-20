@@ -13,6 +13,11 @@ export function CookieConsent() {
     if (!consent) {
       requestAnimationFrame(() => setShowWarning(true));
     }
+    const open = () => setShowWarning(true);
+    window.addEventListener("openCookieConsent", open);
+    return () => {
+      window.removeEventListener("openCookieConsent", open);
+    };
   }, []);
 
   const handleConsent = (accepted: boolean) => {
@@ -41,7 +46,7 @@ export function CookieConsent() {
           variant="ghost"
           onClick={() => handleConsent(false)}
         >
-          Excluir
+          Recusar
         </Button>
         <Button
           className="ml-auto cursor-pointer"

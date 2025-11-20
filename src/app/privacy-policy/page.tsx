@@ -8,8 +8,12 @@ export const metadata: Metadata = {
     index: true,
     follow: true
   },
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_URL ? `${process.env.NEXT_PUBLIC_URL}/privacy-policy` : "/privacy-policy"
+  },
   openGraph: {
     title: "Política de Privacidade | Thalyson Rafael",
+    images: ["/opengraph-image"],
     locale: "pt_BR",
     type: "article"
   },
@@ -17,7 +21,8 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Política de Privacidade | Thalyson Rafael",
     description:
-      "Informações sobre privacidade e cookies, incluindo Google Analytics e controles de consentimento."
+      "Informações sobre privacidade e cookies, incluindo Google Analytics e controles de consentimento.",
+    images: ["/opengraph-image"]
   }
 };
 

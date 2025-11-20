@@ -14,6 +14,7 @@ interface ImageProps {
 const SlideCarousel = ({ images }: ImageProjectProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -24,9 +25,10 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   }, [images.length]);
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval);
-  }, [nextSlide]);
+  }, [nextSlide, isPaused]);
 
   // Preload das imagens para evitar flicker
   useEffect(() => {
@@ -55,7 +57,14 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   }
 
   return (
-    <div className="relative w-full mx-auto">
+    <div
+      className="relative w-full mx-auto"
+      aria-live="polite"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+    >
       <div className="overflow-hidden rounded-lg">
         <div
           className="flex transition-transform duration-500 ease-in-out"

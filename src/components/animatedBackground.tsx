@@ -232,7 +232,7 @@ export const AnimatedBackground = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(301 301) rotate(90) scale(300)"
           >
-            <stop offset="0.333333" stopColor="#fffff" />
+            <stop offset="0.333333" stopColor="#ffffff" />
             <stop offset="1" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <radialGradient
@@ -243,7 +243,7 @@ export const AnimatedBackground = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(301 301) rotate(90) scale(300)"
           >
-            <stop offset="0.333333" stopColor="#fffff" />
+            <stop offset="0.333333" stopColor="#ffffff" />
             <stop offset="1" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <radialGradient
@@ -254,7 +254,7 @@ export const AnimatedBackground = () => {
             gradientUnits="userSpaceOnUse"
             gradientTransform="translate(301 301) rotate(90) scale(300)"
           >
-            <stop offset="0.333333" stopColor="#fffff" />
+            <stop offset="0.333333" stopColor="#ffffff" />
             <stop offset="1" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <linearGradient

@@ -5,6 +5,9 @@ const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 export async function GET() {
+  if (!GITHUB_USERNAME || !GITHUB_TOKEN) {
+    return NextResponse.json({ error: "Missing GitHub credentials" }, { status: 500 });
+  }
   const query = `
   {
     user(login: "${GITHUB_USERNAME}") {
@@ -36,7 +39,8 @@ export async function GET() {
       Authorization: `Bearer ${GITHUB_TOKEN}`,
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ query })
+    body: JSON.stringify({ query }),
+    cache: "no-store"
   });
 
   if (!res.ok) return NextResponse.json({ error: "GitHub GraphQL failed" }, { status: 500 });

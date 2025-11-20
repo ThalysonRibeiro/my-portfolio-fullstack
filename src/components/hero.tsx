@@ -1,11 +1,11 @@
 "use client";
 
 import { ChevronsDown, Download, Eye, MessageCircle } from "lucide-react";
-import { AnimatedBackground } from "./animatedBackground";
+import dynamic from "next/dynamic";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
-import { GithubStats } from "./gfithub-stats";
+import { GithubStats } from "./github-stats";
 
 const ANIMATION_CONFIG = {
   container: {
@@ -234,3 +234,6 @@ export function Hero() {
     </section>
   );
 }
+const AnimatedBackground = dynamic(() => import("./animatedBackground").then(m => m.AnimatedBackground), {
+  ssr: false
+});
