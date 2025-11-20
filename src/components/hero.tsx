@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import { ChevronsDown, Download, Eye, MessageCircle } from 'lucide-react';
-import { AnimatedBackground } from './animatedBackground';
-import { Button } from './ui/button';
+import { ChevronsDown, Download, Eye, MessageCircle } from "lucide-react";
+import { AnimatedBackground } from "./animatedBackground";
+import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
+import { GithubStats } from "./gfithub-stats";
 
 const ANIMATION_CONFIG = {
   container: {
@@ -50,7 +51,7 @@ type ActionButton = {
   label: string;
   icon: typeof Eye;
   targetId?: string;
-  variant: 'default' | 'outline';
+  variant: "default" | "outline";
   className: string;
   ariaLabel: string;
   href?: string;
@@ -59,32 +60,32 @@ type ActionButton = {
 
 const ACTION_BUTTONS: readonly ActionButton[] = [
   {
-    id: 'projects',
-    label: 'Veja meu trabalho',
+    id: "projects",
+    label: "Veja meu trabalho",
     icon: Eye,
-    targetId: 'projetos',
-    variant: 'default',
-    className: 'col-span-2 md:col-span-1',
-    ariaLabel: 'Ver meus projetos em destaque'
+    targetId: "projetos",
+    variant: "default",
+    className: "col-span-2 md:col-span-1",
+    ariaLabel: "Ver meus projetos em destaque"
   },
   {
-    id: 'contact',
-    label: 'Entre em contato',
+    id: "contact",
+    label: "Entre em contato",
     icon: MessageCircle,
-    targetId: 'contato',
-    variant: 'outline',
-    className: '',
-    ariaLabel: 'Ir para seção de contato'
+    targetId: "contato",
+    variant: "outline",
+    className: "",
+    ariaLabel: "Ir para seção de contato"
   },
   {
-    id: 'resume',
-    label: 'Currículo',
+    id: "resume",
+    label: "Currículo",
     icon: Download,
-    href: '/Curriculo_Thalyson_Ribeiro.pdf',
-    download: 'Curriculo_Thalyson_Ribeiro.pdf',
-    variant: 'outline',
-    className: '',
-    ariaLabel: 'Baixar currículo em PDF'
+    href: "/Curriculo_Thalyson_Ribeiro.pdf",
+    download: "Curriculo_Thalyson_Ribeiro.pdf",
+    variant: "outline",
+    className: "",
+    ariaLabel: "Baixar currículo em PDF"
   }
 ] as const;
 
@@ -99,14 +100,14 @@ export function Hero() {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start"
       });
     }
   }, []);
 
   const scrollToProjects = useCallback(() => {
-    scrollToSection('projetos');
+    scrollToSection("projetos");
   }, [scrollToSection]);
 
   return (
@@ -146,7 +147,7 @@ export function Hero() {
             </h2>
 
             <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed text-muted-foreground">
-              Transformo ideias em{' '}
+              Transformo ideias em{" "}
               <span className="text-foreground font-medium">experiências digitais envolventes</span>
               , com atenção aos detalhes no código e no que o usuário realmente precisa.
             </p>
@@ -204,18 +205,7 @@ export function Hero() {
             variants={ANIMATION_CONFIG.item}
             className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-muted-foreground"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span>Disponível para projetos</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-blue-500 rounded-full" />
-              <span>1+ anos de experiência</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-orange-500 rounded-full" />
-              <span>Brasil, RN</span>
-            </div>
+            <GithubStats />
           </motion.div>
         </motion.div>
       </div>
@@ -238,10 +228,7 @@ export function Hero() {
             ease: "easeInOut"
           }}
         >
-          <ChevronsDown
-            size={32}
-            className="text-red-400 drop-shadow-lg"
-          />
+          <ChevronsDown size={32} className="text-red-400 drop-shadow-lg" />
         </motion.div>
       </motion.button>
     </section>
