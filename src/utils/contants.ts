@@ -181,13 +181,13 @@ export interface CoursesProps {
 
 export const courses_details: CoursesProps[] = [
   {
-    id: '01',
-    title: 'FullStack Pro',
-    courses: 'Sujeito Programador (2024 - 2025)'
-  },
-  {
     id: '02',
     title: 'Introdução ao desenvolvimento Front-end',
     courses: 'Ri HAppy (2023 - 2024)'
+  },
+  {
+    id: '01',
+    title: 'FullStack Pro',
+    courses: 'Sujeito Programador (2024 - 2025)'
   },
 ]

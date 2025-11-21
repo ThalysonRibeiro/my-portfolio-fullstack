@@ -49,7 +49,7 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   if (!isLoaded) {
     return (
       <div className="relative w-full mx-auto">
-        <div className="w-full aspect-[4/3] bg-gray-200 animate-pulse rounded-lg flex items-center justify-center">
+        <div className="w-full aspect-[16/9] bg-gray-200 animate-pulse rounded-lg flex items-center justify-center">
           <span className="text-gray-400">Carregando...</span>
         </div>
       </div>
@@ -72,12 +72,12 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
         >
           {images.map((item, index) => (
             <div key={`${item.image}-${index}`} className="w-full flex-shrink-0">
-              <div className="relative w-full aspect-[3/2]">
+              <div className="relative w-full aspect-[16/9]">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
                   className="object-contain"
                   priority={index === 0}
                   quality={85}
