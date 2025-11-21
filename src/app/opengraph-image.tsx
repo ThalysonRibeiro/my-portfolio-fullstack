@@ -8,7 +8,6 @@ export const size = {
 export const contentType = "image/png";
 
 export default function OpengraphImage() {
-  const base = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
   return new ImageResponse(
     (
       <div
@@ -36,17 +35,26 @@ export default function OpengraphImage() {
             boxShadow: "0 20px 40px rgba(0,0,0,0.4)"
           }}
         >
-          <div style={{ position: "relative" }}>
-            <img
-              src={`${base}/profile.png`}
-              width={200}
-              height={200}
-              alt=""
+          <div
+            style={{
+              width: 200,
+              height: 200,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 9999,
+              background: "linear-gradient(135deg, #ef4444 0%, #f97316 100%)",
+              border: "6px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 10px 30px rgba(239,68,68,0.35)"
+            }}
+          >
+            <div
               style={{
+                width: 170,
+                height: 170,
                 borderRadius: 9999,
-                objectFit: "cover",
-                border: "6px solid rgba(255,255,255,0.08)",
-                boxShadow: "0 10px 30px rgba(239,68,68,0.35)"
+                background:
+                  "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(255,255,255,0.02))"
               }}
             />
           </div>
