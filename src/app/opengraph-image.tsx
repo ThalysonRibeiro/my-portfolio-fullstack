@@ -8,6 +8,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default function OpengraphImage() {
+  const base = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
   return new ImageResponse(
     (
       <div
@@ -22,34 +23,53 @@ export default function OpengraphImage() {
       >
         <div
           style={{
-            width: "90%",
-            height: "80%",
+            width: "92%",
+            height: "82%",
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: 36,
             padding: 48,
-            borderRadius: 24,
+            borderRadius: 28,
             background: "rgba(12,12,15,0.6)",
-            border: "1px solid rgba(255,255,255,0.12)"
+            border: "1px solid rgba(255,255,255,0.12)",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.4)"
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <div style={{ fontSize: 64, color: "#ffffff", fontWeight: 800 }}>Thalyson Rafael</div>
-            <div style={{ fontSize: 28, color: "#d1d5db", fontWeight: 600 }}>Full Stack Developer</div>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <div style={{ fontSize: 24, color: "#e5e7eb" }}>
-              Transformo ideias em experiências digitais envolventes
-            </div>
-            <div
+          <div style={{ position: "relative" }}>
+            <img
+              src={`${base}/profile.png`}
+              width={200}
+              height={200}
+              alt=""
               style={{
-                width: "100%",
-                height: 8,
-                background: "linear-gradient(90deg, #ef4444, #f97316)",
-                borderRadius: 9999
+                borderRadius: 9999,
+                objectFit: "cover",
+                border: "6px solid rgba(255,255,255,0.08)",
+                boxShadow: "0 10px 30px rgba(239,68,68,0.35)"
               }}
             />
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 18, flex: 1 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <div style={{ fontSize: 72, color: "#ffffff", fontWeight: 800 }}>Thalyson Rafael</div>
+              <div style={{ fontSize: 30, color: "#d1d5db", fontWeight: 600 }}>Full Stack Developer</div>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              <div style={{ fontSize: 26, color: "#e5e7eb" }}>
+                Transformo ideias em experiências digitais envolventes
+              </div>
+              <div
+                style={{
+                  width: "100%",
+                  height: 10,
+                  background: "linear-gradient(90deg, #ef4444, #f97316)",
+                  borderRadius: 9999
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

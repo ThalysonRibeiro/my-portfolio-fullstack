@@ -107,11 +107,11 @@ const AboutContent = memo(() => (
         <div>
           <h2
             id="about-heading"
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-500 via-red-400 to-orange-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-bold brand-gradient-text"
           >
             Sobre mim
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mt-2" />
+          <div className="h-1 w-20 brand-gradient rounded-full mt-2" />
         </div>
       </div>
     </header>
@@ -149,10 +149,10 @@ const CoursesSection = memo(() => (
           <GraduationCap className="w-7 h-7 text-white" aria-hidden="true" />
         </motion.div>
         <div>
-          <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-500 via-red-400 to-orange-400 bg-clip-text text-transparent">
+          <h3 className="text-3xl md:text-4xl font-bold brand-gradient-text">
             Formação
           </h3>
-          <div className="h-1 w-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mt-2" />
+          <div className="h-1 w-16 brand-gradient rounded-full mt-2" />
         </div>
       </div>
     </header>
@@ -189,11 +189,11 @@ const CourseItem = memo(({ course }: CourseItemProps) => (
     />
 
     <motion.div
-      className="bg-card/60 backdrop-blur-sm rounded-xl p-6 border border-border/50 hover:border-red-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-1"
+      className="glass-card rounded-xl p-6 transition-all duration-500 hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-1"
       whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", damping: 25 }}
     >
-      <h4 className="font-bold text-xl text-primary mb-3 group-hover:text-red-500 transition-colors duration-300">
+      <h4 className="font-bold text-xl text-primary mb-3 group-hover:text-primary transition-colors duration-300">
         {course.title}
       </h4>
       <p className="text-muted-foreground leading-relaxed">

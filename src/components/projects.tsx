@@ -64,7 +64,7 @@ export function Projects() {
         <header className="text-center mb-12">
           <h2
             id="projects-heading"
-            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl font-bold mb-4 brand-gradient-text"
           >
             Projetos em destaque
           </h2>
@@ -143,7 +143,7 @@ const ProjectCard = memo(({ project }: ProjectCardProps) => {
       transition={{ type: "spring", damping: 15 }}
       aria-labelledby={`project-title-${project.id}`}
     >
-      <Card className="bg-transparent hover:border-red-500/50 h-full flex flex-col p-6 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-1">
+      <Card className="glass-card hover:border-red-500/50 h-full flex flex-col p-6 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-1">
 
         <CardHeader className="p-0 mb-4">
           <div className="flex items-start justify-between gap-2 mb-2">
@@ -181,7 +181,7 @@ const ProjectCard = memo(({ project }: ProjectCardProps) => {
           <div className="space-y-3">
             {project.projectType && (
               <div>
-                <h3 className="text-red-500 text-sm font-medium mb-2">
+                <h3 className="text-brand text-sm font-medium mb-2">
                   {project.projectType}
                 </h3>
               </div>
