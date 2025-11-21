@@ -47,6 +47,8 @@
   --radius: 0.65rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
+  --brand-start: oklch(0.637 0.237 25.331); /* vermelho/laranja base */
+  --brand-end: oklch(0.769 0.188 70.08);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
@@ -81,6 +83,8 @@
 .dark {
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
+  --brand-start: oklch(0.637 0.237 25.331);
+  --brand-end: oklch(0.769 0.188 70.08);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
@@ -124,6 +128,38 @@
 }
 
 @layer utilities {
+  .text-brand {
+    color: var(--primary);
+  }
+  .brand-gradient {
+    background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+  }
+
+  .brand-gradient-text {
+    background-image: linear-gradient(90deg, var(--brand-start), var(--brand-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn-gradient-hover {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, oklch(0.637 0.237 25.331 / 0.2), oklch(0.769 0.188 70.08 / 0.2));
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  .group:hover .btn-gradient-hover {
+    opacity: 1;
+  }
+
+  .glass-card {
+    background: color-mix(in oklch, var(--card) 70%, transparent);
+    backdrop-filter: blur(8px);
+    border: 1px solid color-mix(in oklch, var(--border) 60%, transparent);
+  }
+
   @keyframes gradient-x {
 
     0%,

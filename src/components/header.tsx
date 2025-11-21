@@ -92,10 +92,10 @@ function Navigation({ className, activeSection }: NavProps) {
           key={item.id}
           onClick={() => handleNavClick(item.id)}
           className={cn(
-            "hover:text-red-500 transition-all duration-200 cursor-pointer font-medium",
+            "hover:text-primary transition-all duration-200 cursor-pointer font-medium",
             "text-xs sm:text-sm md:text-base lg:text-lg",
-            "focus:outline-none focus:ring-2 focus:ring-red-500 rounded-sm px-1",
-            activeSection === item.id && "text-red-500 font-semibold"
+            "focus:outline-none focus:ring-2 focus:ring-primary rounded-sm px-1",
+            activeSection === item.id && "text-primary font-semibold"
           )}
           aria-current={activeSection === item.id ? "page" : undefined}
           type="button"
@@ -109,8 +109,8 @@ function Navigation({ className, activeSection }: NavProps) {
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
-          "hover:text-red-500 transition-colors duration-200",
-          "focus:outline-none focus:ring-2 focus:ring-red-500 rounded-sm p-1"
+          "hover:text-primary transition-colors duration-200",
+          "focus:outline-none focus:ring-2 focus:ring-primary rounded-sm p-1"
         )}
         aria-label="Perfil do LinkedIn"
       >

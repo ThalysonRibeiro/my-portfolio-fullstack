@@ -179,12 +179,12 @@ export function Contact() {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="p-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg">
+            <div className="p-2 brand-gradient rounded-lg">
               <MessageSquare className="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <h2
               id="contact-heading"
-              className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent"
+              className="text-3xl md:text-4xl font-bold brand-gradient-text"
             >
               Entre em contato
             </h2>
@@ -229,11 +229,11 @@ const ContactForm = memo(({
   isLoading: boolean;
 }) => (
   <motion.div variants={ANIMATION_CONFIG.item}>
-    <Card className="bg-transparent relative group hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
+    <Card className="glass-card relative group transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
 
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Send className="w-5 h-5 text-red-500" />
+          <Send className="w-5 h-5 text-primary" />
           Envie uma mensagem
         </CardTitle>
       </CardHeader>
@@ -251,7 +251,7 @@ const ContactForm = memo(({
                     <Input
                       {...field}
                       placeholder="Seu nome completo"
-                      className="focus:border-red-500 focus:ring-red-500"
+                      className="focus:border-ring focus:ring-ring/50"
                       disabled={isLoading}
                     />
                   </FormControl>
@@ -271,7 +271,7 @@ const ContactForm = memo(({
                       {...field}
                       type="email"
                       placeholder="seu@email.com"
-                      className="focus:border-red-500 focus:ring-red-500"
+                      className="focus:border-ring focus:ring-ring/50"
                       disabled={isLoading}
                     />
                   </FormControl>
@@ -290,7 +290,7 @@ const ContactForm = memo(({
                     <Textarea
                       {...field}
                       placeholder="Conte-me sobre seu projeto ou como posso ajudá-lo..."
-                      className="min-h-[120px] max-h-40 focus:border-red-500 focus:ring-red-500 resize-none"
+                      className="min-h-[120px] max-h-40 focus:border-ring focus:ring-ring/50 resize-none"
                       disabled={isLoading}
                     />
                   </FormControl>
@@ -305,7 +305,7 @@ const ContactForm = memo(({
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-red-500/25"
+              className="w-full group relative overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
               size="lg"
             >
               {isLoading ? (
@@ -317,6 +317,7 @@ const ContactForm = memo(({
                 <>
                   <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
                   Enviar mensagem
+                  <div className="btn-gradient-hover -z-10" />
                 </>
               )}
             </Button>
@@ -339,10 +340,10 @@ const ContactInfo = memo(({
   setIsWhatsAppOpen: (open: boolean) => void;
 }) => (
   <motion.div variants={ANIMATION_CONFIG.item} className="space-y-8">
-    <Card className="bg-transparent hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
+    <Card className="glass-card transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Mail className="w-5 h-5 text-red-500" />
+          <Mail className="w-5 h-5 text-primary" />
           Informações de contato
         </CardTitle>
       </CardHeader>
@@ -355,7 +356,7 @@ const ContactInfo = memo(({
             <p className="font-medium text-sm text-muted-foreground">Email</p>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="text-foreground hover:text-red-500 transition-colors font-medium"
+              className="text-foreground hover:text-primary transition-colors font-medium"
               aria-label="Enviar email"
             >
               {CONTACT_INFO.email}
@@ -375,10 +376,10 @@ const ContactInfo = memo(({
       </CardContent>
     </Card>
 
-    <Card className="bg-transparent hover:border-red-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
+    <Card className="glass-card transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <ExternalLink className="w-5 h-5 text-red-500" />
+          <ExternalLink className="w-5 h-5 text-primary" />
           Redes sociais
         </CardTitle>
       </CardHeader>
@@ -461,7 +462,7 @@ const ContactInfo = memo(({
       </CardContent>
     </Card>
 
-    <Card className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 border-red-200 dark:border-red-800">
+    <Card className="glass-card">
       <CardContent>
         <div className="text-center">
           <h3 className="font-bold text-lg mb-2">Pronto para começar?</h3>
