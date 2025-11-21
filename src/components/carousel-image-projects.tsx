@@ -14,6 +14,7 @@ interface ImageProps {
 const SlideCarousel = ({ images }: ImageProjectProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -24,9 +25,10 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   }, [images.length]);
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval);
-  }, [nextSlide]);
+  }, [nextSlide, isPaused]);
 
   // Preload das imagens para evitar flicker
   useEffect(() => {
@@ -47,7 +49,7 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   if (!isLoaded) {
     return (
       <div className="relative w-full mx-auto">
-        <div className="w-full aspect-[4/3] bg-gray-200 animate-pulse rounded-lg flex items-center justify-center">
+        <div className="w-full aspect-[16/9] bg-gray-200 animate-pulse rounded-lg flex items-center justify-center">
           <span className="text-gray-400">Carregando...</span>
         </div>
       </div>
@@ -55,7 +57,14 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   }
 
   return (
-    <div className="relative w-full mx-auto">
+    <div
+      className="relative w-full mx-auto"
+      aria-live="polite"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+    >
       <div className="overflow-hidden rounded-lg">
         <div
           className="flex transition-transform duration-500 ease-in-out"
@@ -63,12 +72,12 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
         >
           {images.map((item, index) => (
             <div key={`${item.image}-${index}`} className="w-full flex-shrink-0">
-              <div className="relative w-full aspect-[3/2]">
+              <div className="relative w-full aspect-[16/9]">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 50vw"
                   className="object-contain"
                   priority={index === 0}
                   quality={85}
