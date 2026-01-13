@@ -83,8 +83,8 @@ const ACTION_BUTTONS: readonly ActionButton[] = [
     id: "resume",
     label: "Currículo",
     icon: Download,
-    href: "/Curriculo_Thalyson_Ribeiro.pdf",
-    download: "Curriculo_Thalyson_Ribeiro.pdf",
+    href: "/Curriculo_Thalyson_Ribeiro-full-stack.pdf",
+    download: "Curriculo_Thalyson_Ribeiro-full-stack.pdf",
     variant: "outline",
     className: "",
     ariaLabel: "Baixar currículo em PDF"
