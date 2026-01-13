@@ -14,7 +14,7 @@ Desenvolvedor Full Stack apaixonado por arquiteturas modernas e produtividade. T
 *   **Foco Principal:** TypeScript, React.js, Next.js (App Router), Node.js
 *   **Backend:** NestJS (Aprendendo/Migrando), Fastify, Prisma ORM, PostgreSQL
 *   **Arquitetura/Ferramentas:** Monorepos (Turborepo), Docker, Shadcn/ui, TailwindCSS
-*   **Estou Estudando:** WebSockets, Design Patterns, SOLID
+*   **Estou Estudando:** C# (.NET), SQL, WebSockets, Design Patterns, SOLID
 *   **Diferencial:** Uso avançado de IA para pair-programming e arquitetura de software.
 
 ---
