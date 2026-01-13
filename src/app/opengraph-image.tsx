@@ -62,7 +62,9 @@ export default function OpengraphImage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 18, flex: 1 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <div style={{ fontSize: 72, color: "#ffffff", fontWeight: 800 }}>Thalyson Rafael</div>
-              <div style={{ fontSize: 30, color: "#d1d5db", fontWeight: 600 }}>Full Stack Developer</div>
+              <div style={{ fontSize: 30, color: "#d1d5db", fontWeight: 600 }}>
+                Full Stack Developer
+              </div>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>

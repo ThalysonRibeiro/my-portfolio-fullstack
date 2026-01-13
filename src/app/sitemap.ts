@@ -6,6 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const withBase = (path: string) => `${base}${path}`;
   return [
     { url: withBase("/"), lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: withBase("/privacy-policy"), lastModified: now, changeFrequency: "yearly", priority: 0.3 }
+    {
+      url: withBase("/privacy-policy"),
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3
+    }
   ];
 }

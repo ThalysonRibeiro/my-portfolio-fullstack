@@ -1,0 +1,76 @@
+{
+  "project": "Vexiun",
+  "org": "Vexiun Systems",
+  "ptBR": {
+    "title": "Vexiun - SaaS de Gestão de Projetos com IA",
+    "status": "MVP - 60% Completo",
+    "shortDescription": "Ecossistema escalável para automação de tarefas e gestão de times usando IA.",
+    "fullDescription": "Uma plataforma moderna que transforma a gestão de produtos através de inteligência artificial. O setup inteligente via IA reduz o tempo de onboarding de horas para segundos, automatizando a criação de boards e fluxos.",
+    "technicalHighlights": [
+      "Arquitetura Monorepo com Turborepo e PNPM Workspaces",
+      "Segurança de tipos Fullstack (E2E) com pacote @vexiun/types compartilhado",
+      "Back-end modular com NestJS e Prisma ORM",
+      "Front-end de alta performance com Next.js 15 (App Router)",
+      "Infraestrutura moderna com Docker e GitHub Actions CI/CD"
+    ],
+    "impactMetrics": [
+      {
+        "label": "Redução Custos",
+        "value": "-70%",
+        "detail": "Vercel → Railway"
+      },
+      {
+        "label": "Requests ↓",
+        "value": "86k",
+        "detail": "Polling → WS"
+      },
+      {
+        "label": "Contrato Seguro",
+        "value": "100%",
+        "detail": "Type-safe E2E"
+      }
+    ],
+    "linkNote": "Repositório privado (Acesso para demonstração técnica sob consulta)"
+  },
+  "en": {
+    "title": "Vexiun - AI-Powered Project Management SaaS",
+    "status": "MVP - 60% Complete",
+    "shortDescription": "Scalable ecosystem for AI-driven task automation and team management.",
+    "fullDescription": "A modern platform designed to revolutionize product management through AI. Smart AI-based setup reduces onboarding time from hours to seconds by automating board and workflow creation.",
+    "technicalHighlights": [
+      "Monorepo Architecture powered by Turborepo and PNPM Workspaces",
+      "Fullstack E2E Type Safety with shared @vexiun/types package",
+      "Modular Backend using NestJS and Prisma ORM",
+      "High-performance Frontend with Next.js 15 (App Router)",
+      "Modern Infrastructure with Docker and GitHub Actions CI/CD"
+    ],
+    "impactMetrics": [
+      {
+        "label": "Cost Reduction",
+        "value": "-70%",
+        "detail": "Vercel → Railway"
+      },
+      {
+        "label": "Requests ↓",
+        "value": "86k",
+        "detail": "Polling → WS"
+      },
+      {
+        "label": "Secure Contract",
+        "value": "100%",
+        "detail": "Type-safe E2E"
+      }
+    ],
+    "linkNote": "Private Repository (Technical walkthrough available upon request)"
+  },
+  "stack": [
+    "Next.js 15",
+    "NestJS",
+    "TypeScript",
+    "Turbo",
+    "Prisma",
+    "Docker",
+    "PostgreSQL",
+    "Redis"
+  ]
+}

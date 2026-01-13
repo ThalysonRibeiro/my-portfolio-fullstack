@@ -1,20 +1,35 @@
-import { About } from "@/components/about";
-import { Contact } from "@/components/contact";
 import { NavigationHeader } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { Projects } from "@/components/projects";
+import Squares from "@/components/Squares";
+import dynamic from "next/dynamic";
+
+const Projects = dynamic(() => import("@/components/projects").then((mod) => mod.Projects));
+const TechnicalDecisions = dynamic(() =>
+  import("@/components/technical-decisions").then((mod) => mod.TechnicalDecisions)
+);
+const About = dynamic(() => import("@/components/about").then((mod) => mod.About));
+const Contact = dynamic(() => import("@/components/contact").then((mod) => mod.Contact));
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden">
       <NavigationHeader />
-      <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-transparent to-orange-500/10 pointer-events-none" />
-      <div className="absolute top-20 left-10 w-32 h-32 bg-red-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl" />
+      {/* <Background /> */}
 
-      <div className="space-y-6 mb-4">
+      <div className="absolute w-full h-full -z-10 opacity-50">
+        <Squares
+          speed={0.1}
+          squareSize={70}
+          direction="diagonal" // up, down, left, right, diagonal
+          borderColor="#404040"
+          hoverFillColor="#222"
+        />
+      </div>
+
+      <div className="space-y-8">
         <Hero />
         <Projects />
+        <TechnicalDecisions />
         <About />
         <Contact />
       </div>
