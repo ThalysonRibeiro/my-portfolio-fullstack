@@ -7,4 +7,4 @@ export const scrollToSection = (id: string, scrollMod: scrollTypes = "smooth") =
       element.scrollIntoView({ behavior: scrollMod });
     }
   }
-}
+};

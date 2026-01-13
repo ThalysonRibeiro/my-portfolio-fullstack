@@ -1,6 +1,6 @@
-"use client"
-import Image from 'next/image';
-import { useEffect, useState, useCallback } from 'react';
+"use client";
+import Image from "next/image";
+import { useEffect, useState, useCallback } from "react";
 
 interface ImageProjectProps {
   images: ImageProps[];
@@ -49,7 +49,7 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
   if (!isLoaded) {
     return (
       <div className="relative w-full mx-auto">
-        <div className="w-full aspect-[16/9] bg-gray-200 animate-pulse rounded-lg flex items-center justify-center">
+        <div className="w-full aspect-[16/9] bg-gray-200 animate-pulse rounded-none flex items-center justify-center">
           <span className="text-gray-400">Carregando...</span>
         </div>
       </div>
@@ -65,7 +65,7 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
     >
-      <div className="overflow-hidden rounded-lg">
+      <div className="overflow-hidden rounded-none">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -91,21 +91,29 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
       {/* Botões de navegação */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all duration-200 z-10"
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-none shadow-lg transition-all duration-200 z-10"
         aria-label="Imagem anterior"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+          <path
+            fillRule="evenodd"
+            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+            clipRule="evenodd"
+          />
         </svg>
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full shadow-lg transition-all duration-200 z-10"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-none shadow-lg transition-all duration-200 z-10"
         aria-label="Próxima imagem"
       >
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+          <path
+            fillRule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clipRule="evenodd"
+          />
         </svg>
       </button>
 
@@ -115,10 +123,9 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${index === currentIndex
-              ? 'bg-white scale-125'
-              : 'bg-white/50 hover:bg-white/75'
-              }`}
+            className={`w-2 h-2 rounded-none transition-all duration-200 ${
+              index === currentIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
+            }`}
             aria-label={`Ir para imagem ${index + 1}`}
           />
         ))}
@@ -130,7 +137,7 @@ const SlideCarousel = ({ images }: ImageProjectProps) => {
 export function Carousel({ images }: ImageProjectProps) {
   if (!images || images.length === 0) {
     return (
-      <div className="w-full aspect-[4/3] bg-gray-100 rounded-lg flex items-center justify-center">
+      <div className="w-full aspect-[4/3] bg-gray-100 rounded-none flex items-center justify-center">
         <span className="text-gray-500">Nenhuma imagem disponível</span>
       </div>
     );

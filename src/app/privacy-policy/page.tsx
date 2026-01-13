@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     follow: true
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_URL ? `${process.env.NEXT_PUBLIC_URL}/privacy-policy` : "/privacy-policy"
+    canonical: process.env.NEXT_PUBLIC_URL
+      ? `${process.env.NEXT_PUBLIC_URL}/privacy-policy`
+      : "/privacy-policy"
   },
   openGraph: {
     title: "Política de Privacidade | Thalyson Rafael",
@@ -31,7 +33,9 @@ export default function PrivacyPolicyPage() {
     <main className="mx-auto max-w-3xl px-4 py-10 space-y-8">
       <header className="space-y-2">
         <h1 className="text-3xl font-bold">Política de Privacidade</h1>
-        <p className="text-muted-foreground">Última atualização: {new Date().toLocaleDateString("pt-BR")}</p>
+        <p className="text-muted-foreground">
+          Última atualização: {new Date().toLocaleDateString("pt-BR")}
+        </p>
       </header>
 
       <section className="space-y-4">
@@ -76,9 +80,9 @@ export default function PrivacyPolicyPage() {
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Compartilhamento de dados</h2>
         <p className="text-muted-foreground">
-          Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing. As métricas
-          coletadas pelo Google Analytics são processadas pelo Google de acordo com as políticas do
-          serviço.
+          Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing. As
+          métricas coletadas pelo Google Analytics são processadas pelo Google de acordo com as
+          políticas do serviço.
         </p>
       </section>
 
@@ -104,8 +108,8 @@ export default function PrivacyPolicyPage() {
           <div>
             <h3 className="font-medium">Consentimento</h3>
             <p className="text-muted-foreground">
-              Ao acessar o site, você pode aceitar ou recusar cookies analíticos por meio do aviso de
-              consentimento exibido. Caso recuse, o Google Analytics não será carregado.
+              Ao acessar o site, você pode aceitar ou recusar cookies analíticos por meio do aviso
+              de consentimento exibido. Caso recuse, o Google Analytics não será carregado.
             </p>
           </div>
           <div>
