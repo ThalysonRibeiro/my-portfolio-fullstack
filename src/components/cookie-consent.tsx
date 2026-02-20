@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardFooter } from "./ui/card";
+import content from "@/utils/content.json";
+import { useLanguageStore } from "@/store/language-store";
 
 export function CookieConsent() {
+  const { lang } = useLanguageStore();
   const [showWarning, setShowWarning] = useState<boolean>(false);
 
   useEffect(() => {
@@ -32,13 +35,11 @@ export function CookieConsent() {
   return (
     <Card className="fixed bottom-2 left-2 max-w-sm z-50">
       <CardContent>
-        <p className="text-muted-foreground">
-          Coletamos cookies analíticos apenas para melhorar sua experiência.
-        </p>
+        <p className="text-muted-foreground">{content.cookieConsent.message[lang]}</p>
       </CardContent>
       <CardFooter className="flex items-center">
         <Button variant="link" size="sm" className="mr-auto text-xs">
-          <Link href="/privacy-policy">Política de Privacidade</Link>
+          <Link href="/privacy-policy">{content.cookieConsent.privacy[lang]}</Link>
         </Button>
         <Button
           className="ml-auto cursor-pointer"
@@ -46,7 +47,7 @@ export function CookieConsent() {
           variant="ghost"
           onClick={() => handleConsent(false)}
         >
-          Recusar
+          {content.cookieConsent.decline[lang]}
         </Button>
         <Button
           className="ml-auto cursor-pointer"
@@ -54,7 +55,7 @@ export function CookieConsent() {
           variant="secondary"
           onClick={() => handleConsent(true)}
         >
-          Aceitar
+          {content.cookieConsent.accept[lang]}
         </Button>
       </CardFooter>
     </Card>

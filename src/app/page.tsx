@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden">
       <NavigationHeader />
-      {/* <Background /> */}
 
       <div className="absolute w-full h-full -z-10 opacity-50">
         <Squares
@@ -26,7 +25,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-8 border-2">
         <Hero />
         <Projects />
         <TechnicalDecisions />

@@ -22,13 +22,15 @@
     "framer-motion": "^12.17.0",
     "lucide-react": "^0.514.0",
     "next": "^16.0.10",
+    "radix-ui": "^1.4.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-hook-form": "^7.57.0",
     "react-icons": "^5.5.0",
     "sonner": "^2.0.5",
     "tailwind-merge": "^3.3.0",
-    "zod": "^3.25.58"
+    "zod": "^3.25.58",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

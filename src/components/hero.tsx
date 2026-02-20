@@ -1,6 +1,5 @@
 "use client";
 
-import { Download, Eye, Rocket, Server, Layout, LucideIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { GithubStats } from "./github-stats";
@@ -8,6 +7,11 @@ import { Button } from "./me-ui/button";
 import Link from "next/link";
 import { cn } from "@/utils/cn";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import content from "@/utils/content.json";
+import { Lang, useLanguageStore } from "@/store/language-store";
+import { translate } from "@/utils/i18n";
+import { getIcon } from "@/utils/get-icon";
+import { Download, Eye, LucideIcon } from "lucide-react";
 
 const ANIMATION_CONFIG = {
   container: {
@@ -48,6 +52,8 @@ const ANIMATION_CONFIG = {
   }
 } as const;
 
+const FEATURES = content.hero.features;
+
 type ActionButton = {
   id: string;
   label: string;
@@ -60,50 +66,41 @@ type ActionButton = {
   download?: string;
 };
 
-const ACTION_BUTTONS: readonly ActionButton[] = [
-  {
-    id: "projects",
-    label: "Ver portfólio",
-    icon: Eye,
-    targetId: "projetos",
-    variant: "default",
-    className: "col-span-2 md:col-span-1",
-    ariaLabel: "Ver meus projetos em destaque"
-  },
-  {
-    id: "whatsapp",
-    label: "WhatsApp",
-    icon: FaWhatsapp,
-    href: "https://wa.me/5565981278291?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar.",
-    variant: "outline",
-    className: "",
-    ariaLabel: "Abrir conversa no WhatsApp"
-  },
-  {
-    id: "resume",
-    label: "Currículo",
-    icon: Download,
-    href: "/Curriculo_Thalyson_Ribeiro-full-stack.pdf",
-    download: "Curriculo_Thalyson_Ribeiro-full-stack.pdf",
-    variant: "outline",
-    className: "",
-    ariaLabel: "Baixar currículo em PDF"
-  }
-] as const;
-
-type Feature = {
-  id: string;
-  label: string;
-  icon: typeof Eye;
-};
-
-const FEATURES: readonly Feature[] = [
-  { id: "end-to-end", label: "Do planejamento ao deploy", icon: Rocket },
-  { id: "backend", label: "Back-end escalável (Node.js, Prisma, Postgres)", icon: Server },
-  { id: "ui", label: "Interfaces animadas e acessíveis", icon: Layout }
-] as const;
+function getActionButton(lang: Lang): ActionButton[] {
+  return [
+    {
+      id: "projects",
+      label: content.hero.actions.portfolio.label[lang],
+      icon: Eye,
+      targetId: "projetos",
+      variant: "default",
+      className: "col-span-2 md:col-span-1",
+      ariaLabel: content.hero.actions.portfolio.ariaLabel[lang]
+    },
+    {
+      id: "whatsapp",
+      label: content.hero.actions.whatsapp.label[lang],
+      icon: FaWhatsapp,
+      href: "https://wa.me/5565981278291?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar.",
+      variant: "outline",
+      className: "",
+      ariaLabel: content.hero.actions.whatsapp.ariaLabel[lang]
+    },
+    {
+      id: "resume",
+      label: content.hero.actions.resume.label[lang],
+      icon: Download,
+      href: "/Curriculo_Thalyson_Ribeiro-full-stack.pdf",
+      download: "Curriculo_Thalyson_Ribeiro-full-stack.pdf",
+      variant: "outline",
+      className: "",
+      ariaLabel: content.hero.actions.resume.ariaLabel[lang]
+    }
+  ] as const;
+}
 
 export function Hero() {
+  const { lang } = useLanguageStore();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -122,8 +119,8 @@ export function Hero() {
 
   return (
     <section
-      id="inicio"
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-6 px-2"
+      id="home"
+      className="transition-all duration-300 relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-6 px-2"
       aria-labelledby="hero-heading"
     >
       {/* Premium Background Glows */}
@@ -138,41 +135,40 @@ export function Hero() {
       >
         <motion.header variants={ANIMATION_CONFIG.title} className="w-full space-y-4">
           <span className="text-sm font-bold tracking-[0.3em] uppercase text-primary/60 mb-4 block">
-            Full Stack Developer & Architect
+            {translate(content.hero.role, lang)}
           </span>
           <h1
             id="hero-heading"
             className="text-5xl md:text-6xl lg:text-7xl font-black text-center tracking-tighter mx-auto px-4"
           >
-            <span className="block text-white mb-2">Olá, eu sou</span>
+            <span className="block text-white mb-2">{translate(content.hero.hello, lang)}</span>
             <span className="bg-gradient-to-r from-white via-primary to-white bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient">
-              Thalyson Rafael
+              {translate(content.hero.name, lang)}
             </span>
           </h1>
         </motion.header>
 
         <motion.div variants={ANIMATION_CONFIG.item} className="space-y-4 max-w-5xl px-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-zinc-400 leading-tight">
-            Transformo visão técnica em{" "}
-            <span className="text-white font-bold decoration-primary/40">produtos escaláveis</span>{" "}
-            e experiências de alto impacto.
+            {translate(content.hero.tagline, lang)}
           </h2>
 
           <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-muted-foreground/80">
-            Focado em arquitetura monorepo, performance extrema e decisões orientadas a dados para
-            SaaS de nova geração.
+            {translate(content.hero.description, lang)}
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 pt-4">
             {FEATURES.map((f) => {
-              const Icon = f.icon;
+              const Icon = getIcon(f.id);
               return (
                 <div
                   key={f.id}
                   className="flex items-center gap-2.5 px-4 py-2 bg-white/5 border border-white/5 hover:border-primary/20 transition-colors"
                 >
                   <Icon className="w-4 h-4 text-primary" aria-hidden="true" />
-                  <span className="text-xs md:text-sm font-medium text-zinc-300">{f.label}</span>
+                  <span className="text-xs md:text-sm font-medium text-zinc-300">
+                    {translate(f.label, lang)}
+                  </span>
                 </div>
               );
             })}
@@ -212,7 +208,7 @@ export function Hero() {
             className="flex flex-wrap items-center justify-center gap-4 w-full"
             aria-label="Ações principais"
           >
-            {ACTION_BUTTONS.map((button) => {
+            {getActionButton(lang).map((button) => {
               const Icon = button.icon;
               const isPrimary = button.variant === "default";
 
@@ -263,7 +259,7 @@ export function Hero() {
           variants={ANIMATION_CONFIG.item}
           className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground w-full py-8"
         >
-          <GithubStats />
+          <GithubStats lang={lang} />
         </motion.div>
       </motion.div>
     </section>
