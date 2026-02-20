@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { AnimatedNumber } from "./animated-number";
 import { cn } from "@/utils/cn";
 import { GitCommit, GitPullRequest, Star, FolderGit2 } from "lucide-react";
+import content from "@/utils/content.json";
+import { Lang } from "@/store/language-store";
 
 type Stats = {
   totalRepos: number;
@@ -11,25 +13,35 @@ type Stats = {
   totalStars: number;
 };
 
-export function GithubStats() {
+export function GithubStats({ lang }: { lang: Lang }) {
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
 
   const statsArray = [
     {
       value: stats?.totalRepos ?? 0,
-      label: "Repositórios",
+      label: content.githubStats.repos[lang],
       icon: FolderGit2,
       color: "text-blue-400"
     },
     {
       value: stats?.totalCommits ?? 0,
-      label: "Commits",
+      label: content.githubStats.commits[lang],
       icon: GitCommit,
       color: "text-emerald-400"
     },
-    { value: stats?.totalPRs ?? 0, label: "PRs", icon: GitPullRequest, color: "text-purple-400" },
-    { value: stats?.totalStars ?? 0, label: "Stars", icon: Star, color: "text-yellow-400" }
+    {
+      value: stats?.totalPRs ?? 0,
+      label: content.githubStats.prs[lang],
+      icon: GitPullRequest,
+      color: "text-purple-400"
+    },
+    {
+      value: stats?.totalStars ?? 0,
+      label: content.githubStats.stars[lang],
+      icon: Star,
+      color: "text-yellow-400"
+    }
   ];
 
   useEffect(() => {

@@ -1,0 +1,811 @@
+{
+  "header": {
+    "ariaLabel": { "ptBR": "Navegação principal", "en": "Main navigation" },
+    "nav": [
+      { "id": "home", "label": { "ptBR": "Início", "en": "Home" } },
+      { "id": "projects", "label": { "ptBR": "Projetos", "en": "Projects" } },
+      { "id": "about", "label": { "ptBR": "Sobre", "en": "About" } },
+      { "id": "contact", "label": { "ptBR": "Contato", "en": "Contact" } }
+    ]
+  },
+
+  "hero": {
+    "role": {
+      "ptBR": "Full-stack Developer • Product Builder",
+      "en": "Full-stack Developer • Product Builder"
+    },
+    "hello": { "ptBR": "Olá, eu sou", "en": "Hi, I'm" },
+    "name": "Thalyson Rafael",
+    "tagline": {
+      "ptBR": "Transformo visão técnica em produtos escaláveis e experiências de alto impacto.",
+      "en": "I turn technical vision into scalable products and high-impact experiences."
+    },
+    "description": {
+      "ptBR": "Focado em arquitetura monorepo, performance e decisões orientadas a dados para SaaS moderno.",
+      "en": "Focused on monorepo architecture, performance, and data-informed decisions for modern SaaS."
+    },
+    "features": [
+      {
+        "id": "end-to-end",
+        "label": { "ptBR": "Do planejamento ao deploy", "en": "From planning to deployment" }
+      },
+      {
+        "id": "backend",
+        "label": {
+          "ptBR": "Back-end escalável (Node.js, Drizzle, Postgres)",
+          "en": "Scalable backend (Node.js, Drizzle, Postgres)"
+        }
+      },
+      {
+        "id": "ui",
+        "label": {
+          "ptBR": "Interfaces rápidas, animadas e acessíveis",
+          "en": "Fast, animated, accessible interfaces"
+        }
+      }
+    ],
+    "actions": {
+      "portfolio": {
+        "label": { "ptBR": "Ver portfólio", "en": "View portfolio" },
+        "ariaLabel": { "ptBR": "Ver meus projetos em destaque", "en": "View my featured projects" }
+      },
+      "whatsapp": {
+        "label": { "ptBR": "WhatsApp", "en": "WhatsApp" },
+        "ariaLabel": { "ptBR": "Abrir conversa no WhatsApp", "en": "Open WhatsApp chat" },
+        "message": {
+          "ptBR": "Olá! Vi seu portfólio e quero conversar.",
+          "en": "Hi! I saw your portfolio and would like to chat."
+        }
+      },
+      "resume": {
+        "label": { "ptBR": "Currículo", "en": "Resume" },
+        "ariaLabel": { "ptBR": "Baixar currículo em PDF", "en": "Download resume PDF" }
+      }
+    }
+  },
+
+  "about": {
+    "title": { "ptBR": "Sobre mim", "en": "About me" },
+    "intro": {
+      "text1": {
+        "ptBR": "Da gastronomia para a tecnologia, levo disciplina, clareza e foco em resultado para cada projeto. Não apenas escrevo código: projeto software com decisões orientadas a dados e custo.",
+        "en": "From gastronomy to tech, I bring discipline, clarity, and outcome-focused execution to every project. I don't just write code: I design software with data- and cost-informed decisions."
+      },
+      "text2": {
+        "ptBR": "Priorizo performance, acessibilidade e DX para evoluir rápido sem perder qualidade.",
+        "en": "I prioritize performance, accessibility, and developer experience to move fast without losing quality."
+      }
+    },
+    "techStack": [
+      { "title": "TypeScript" },
+      { "title": "Next.js" },
+      { "title": "Nest.js" },
+      { "title": "PostgreSQL" },
+      { "title": "Redis" },
+      { "title": "Docker" }
+    ],
+    "differentiation": {
+      "title": { "ptBR": "O que me diferencia:", "en": "What sets me apart:" },
+      "subtitle": { "ptBR": "Dados, não achismos:", "en": "Data, not guesses:" },
+      "description": {
+        "ptBR": "Decisões técnicas guiadas por benchmark, trade-offs e projeções de custo. Eu valido antes, implemento depois.",
+        "en": "Technical decisions guided by benchmarks, trade-offs, and cost projections. I validate first, then implement."
+      },
+      "items": [
+        {
+          "title": { "ptBR": "Gestão de Infra:", "en": "Infra strategy:" },
+          "description": {
+            "ptBR": "Análises comparativas para escolher o stack de deploy mais eficiente.",
+            "en": "Comparative analysis to choose the most efficient deployment stack."
+          }
+        },
+        {
+          "title": { "ptBR": "Performance:", "en": "Performance:" },
+          "description": {
+            "ptBR": "Uso de real-time quando faz sentido (ex.: WebSocket no lugar de polling).",
+            "en": "Using real-time when it makes sense (e.g., WebSocket instead of polling)."
+          }
+        },
+        {
+          "title": { "ptBR": "Arquitetura:", "en": "Architecture:" },
+          "description": {
+            "ptBR": "Monorepo com tipos compartilhados (zero drift) em Next.js + NestJS.",
+            "en": "Monorepo with shared types (zero drift) across Next.js + NestJS."
+          }
+        }
+      ]
+    },
+    "howIWorkTitle": { "ptBR": "Como trabalho", "en": "How I work" },
+    "process": [
+      {
+        "title": { "ptBR": "Descoberta", "en": "Discovery" },
+        "text": {
+          "ptBR": "Entendo o problema, público e sucesso esperado.",
+          "en": "I understand the problem, audience, and definition of success."
+        }
+      },
+      {
+        "title": { "ptBR": "Arquitetura", "en": "Architecture" },
+        "text": {
+          "ptBR": "Defino fluxos, modelos e integrações.",
+          "en": "I define flows, models, and integrations."
+        }
+      },
+      {
+        "title": { "ptBR": "Entrega", "en": "Delivery" },
+        "text": {
+          "ptBR": "Implemento com foco em performance e acessibilidade.",
+          "en": "I implement with performance and accessibility in mind."
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "value": "5+",
+        "label": { "ptBR": "Projetos end-to-end", "en": "End-to-end projects" }
+      },
+      {
+        "value": "Real-time",
+        "label": { "ptBR": "Arquitetura escalável", "en": "Scalable architecture" }
+      },
+      {
+        "value": "UI + DX",
+        "label": { "ptBR": "Interface performática", "en": "High-performance UI" }
+      },
+      {
+        "value": "Auth + Billing",
+        "label": { "ptBR": "Integrações seguras", "en": "Secure integrations" }
+      }
+    ]
+  },
+
+  "aboutMeData": [
+    {
+      "id": "01",
+      "description": {
+        "ptBR": "Minha jornada no desenvolvimento web começou com uma transição inesperada do mundo da gastronomia. O ritmo e a precisão da cozinha moldaram minha forma de construir software: foco, detalhe e resolução de problemas.",
+        "en": "My web development journey started with an unexpected transition from gastronomy. The pace and precision of the kitchen shaped how I build software: focus, detail, and problem-solving."
+      }
+    },
+    {
+      "id": "02",
+      "description": {
+        "ptBR": "Hoje eu construo interfaces intuitivas e evoluo minha base de arquitetura back-end. Trabalhar sob pressão me ensinou a entregar com eficiência sem abrir mão de qualidade e experiência.",
+        "en": "Today I build intuitive interfaces and strengthen my backend architecture foundation. High-pressure environments taught me to deliver efficiently without sacrificing quality and experience."
+      }
+    },
+    {
+      "id": "03",
+      "description": {
+        "ptBR": "Meu objetivo é contribuir para produtos que expandam limites e resolvam problemas reais — com impacto e consistência.",
+        "en": "My goal is to contribute to products that push boundaries and solve real problems — with impact and consistency."
+      }
+    }
+  ],
+
+  "projects": {
+    "title": { "ptBR": "Projetos em destaque", "en": "Featured projects" },
+    "description": {
+      "ptBR": "Explore uma seleção dos meus trabalhos mais recentes e impactantes",
+      "en": "Explore a selection of my most recent and impactful work"
+    },
+    "filters": {
+      "githubViewAll": { "ptBR": "Ver todos no GitHub →", "en": "View all on GitHub →" },
+      "githubAriaLabel": {
+        "ptBR": "Ver todos os repositórios no GitHub",
+        "en": "View all repositories on GitHub"
+      }
+    },
+    "labels": {
+      "liveDemo": { "ptBR": "Demo ao vivo", "en": "Live demo" },
+      "frontend": { "ptBR": "Frontend", "en": "Frontend" },
+      "backend": { "ptBR": "Backend", "en": "Backend" },
+      "downloadApp": { "ptBR": "Baixar app", "en": "Download app" }
+    }
+  },
+
+  "projectsData": [
+    {
+      "id": "02",
+      "title": "Equilibrium Center",
+      "projectType": "Fullstack",
+      "category": { "ptBR": "Gestão / Saúde", "en": "Management / Health" },
+      "description": {
+        "ptBR": "Plataforma completa de gestão para massoterapeutas: agendamento, clientes e organização do atendimento.",
+        "en": "A complete management platform for massage therapists: scheduling, clients, and service organization."
+      },
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "shadcn",
+        "TailwindCSS",
+        "React Hook Form",
+        "Zod",
+        "PostgreSQL (Neon)",
+        "Prisma",
+        "Vercel",
+        "Docker",
+        "Stripe",
+        "Cloudinary",
+        "Auth.js"
+      ],
+      "links": {
+        "github": "https://github.com/ThalysonRibeiro/equilibrium-center",
+        "githubBackend": "",
+        "app": "",
+        "live": "https://equilibrium-center.vercel.app"
+      },
+      "images": [
+        { "title": "Equilibrium-Center-photo-1", "image": "/eq-center/1.webp" },
+        { "title": "Equilibrium-Center-photo-2", "image": "/eq-center/2.webp" },
+        { "title": "Equilibrium-Center-photo-3", "image": "/eq-center/3.webp" },
+        { "title": "Equilibrium-Center-photo-4", "image": "/eq-center/4.webp" },
+        { "title": "Equilibrium-Center-photo-5", "image": "/eq-center/5.webp" }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "BarberPro 💈",
+      "projectType": "Fullstack",
+      "category": { "ptBR": "Gestão / Negócios", "en": "Management / Business" },
+      "description": {
+        "ptBR": "Sistema web para gestão de barbearias com clientes, serviços e planos.",
+        "en": "A web system for barbershop management with clients, services, and plans."
+      },
+      "tech": [
+        "Next.js",
+        "Chakra UI",
+        "TypeScript",
+        "Axios",
+        "Express",
+        "Prisma",
+        "PostgreSQL (Neon)",
+        "Stripe",
+        "Node.js"
+      ],
+      "links": {
+        "github": "https://github.com/ThalysonRibeiro/barberpro-web",
+        "githubBackend": "https://github.com/ThalysonRibeiro/barberpro-backend",
+        "app": "",
+        "live": "https://barberpro-web.vercel.app/"
+      },
+      "images": [
+        { "title": "photo-barberpro-photo-1", "image": "/barber-pro/1.webp" },
+        { "title": "photo-barberpro-photo-2", "image": "/barber-pro/2.webp" },
+        { "title": "photo-barberpro-photo-3", "image": "/barber-pro/3.webp" },
+        { "title": "photo-barberpro-photo-4", "image": "/barber-pro/4.webp" },
+        { "title": "photo-barberpro-photo-5", "image": "/barber-pro/5.webp" },
+        { "title": "photo-barberpro-photo-6", "image": "/barber-pro/6.webp" }
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Blend House",
+      "projectType": "Fullstack",
+      "category": { "ptBR": "Restaurante / Delivery", "en": "Restaurant / Delivery" },
+      "app": "Mobile",
+      "description": {
+        "ptBR": "Web app para pedidos + API backend + app mobile para atendentes registrarem pedidos.",
+        "en": "Orders web app + backend API + mobile app for staff to place orders."
+      },
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Axios",
+        "Sass",
+        "Sonner",
+        "Lucide React",
+        "Node.js",
+        "Express",
+        "Prisma",
+        "PostgreSQL (Neon)",
+        "Cloudinary",
+        "React Native",
+        "Expo",
+        "React Navigation",
+        "AsyncStorage"
+      ],
+      "links": {
+        "github": "https://github.com/ThalysonRibeiro/blend-house-frontend",
+        "githubBackend": "https://github.com/ThalysonRibeiro/blend-house-backend",
+        "app": "https://expo.dev/accounts/thalysonribeiro/projects/mobile-blend-house/builds/0aa905a2-8928-47e5-b17f-506de0310bba",
+        "live": "https://blend-house.vercel.app"
+      },
+      "images": [
+        { "title": "photo-blend-house-photo-1", "image": "/blend-house/1.webp" },
+        { "title": "photo-blend-house-photo-2", "image": "/blend-house/2.webp" },
+        { "title": "photo-blend-house-photo-3", "image": "/blend-house/3.webp" },
+        { "title": "photo-blend-house-photo-4", "image": "/blend-house/4.webp" },
+        { "title": "photo-blend-house-photo-5", "image": "/blend-house/5.webp" },
+        { "title": "photo-blend-house-photo-6", "image": "/blend-house/6.webp" },
+        { "title": "photo-blend-house-photo-7", "image": "/blend-house/7.webp" }
+      ]
+    },
+    {
+      "id": "05",
+      "title": "TicketFlow",
+      "projectType": "Fullstack",
+      "category": { "ptBR": "Suporte / Atendimento", "en": "Support / Customer Service" },
+      "description": {
+        "ptBR": "Sistema de chamados com cadastro de clientes, acompanhamento e fluxo de atendimento.",
+        "en": "Ticketing system with client registration, tracking, and support workflow."
+      },
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "Mongodb",
+        "NextAuth",
+        "Tailwind CSS",
+        "Zod",
+        "React Hook Form"
+      ],
+      "links": {
+        "github": "https://github.com/ThalysonRibeiro/TicketFlow-g3",
+        "githubBackend": "",
+        "app": "",
+        "live": "https://ticketflow-g3.vercel.app/"
+      },
+      "images": [
+        { "title": "TicketFlow-photo-1", "image": "/ticketflow/1.webp" },
+        { "title": "TicketFlow-photo-2", "image": "/ticketflow/2.webp" },
+        { "title": "TicketFlow-photo-3", "image": "/ticketflow/3.webp" },
+        { "title": "TicketFlow-photo-4", "image": "/ticketflow/4.webp" },
+        { "title": "TicketFlow-photo-5", "image": "/ticketflow/5.webp" },
+        { "title": "TicketFlow-photo-6", "image": "/ticketflow/6.webp" },
+        { "title": "TicketFlow-photo-7", "image": "/ticketflow/7.webp" },
+        { "title": "TicketFlow-photo-8", "image": "/ticketflow/8.webp" },
+        { "title": "TicketFlow-photo-9", "image": "/ticketflow/9.webp" }
+      ]
+    }
+  ],
+
+  "vexiunData": {
+    "project": "Vexiun",
+    "org": "Vexiun Systems",
+    "stack": [
+      "Next.js 15",
+      "NestJS",
+      "TypeScript",
+      "Turbo",
+      "Drizzle",
+      "Docker",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "i18n": {
+      "ptBR": {
+        "title": "Vexiun - Plataforma Moderna de Gestão de Projetos",
+        "status": "Beta Privado",
+        "shortDescription": "Gestão técnica estruturada para times modernos que precisam de clareza, velocidade e controle.",
+        "fullDescription": "Vexiun é uma plataforma projetada para reduzir o caos da gestão técnica. Estruture projetos rapidamente, mantenha times alinhados e evolua com uma arquitetura preparada para escala. Construído com foco em performance, segurança e organização inteligente de fluxos.",
+        "linkNote": "Repositório privado (Demonstração técnica sob consulta)",
+        "technicalHighlights": [
+          "Arquitetura Monorepo com Turborepo e PNPM Workspaces",
+          "Segurança de tipos Fullstack (E2E) com pacote @vexiun/types compartilhado",
+          "Back-end modular orientado a eventos com NestJS",
+          "Front-end de alta performance com Next.js 15 (App Router)",
+          "Infraestrutura moderna com Docker e CI/CD automatizado"
+        ],
+        "impactMetrics": [
+          {
+            "label": "Cenários de Escala",
+            "value": "5 níveis",
+            "detail": "Modelagem financeira serverless"
+          },
+          {
+            "label": "Performance",
+            "value": "86k",
+            "detail": "Requests otimizadas (Polling → WebSocket)"
+          },
+          { "label": "Contrato Seguro", "value": "100%", "detail": "Type-safe E2E" }
+        ]
+      },
+      "en": {
+        "title": "Vexiun - Modern Project Management Platform",
+        "status": "Private Beta",
+        "shortDescription": "Structured technical management for modern teams that need clarity, speed, and control.",
+        "fullDescription": "Vexiun is designed to reduce the chaos of technical project management. Set up projects fast, keep teams aligned, and evolve with an architecture built for scale — focusing on performance, security, and smart workflow organization.",
+        "linkNote": "Private repository (Technical walkthrough available upon request)",
+        "technicalHighlights": [
+          "Monorepo architecture with Turborepo and PNPM Workspaces",
+          "Fullstack E2E type safety with shared @vexiun/types package",
+          "Event-driven modular backend with NestJS",
+          "High-performance frontend with Next.js 15 (App Router)",
+          "Modern infrastructure with Docker and automated CI/CD"
+        ],
+        "impactMetrics": [
+          { "label": "Scale Scenarios", "value": "5 levels", "detail": "Serverless cost modeling" },
+          {
+            "label": "Performance",
+            "value": "86k",
+            "detail": "Requests optimized (Polling → WebSocket)"
+          },
+          { "label": "Safe Contract", "value": "100%", "detail": "Type-safe E2E" }
+        ]
+      }
+    },
+    "projects": [
+      {
+        "project": "Vexiun Theme",
+        "type": "VSCode Theme",
+        "stack": ["VSCode Theme API", "JSON", "Color Tokens", "UI Customization"],
+        "status": { "ptBR": "Publicado", "en": "Published" },
+        "highlights": [
+          {
+            "ptBR": "Publicado no Visual Studio Marketplace",
+            "en": "Published on the Visual Studio Marketplace"
+          },
+          { "ptBR": "220+ downloads", "en": "220+ downloads" },
+          {
+            "ptBR": "Estudo aprofundado da documentação oficial do VSCode",
+            "en": "Deep dive into the official VSCode documentation"
+          },
+          {
+            "ptBR": "Três variações oficiais (Gray, Sakura, Strawberry)",
+            "en": "Three official variants (Gray, Sakura, Strawberry)"
+          },
+          {
+            "ptBR": "Influenciou a identidade visual do Vexiun",
+            "en": "Influenced Vexiun's visual identity"
+          }
+        ],
+        "description": {
+          "ptBR": {
+            "title": "Vexiun Theme — Tema Oficial para VSCode",
+            "fullDescription": "Antes de construir o Vexiun como SaaS, eu já explorava personalização de ferramentas do meu fluxo. Eu usava o tema Dracula no VSCode, mas queria uma paleta mais alinhada ao meu gosto — trocando o rosa por roxo e ajustando tons para foco e conforto visual. Passei cerca de 4 dias estudando a documentação oficial do VSCode e implementando praticamente todas as propriedades disponíveis para criar um tema consistente. O resultado foi publicado no Visual Studio Marketplace e hoje possui mais de 220 downloads. O tema tem três variações principais: Gray (meu padrão diário), Sakura (versão light) e Strawberry (versão mais recente com refinamentos). Esse projeto influenciou diretamente a identidade visual do Vexiun."
+          },
+          "en": {
+            "title": "Vexiun Theme — Official VSCode Theme",
+            "fullDescription": "Before building Vexiun as a SaaS, I was already customizing developer tooling. I used Dracula in VSCode but wanted a palette closer to my style — swapping pink for purple and refining tones for focus and long coding sessions. I spent ~4 days studying the official VSCode documentation and implementing most available theme properties to create a consistent theme. It's published on the Visual Studio Marketplace and has 220+ downloads. It includes three variants: Gray (my daily driver), Sakura (light version), and Strawberry (latest refinements). This project directly influenced Vexiun's visual identity."
+          }
+        }
+      }
+    ]
+  },
+
+  "technicalDecisions": {
+    "title": { "ptBR": "Decisões Arquiteturais", "en": "Architectural Decisions" },
+    "description": {
+      "ptBR": "Alguns trade-offs e soluções técnicas que implementei focando em escalabilidade, custo e experiência do desenvolvedor.",
+      "en": "A few trade-offs and technical solutions I implemented focusing on scalability, cost, and developer experience."
+    },
+    "labels": {
+      "before": { "ptBR": "Antes", "en": "Before" },
+      "after": { "ptBR": "Depois", "en": "After" }
+    },
+    "decisions": [
+      {
+        "title": {
+          "ptBR": "Infraestrutura Orientada a Escala",
+          "en": "Scale-Oriented Infrastructure"
+        },
+        "description": {
+          "ptBR": "Modelagem de custo e performance antes da migração",
+          "en": "Cost and performance modeling before migration"
+        },
+        "before": {
+          "ptBR": "Serverless puro\ncom crescimento imprevisível",
+          "en": "Pure serverless with\nunpredictable scaling costs"
+        },
+        "after": {
+          "ptBR": "Container otimizado com custo\nprevisível (-70% base)",
+          "en": "Optimized container setup\nwith predictable cost (-70% baseline)"
+        },
+        "highlight": {
+          "ptBR": "Escala projetada: 1k → 10k usuários",
+          "en": "Projected scale: 1k → 10k users"
+        }
+      },
+      {
+        "title": { "ptBR": "Polling → WebSocket", "en": "Polling → WebSocket" },
+        "description": {
+          "ptBR": "Arquitetura real-time baseada em eventos",
+          "en": "Event-driven real-time architecture"
+        },
+        "before": {
+          "ptBR": "86k+ requests/dia\ncom overhead constante",
+          "en": "86k+ requests/day\nwith constant overhead"
+        },
+        "after": {
+          "ptBR": "Latência <100ms\ncom comunicação persistente",
+          "en": "<100ms latency with\npersistent communication"
+        },
+        "highlight": {
+          "ptBR": "Menos carga, mais responsividade",
+          "en": "Less load, more responsiveness"
+        }
+      },
+      {
+        "title": {
+          "ptBR": "Monorepo + Shared Types",
+          "en": "Monorepo + Shared Types"
+        },
+        "description": {
+          "ptBR": "Contrato único entre frontend e backend",
+          "en": "A single contract between frontend and backend"
+        },
+        "before": {
+          "ptBR": "Possível drift entre camadas",
+          "en": "Potential drift between layers"
+        },
+        "after": {
+          "ptBR": "100% Type-safe E2E",
+          "en": "100% type-safe end-to-end"
+        },
+        "highlight": {
+          "ptBR": "Zero inconsistência estrutural",
+          "en": "Zero structural inconsistencies"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "static": {
+      "email": "rafinha.head@gmail.com",
+      "phone": "+55 65 98127-8291",
+      "location": "Natal, Rio Grande do Norte, Brasil",
+      "socialLinks": [
+        {
+          "id": "linkedin",
+          "href": "https://www.linkedin.com/in/thalyson-rafael-br",
+          "icon": "FaLinkedinIn",
+          "color": "hover:text-blue-400"
+        },
+        {
+          "id": "github",
+          "href": "https://github.com/ThalysonRibeiro",
+          "icon": "FaGithub",
+          "color": "hover:text-gray-400"
+        },
+        {
+          "id": "twitter",
+          "href": "https://x.com/thalyson_rb",
+          "icon": "FaXTwitter",
+          "color": "hover:text-gray-400"
+        }
+      ]
+    },
+    "i18n": {
+      "title": { "ptBR": "Entre em contato", "en": "Get in touch" },
+      "description": { "ptBR": "Como posso te ajudar?", "en": "How can I help?" },
+      "info": {
+        "title": { "ptBR": "Informações de contato", "en": "Contact info" },
+        "emailLabel": { "ptBR": "Email", "en": "Email" },
+        "locationLabel": { "ptBR": "Localização", "en": "Location" }
+      },
+      "social": {
+        "title": { "ptBR": "Redes sociais", "en": "Social" },
+        "ariaLabels": {
+          "linkedin": { "ptBR": "Visitar perfil no LinkedIn", "en": "Visit LinkedIn profile" },
+          "github": { "ptBR": "Visitar perfil no GitHub", "en": "Visit GitHub profile" },
+          "twitter": { "ptBR": "Visitar perfil no Twitter", "en": "Visit Twitter profile" }
+        }
+      },
+      "whatsappDialog": {
+        "title": { "ptBR": "Contato pelo WhatsApp", "en": "WhatsApp message" },
+        "description": {
+          "ptBR": "Escreva sua mensagem e seja redirecionado para o WhatsApp.",
+          "en": "Write your message and you'll be redirected to WhatsApp."
+        },
+        "placeholder": {
+          "ptBR": "Olá! Gostaria de conversar sobre...",
+          "en": "Hi! I'd like to talk about..."
+        },
+        "button": { "ptBR": "Enviar no WhatsApp", "en": "Send on WhatsApp" },
+        "charLimit": { "ptBR": "caracteres", "en": "characters" },
+        "successToast": {
+          "ptBR": "🔗 Redirecionando para o WhatsApp...",
+          "en": "🔗 Redirecting to WhatsApp..."
+        }
+      },
+      "cta": {
+        "title": {
+          "ptBR": "Pronto para transformar sua ideia em realidade?",
+          "en": "Ready to turn your idea into reality?"
+        },
+        "description": {
+          "ptBR": "Respondo todas as mensagens em até 24 horas. Vamos construir algo incrível juntos!",
+          "en": "I reply to all messages within 24 hours. Let's build something great together!"
+        },
+        "button": { "ptBR": "💬 Vamos Conversar", "en": "💬 Let's talk" }
+      },
+      "validation": {
+        "min": {
+          "ptBR": "Mensagem deve ter pelo menos 10 caracteres",
+          "en": "Message must be at least 10 characters"
+        },
+        "max": {
+          "ptBR": "Mensagem deve ter no máximo 300 caracteres",
+          "en": "Message must be at most 300 characters"
+        }
+      }
+    }
+  },
+
+  "githubStats": {
+    "repos": { "ptBR": "Repositórios", "en": "Repos" },
+    "commits": { "ptBR": "Commits", "en": "Commits" },
+    "prs": { "ptBR": "PRs", "en": "PRs" },
+    "stars": { "ptBR": "Stars", "en": "Stars" }
+  },
+
+  "footer": {
+    "privacy": { "ptBR": "Política de Privacidade", "en": "Privacy Policy" },
+    "cookies": { "ptBR": "Política de Cookies", "en": "Cookie Policy" },
+    "manageCookies": { "ptBR": "Gerenciar Cookies", "en": "Manage Cookies" },
+    "rights": { "ptBR": "Todos os direitos reservados.", "en": "All rights reserved." }
+  },
+
+  "cookieConsent": {
+    "message": {
+      "ptBR": "Coletamos cookies analíticos apenas para melhorar sua experiência.",
+      "en": "We use analytics cookies only to improve your experience."
+    },
+    "privacy": { "ptBR": "Política de Privacidade", "en": "Privacy Policy" },
+    "decline": { "ptBR": "Recusar", "en": "Decline" },
+    "accept": { "ptBR": "Aceitar", "en": "Accept" }
+  },
+
+  "metadata": {
+    "siteName": {
+      "ptBR": "Thalyson Rafael",
+      "en": "Thalyson Rafael"
+    },
+    "title": {
+      "ptBR": "Thalyson Rafael | Full-stack Developer & Product Builder",
+      "en": "Thalyson Rafael | Full-stack Developer & Product Builder"
+    },
+    "description": {
+      "ptBR": "Full-stack com Next.js, NestJS e TypeScript. Construo aplicações escaláveis com foco em performance, custo e experiência do usuário.",
+      "en": "Full-stack with Next.js, NestJS, and TypeScript. I build scalable apps focused on performance, cost, and user experience."
+    },
+    "ogDescription": {
+      "ptBR": "Foco em arquiteturas escaláveis e decisões técnicas orientadas a dados.",
+      "en": "Focused on scalable architectures and data-informed technical decisions."
+    },
+    "twitterDescription": {
+      "ptBR": "Construo produtos full stack focados em performance e resultado.",
+      "en": "I build full-stack products focused on performance and outcomes."
+    }
+  },
+  "privacyPolicy": {
+    "metadata": {
+      "title": {
+        "ptBR": "Política de Privacidade | Thalyson Rafael",
+        "en": "Privacy Policy | Thalyson Rafael"
+      },
+      "description": {
+        "ptBR": "Entenda como este site coleta, usa e protege seus dados, incluindo o uso de cookies e Google Analytics.",
+        "en": "Understand how this site collects, uses, and protects your data, including the use of cookies and Google Analytics."
+      },
+      "ogTitle": {
+        "ptBR": "Política de Privacidade | Thalyson Rafael",
+        "en": "Privacy Policy | Thalyson Rafael"
+      },
+      "twitterTitle": {
+        "ptBR": "Política de Privacidade | Thalyson Rafael",
+        "en": "Privacy Policy | Thalyson Rafael"
+      },
+      "twitterDescription": {
+        "ptBR": "Informações sobre privacidade e cookies, incluindo Google Analytics e controles de consentimento.",
+        "en": "Information about privacy and cookies, including Google Analytics and consent controls."
+      }
+    },
+    "header": {
+      "title": { "ptBR": "Política de Privacidade", "en": "Privacy Policy" },
+      "lastUpdate": { "ptBR": "Última atualização", "en": "Last update" }
+    },
+    "sections": {
+      "overview": {
+        "title": { "ptBR": "Visão geral", "en": "Overview" },
+        "content": {
+          "ptBR": "Este site tem o objetivo de apresentar meu trabalho como desenvolvedor. Coletamos apenas informações necessárias para contato e métricas de uso com o propósito de melhorar a experiência de navegação.",
+          "en": "This site aims to present my work as a developer. We only collect information necessary for contact and usage metrics to improve the browsing experience."
+        }
+      },
+      "dataCollected": {
+        "title": {
+          "ptBR": "Dados que podem ser coletados",
+          "en": "Data that may be collected"
+        },
+        "providedByYou": {
+          "title": {
+            "ptBR": "Informações fornecidas por você",
+            "en": "Information provided by you"
+          },
+          "content": {
+            "ptBR": "Ao utilizar o formulário de contato, você pode enviar nome, e-mail e mensagem. Esses dados são usados exclusivamente para responder ao seu contato.",
+            "en": "When using the contact form, you can send your name, email, and message. This data is used exclusively to respond to your contact."
+          }
+        },
+        "usageMetrics": {
+          "title": { "ptBR": "Dados de uso e métricas", "en": "Usage data and metrics" },
+          "content": {
+            "ptBR": "Utilizamos Google Analytics para entender de forma agregada como o site é utilizado (páginas visitadas, tempo de navegação, dispositivo, localização aproximada). A anonimização de IP está ativada.",
+            "en": "We use Google Analytics to understand in an aggregate way how the site is used (pages visited, browsing time, device, approximate location). IP anonymization is enabled."
+          }
+        }
+      },
+      "howWeUse": {
+        "title": { "ptBR": "Como usamos seus dados", "en": "How we use your data" },
+        "items": [
+          {
+            "ptBR": "Responder mensagens enviadas via formulário de contato.",
+            "en": "Respond to messages sent via the contact form."
+          },
+          {
+            "ptBR": "Mensurar desempenho e melhorar conteúdo e acessibilidade do site.",
+            "en": "Measure performance and improve site content and accessibility."
+          },
+          {
+            "ptBR": "Garantir segurança e integridade da experiência de navegação.",
+            "en": "Ensure security and integrity of the browsing experience."
+          }
+        ]
+      },
+      "dataSharing": {
+        "title": { "ptBR": "Compartilhamento de dados", "en": "Data sharing" },
+        "content": {
+          "ptBR": "Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing. As métricas coletadas pelo Google Analytics são processadas pelo Google de acordo com as políticas do serviço.",
+          "en": "We do not sell or share your data with third parties for marketing purposes. Metrics collected by Google Analytics are processed by Google in accordance with the service policies."
+        }
+      },
+      "yourRights": {
+        "title": { "ptBR": "Seus direitos", "en": "Your rights" },
+        "items": [
+          {
+            "ptBR": "Solicitar acesso, correção ou remoção de informações fornecidas por você.",
+            "en": "Request access, correction, or removal of information provided by you."
+          },
+          {
+            "ptBR": "Gerenciar consentimento de cookies pelo aviso exibido no site.",
+            "en": "Manage cookie consent through the notice displayed on the site."
+          },
+          {
+            "ptBR": "Desativar cookies analíticos nas preferências do navegador.",
+            "en": "Disable analytical cookies in your browser preferences."
+          }
+        ]
+      },
+      "cookiePolicy": {
+        "title": { "ptBR": "Política de Cookies", "en": "Cookie Policy" },
+        "whatAre": {
+          "title": { "ptBR": "O que são cookies", "en": "What are cookies" },
+          "content": {
+            "ptBR": "Cookies são pequenos arquivos armazenados no seu dispositivo para lembrar preferências e ajudar a entender o uso do site. Utilizamos apenas cookies analíticos opcionais.",
+            "en": "Cookies are small files stored on your device to remember preferences and help understand site usage. We only use optional analytical cookies."
+          }
+        },
+        "consent": {
+          "title": { "ptBR": "Consentimento", "en": "Consent" },
+          "content": {
+            "ptBR": "Ao acessar o site, você pode aceitar ou recusar cookies analíticos por meio do aviso de consentimento exibido. Caso recuse, o Google Analytics não será carregado.",
+            "en": "When accessing the site, you can accept or refuse analytical cookies through the displayed consent notice. If you refuse, Google Analytics will not be loaded."
+          }
+        },
+        "googleAnalytics": {
+          "title": { "ptBR": "Google Analytics", "en": "Google Analytics" },
+          "content": {
+            "ptBR": "O Google Analytics é usado para coletar estatísticas agregadas de navegação. O recurso de anonimização de IP está habilitado. Você pode desativar o uso de cookies nas configurações do seu navegador.",
+            "en": "Google Analytics is used to collect aggregate browsing statistics. The IP anonymization feature is enabled. You can disable the use of cookies in your browser settings."
+          }
+        }
+      },
+      "retention": {
+        "title": { "ptBR": "Retenção", "en": "Retention" },
+        "content": {
+          "ptBR": "Mantemos informações enviadas via contato apenas pelo tempo necessário para responder e dar seguimento à conversa. Métricas analíticas são retidas conforme as políticas do Google Analytics.",
+          "en": "We keep information sent via contact only for the time necessary to respond and follow up on the conversation. Analytical metrics are retained according to Google Analytics policies."
+        }
+      },
+      "contact": {
+        "title": { "ptBR": "Contato", "en": "Contact" },
+        "content": {
+          "ptBR": "Para dúvidas sobre privacidade ou pedidos relacionados a dados, envie um e-mail para",
+          "en": "For questions about privacy or data-related requests, send an email to"
+        }
+      }
+    }
+  }
+}

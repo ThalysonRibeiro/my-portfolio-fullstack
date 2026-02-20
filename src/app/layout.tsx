@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import content from "@/utils/content.json";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Footer } from "@/components/footer";
@@ -20,9 +21,8 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
-  title: "Thalyson Rafael | Full Stack Developer & Software Architect",
-  description:
-    "Especialista em Next.js, NestJS e TypeScript. Construo aplicações escaláveis com foco em performance, custos e experiência do usuário.",
+  title: content.metadata.title.en,
+  description: content.metadata.description.en,
   keywords: [
     "Thalyson Rafael",
     "Desenvolvedor Full Stack",
@@ -40,20 +40,19 @@ export const metadata: Metadata = {
     canonical: "/"
   },
   openGraph: {
-    title: "Thalyson Rafael | Full Stack Developer",
-    description:
-      "985+ commits | 22+ projetos. Foco em arquiteturas escaláveis e decisões orientadas a dados.",
+    title: content.metadata.title.en,
+    description: content.metadata.ogDescription.en,
     url: siteUrl,
-    siteName: "Thalyson Rafael Portfolio",
+    siteName: content.metadata.siteName.en,
     images: [
       {
         url: "/og-image.webp", // Nome padrão para facilidade
         width: 1200,
         height: 630,
-        alt: "Thalyson Rafael - Full Stack Developer Portfolio"
+        alt: content.metadata.title.en
       }
     ],
-    locale: "pt_BR",
+    locale: "en_US",
     type: "website"
   },
   robots: {
@@ -69,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Thalyson Rafael | Full Stack Developer",
-    description: "Construo produtos full stack focados em performance e resultado.",
+    title: content.metadata.title.en,
+    description: content.metadata.twitterDescription.en,
     images: ["/og-image.webp"],
     creator: "@thalyson_rb"
   },
@@ -86,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Toaster position="top-right" expand={false} theme="dark" />
         <GoogleAnalytics />

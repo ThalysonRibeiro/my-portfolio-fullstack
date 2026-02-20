@@ -10,7 +10,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from "@/components/ui/dialog";
-import { useState, useCallback, memo } from "react";
+import { useState, useCallback } from "react";
 import { Mail, ExternalLink, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
@@ -23,12 +23,14 @@ import { z } from "zod";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./me-ui/button";
 import { motion } from "framer-motion";
+import content from "@/utils/content.json";
+import { Lang, useLanguageStore } from "@/store/language-store";
 
 const formWhatsAppSchema = z.object({
   message: z
     .string()
-    .min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" })
-    .max(300, { message: "Mensagem deve ter no máximo 300 caracteres" })
+    .min(10, { message: "A mensagem deve ter pelo menos 10 caracteres" })
+    .max(300, { message: "A mensagem deve ter no máximo 300 caracteres" })
 });
 
 type FormWhatsAppData = z.infer<typeof formWhatsAppSchema>;
@@ -58,36 +60,10 @@ const ANIMATION_CONFIG = {
   }
 } as const;
 
-const CONTACT_INFO = {
-  email: "rafinha.head@gmail.com",
-  phone: "+55 65 98127-8291",
-  location: "Natal, Rio Grande do Norte, Brasil",
-  socialLinks: [
-    {
-      id: "linkedin",
-      href: "https://www.linkedin.com/in/thalyson-rafael-br",
-      icon: FaLinkedinIn,
-      color: "hover:text-blue-400",
-      ariaLabel: "Visitar perfil no LinkedIn"
-    },
-    {
-      id: "github",
-      href: "https://github.com/ThalysonRibeiro",
-      icon: FaGithub,
-      color: "hover:text-gray-400",
-      ariaLabel: "Visitar perfil no GitHub"
-    },
-    {
-      id: "X",
-      href: "https://x.com/thalyson_rb",
-      icon: FaXTwitter,
-      color: "hover:text-gray-400",
-      ariaLabel: "Visitar perfil no GitHub"
-    }
-  ]
-} as const;
+const CONTACT_INFO = content.contact.static;
 
 export function Contact() {
+  const { lang } = useLanguageStore();
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
 
   const whatsAppForm = useForm<FormWhatsAppData>({
@@ -105,18 +81,18 @@ export function Contact() {
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
       whatsAppForm.reset();
       setIsWhatsAppOpen(false);
-      toast.success("🔗 Redirecionando para o WhatsApp...");
+      toast.success(content.contact.i18n.whatsappDialog.successToast[lang]);
     },
-    [whatsAppForm]
+    [whatsAppForm, lang]
   );
 
   return (
     <section
-      id="contato"
-      className="flex items-center justify-center pb-10 scroll-mt-20"
+      id="contact"
+      className="transition-all duration-300 flex items-center justify-center pb-10 scroll-mt-20"
       aria-labelledby="contact-heading"
     >
-      <div className="z-10 bg-background max-w-7xl mx-auto border p-6">
+      <div className="z-10 bg-background w-full max-w-7xl mx-auto border p-6">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,12 +102,11 @@ export function Contact() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <h2 id="contact-heading" className="text-3xl md:text-4xl font-bold">
-              Entre em contato
+              {content.contact.i18n.title[lang]}
             </h2>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Vamos conversar sobre seu próximo projeto! Estou sempre aberto a novas oportunidades e
-            colaborações.
+            {content.contact.i18n.description[lang]}
           </p>
         </motion.header>
 
@@ -143,6 +118,7 @@ export function Contact() {
           className="mx-auto"
         >
           <ContactInfo
+            lang={lang}
             whatsAppForm={whatsAppForm}
             onWhatsAppSubmit={handleWhatsAppSubmit}
             isWhatsAppOpen={isWhatsAppOpen}
@@ -154,24 +130,36 @@ export function Contact() {
   );
 }
 
-const ContactInfo = memo(
-  ({
-    whatsAppForm,
-    onWhatsAppSubmit,
-    isWhatsAppOpen,
-    setIsWhatsAppOpen
-  }: {
-    whatsAppForm: ReturnType<typeof useForm<FormWhatsAppData>>;
-    onWhatsAppSubmit: (values: FormWhatsAppData) => void;
-    isWhatsAppOpen: boolean;
-    setIsWhatsAppOpen: (open: boolean) => void;
-  }) => (
+function ContactInfo({
+  lang,
+  whatsAppForm,
+  onWhatsAppSubmit,
+  isWhatsAppOpen,
+  setIsWhatsAppOpen
+}: {
+  lang: Lang;
+  whatsAppForm: ReturnType<typeof useForm<FormWhatsAppData>>;
+  onWhatsAppSubmit: (values: FormWhatsAppData) => void;
+  isWhatsAppOpen: boolean;
+  setIsWhatsAppOpen: (open: boolean) => void;
+}) {
+  const getSocialIcon = (social: string) => {
+    switch (social) {
+      case "linkedin":
+        return <FaLinkedinIn className="w-5 h-5 group-hover:scale-110 transition-transform" />;
+      case "github":
+        return <FaGithub className="w-5 h-5 group-hover:scale-110 transition-transform" />;
+      case "twitter":
+        return <FaXTwitter className="w-5 h-5 group-hover:scale-110 transition-transform" />;
+    }
+  };
+  return (
     <motion.div variants={ANIMATION_CONFIG.item} className="grid grid-cols-1 md:grid-cols-2">
       <Card className="transition-all duration-300 rounded-none bg-transparent md:border-r-0">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Mail className="w-5 h-5 text-primary" />
-            Informações de contato
+            {content.contact.i18n.info.title[lang]}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -180,7 +168,9 @@ const ContactInfo = memo(
               <Mail className="w-4 h-4" />
             </div>
             <div>
-              <p className="font-medium text-sm text-muted-foreground">Email</p>
+              <p className="font-medium text-sm text-muted-foreground">
+                {content.contact.i18n.info.emailLabel[lang]}
+              </p>
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 className="text-foreground hover:text-primary transition-colors font-medium"
@@ -196,7 +186,9 @@ const ContactInfo = memo(
               <MapPin className="w-4 h-4" />
             </div>
             <div>
-              <p className="font-medium text-sm text-muted-foreground">Localização</p>
+              <p className="font-medium text-sm text-muted-foreground">
+                {content.contact.i18n.info.locationLabel[lang]}
+              </p>
               <p className="text-foreground font-medium">{CONTACT_INFO.location}</p>
             </div>
           </div>
@@ -208,13 +200,12 @@ const ContactInfo = memo(
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <ExternalLink className="w-5 h-5 text-primary" />
-              Redes sociais
+              {content.contact.i18n.social.title[lang]}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-4">
               {CONTACT_INFO.socialLinks.map((social) => {
-                const Icon = social.icon;
                 return (
                   <Link
                     key={social.id}
@@ -222,9 +213,9 @@ const ContactInfo = memo(
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`flex items-center gap-3 p-4 border hover:border-current transition-all duration-200 hover:scale-105 ${social.color} group`}
-                    aria-label={social.ariaLabel}
+                    aria-label={social.id}
                   >
-                    <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    {getSocialIcon(social.id)}
                   </Link>
                 );
               })}
@@ -243,10 +234,10 @@ const ContactInfo = memo(
                   <DialogHeader>
                     <DialogTitle className="flex items-center gap-2">
                       <IoLogoWhatsapp className="w-5 h-5 text-green-500" />
-                      Contato pelo WhatsApp
+                      {content.contact.i18n.whatsappDialog.title[lang]}
                     </DialogTitle>
                     <DialogDescription>
-                      Escreva sua mensagem e seja redirecionado para o WhatsApp.
+                      {content.contact.i18n.whatsappDialog.description[lang]}
                     </DialogDescription>
                   </DialogHeader>
 
@@ -263,13 +254,14 @@ const ContactInfo = memo(
                             <FormControl>
                               <Textarea
                                 {...field}
-                                placeholder="Olá! Gostaria de conversar sobre..."
+                                placeholder={content.contact.i18n.whatsappDialog.placeholder[lang]}
                                 className="min-h-[100px] focus:border-green-500 focus:ring-green-500"
                               />
                             </FormControl>
                             <FormMessage />
                             <div className="text-xs text-muted-foreground text-right">
-                              {field.value?.length || 0}/300 caracteres
+                              {field.value?.length || 0}/
+                              {content.contact.i18n.whatsappDialog.charLimit[lang]}
                             </div>
                           </FormItem>
                         )}
@@ -281,7 +273,7 @@ const ContactInfo = memo(
                         size="lg"
                       >
                         <IoLogoWhatsapp className="w-4 h-4 mr-2" />
-                        Enviar no WhatsApp
+                        {content.contact.i18n.whatsappDialog.button[lang]}
                       </Button>
                     </form>
                   </Form>
@@ -294,15 +286,13 @@ const ContactInfo = memo(
         <Card className="glass-card bg-transparent rounded-none border-t-0 py-8">
           <CardContent>
             <div className="text-center space-y-4">
-              <h3 className="font-bold text-2xl">
-                Pronto para transformar sua ideia em realidade?
-              </h3>
+              <h3 className="font-bold text-2xl">{content.contact.i18n.cta.title[lang]}</h3>
               <p className="text-muted-foreground text-base max-w-xl mx-auto">
-                Respondo todas as mensagens em até 24 horas. Vamos construir algo incrível juntos!
+                {content.contact.i18n.cta.description[lang]}
               </p>
               <Button asChild size="lg" className="bg-primary hover:opacity-90">
                 <Link href="https://wa.me/5565981278291" target="_blank">
-                  💬 Vamos Conversar
+                  {content.contact.i18n.cta.button[lang]}
                 </Link>
               </Button>
             </div>
@@ -310,8 +300,5 @@ const ContactInfo = memo(
         </Card>
       </div>
     </motion.div>
-  )
-);
-
-// Display names
-ContactInfo.displayName = "ContactInfo";
+  );
+}
