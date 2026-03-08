@@ -1,21 +1,58 @@
 # 🚀 Thalyson Rafael
 
-Full-stack developer building real products from scratch.
+Full-stack engineer building real products.
 
-From high-pressure kitchens to scalable software architecture —  
-I transform ideas into structured, production-ready systems.
+From high-pressure kitchens to scalable software architecture.
 
-Currently building **Vexiun**, a multi-tenant project management platform focused on reducing friction in team setup and execution.
+I design and build systems focused on **clarity, scalability and product impact**.
+
+Currently building **Vexiun**, a multi-tenant platform for managing technical work.
+
+> Building Vexiun in public.
 
 ---
 
-## 🧠 What I Focus On
+## 🧩 What I Build
 
-- Scalable full-stack architecture
-- Multi-tenant systems
-- Event-driven backend design
-- Real-time collaboration (WebSocket)
-- Product-oriented engineering
+I focus on systems where product and engineering are tightly connected.
+
+Main areas:
+
+• Multi-tenant SaaS platforms  
+• Real-time collaboration systems  
+• Event-driven backends  
+• Developer-centric tools  
+• Product-oriented infrastructure
+
+---
+
+## ⚙️ Engineering Approach
+
+Some principles I follow when building software:
+
+• End-to-end type safety  
+• Clear architectural boundaries  
+• Event-driven systems when scale demands  
+• Simplicity before abstraction  
+• Infrastructure that evolves with the product
+
+---
+
+## 🚀 Current System
+
+### Vexiun
+
+A project management platform designed for technical teams.
+
+Core ideas behind the system:
+
+• Monorepo architecture (Turbo + Workspaces)  
+• Type-safe contracts across the stack  
+• Event-driven backend services  
+• Real-time collaboration layer  
+• Cost-efficient infrastructure
+
+🔗 https://vexiun.com
 
 ---
 
