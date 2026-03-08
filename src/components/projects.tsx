@@ -3,7 +3,15 @@
 import { Card, CardDescription, CardTitle } from "@/components/me-ui/card";
 import { Badge } from "@/components/me-ui/badge";
 import { Button } from "@/components/me-ui/button";
-import { ArrowBigDown, Eye, Lock, FileText, ExternalLink, CheckCircle2 } from "lucide-react";
+import {
+  ArrowBigDown,
+  Eye,
+  Lock,
+  FileText,
+  ExternalLink,
+  CheckCircle2,
+  Palette
+} from "lucide-react";
 import Link from "next/link";
 import { Carousel } from "./carousel-image-projects";
 import { motion } from "framer-motion";
@@ -72,6 +80,7 @@ export function Projects() {
         </header>
 
         <VexiunCard lang={lang} />
+        <VexiunThemeCard lang={lang} />
 
         <div
           className="mt-6 flex flex-wrap items-center justify-center gap-2"
@@ -237,7 +246,7 @@ const ProjectCard = memo(({ project, lang }: ProjectCardProps) => {
 
 export function VexiunCard({ lang }: { lang: Lang }) {
   return (
-    <div className="relative border transition-all hover:bg-zinc-900/60 w-full h-full group overflow-hidden">
+    <div className="relative border-t transition-all hover:bg-zinc-900/60 w-full h-full group overflow-hidden">
       <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 blur-[80px] group-hover:bg-primary/10" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full">
@@ -341,3 +350,99 @@ export function VexiunCard({ lang }: { lang: Lang }) {
 }
 
 ProjectCard.displayName = "ProjectCard";
+
+function VexiunThemeCard({ lang }: { lang: Lang }) {
+  return (
+    <>
+      {content.vexiunData.projects.map((subProject, idx) => (
+        <div
+          key={idx}
+          className="relative border-y transition-all hover:bg-zinc-900/60 w-full group overflow-hidden"
+        >
+          <div className="absolute -left-10 -bottom-10 h-32 w-32 rounded-full bg-primary/5 blur-[80px] group-hover:bg-primary/10" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 w-full">
+            {/* Images */}
+            <div className="grid grid-cols-2 gap-2 p-4 border-b lg:border-b-0 lg:border-r">
+              {subProject.images?.map((img, i) => (
+                <div key={i} className="relative aspect-video overflow-hidden border">
+                  <Image
+                    src={img.image}
+                    alt={img.title}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Content */}
+            <div className="flex flex-col p-6">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <Palette size={14} className="text-primary" />
+                  <h4 className="text-lg font-bold text-white">
+                    {subProject.description[lang].title}
+                  </h4>
+                </div>
+                <Badge
+                  variant="secondary"
+                  className="bg-primary/10 text-[10px] font-bold text-primary border-primary/20"
+                >
+                  {subProject.status[lang]}
+                </Badge>
+              </div>
+
+              <ul className="grid grid-cols-1 gap-1.5 mb-4">
+                {subProject.highlights.map((h, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-zinc-400">
+                    <CheckCircle2 className="mt-0.5 h-3 w-3 flex-shrink-0 text-primary/60" />
+                    <span>{h[lang]}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {subProject.stack.map((tech) => (
+                  <Badge
+                    key={tech}
+                    variant="secondary"
+                    className="bg-white/5 text-[10px] font-medium text-zinc-400 border-transparent hover:border-primary/30 hover:text-primary transition-all"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+
+              <div className="mt-auto flex flex-wrap gap-2">
+                {subProject.links?.marketplace && (
+                  <Link
+                    href={subProject.links.marketplace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-primary/10 border border-primary/20 px-3 py-1.5 text-[11px] font-bold text-primary transition-all hover:bg-primary/20"
+                  >
+                    <ExternalLink size={12} />
+                    Marketplace
+                  </Link>
+                )}
+                {subProject.links?.github && (
+                  <Link
+                    href={subProject.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-bold text-white transition-all hover:bg-white/10"
+                  >
+                    <FaGithub size={12} />
+                    GitHub
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+}

@@ -7,7 +7,7 @@ import { useLanguageStore } from "@/store/language-store";
 export function TechnicalDecisions() {
   const { lang } = useLanguageStore();
   return (
-    <section className="transition-all duration-300 py-24 px-4 bg-zinc-950/20 border-y border-white/5 relative overflow-hidden">
+    <section className="transition-all duration-300 py-24 px-4 bg-zinc-950/20 relative overflow-hidden">
       {/* Glow Effects */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
@@ -22,7 +22,7 @@ export function TechnicalDecisions() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {content.technicalDecisions.decisions.map((decision, index) => (
             <motion.div
               key={index}

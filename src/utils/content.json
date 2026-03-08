@@ -430,6 +430,14 @@
         "project": "Vexiun Theme",
         "type": "VSCode Theme",
         "stack": ["VSCode Theme API", "JSON", "Color Tokens", "UI Customization"],
+        "links": {
+          "marketplace": "https://marketplace.visualstudio.com/items?itemName=Rafinha-g3.vexiun-theme",
+          "github": "https://github.com/ThalysonRibeiro/vexiun-theme"
+        },
+        "images": [
+          { "title": "Vexiun Theme Dark", "image": "/theme-vexiun/gray.png" },
+          { "title": "Vexiun Theme Light", "image": "/theme-vexiun/sakura.png" }
+        ],
         "status": { "ptBR": "Publicado", "en": "Published" },
         "highlights": [
           {
@@ -485,12 +493,12 @@
           "en": "Cost and performance modeling before migration"
         },
         "before": {
-          "ptBR": "Serverless puro\ncom crescimento imprevisível",
-          "en": "Pure serverless with\nunpredictable scaling costs"
+          "ptBR": "Serverless puro com crescimento imprevisível",
+          "en": "Pure serverless with unpredictable scaling costs"
         },
         "after": {
-          "ptBR": "Container otimizado com custo\nprevisível (-70% base)",
-          "en": "Optimized container setup\nwith predictable cost (-70% baseline)"
+          "ptBR": "Container otimizado com custo previsível (-70% base)",
+          "en": "Optimized container setup with predictable cost (-70% baseline)"
         },
         "highlight": {
           "ptBR": "Escala projetada: 1k → 10k usuários",
@@ -504,12 +512,12 @@
           "en": "Event-driven real-time architecture"
         },
         "before": {
-          "ptBR": "86k+ requests/dia\ncom overhead constante",
-          "en": "86k+ requests/day\nwith constant overhead"
+          "ptBR": "86k+ requests/dia com overhead constante",
+          "en": "86k+ requests/day with constant overhead"
         },
         "after": {
-          "ptBR": "Latência <100ms\ncom comunicação persistente",
-          "en": "<100ms latency with\npersistent communication"
+          "ptBR": "Latência <100ms com comunicação persistente",
+          "en": "<100ms latency with persistent communication"
         },
         "highlight": {
           "ptBR": "Menos carga, mais responsividade",
@@ -536,6 +544,28 @@
         "highlight": {
           "ptBR": "Zero inconsistência estrutural",
           "en": "Zero structural inconsistencies"
+        }
+      },
+      {
+        "title": {
+          "ptBR": "Provider Realtime → Arquitetura Própria",
+          "en": "Realtime Provider → In-House Architecture"
+        },
+        "description": {
+          "ptBR": "Substituí polling + provider externo por WebSocket nativo em backend containerizado.",
+          "en": "Replaced polling + external realtime provider with native WebSocket in a containerized backend."
+        },
+        "before": {
+          "ptBR": "Polling constante + custo extra com Ably + funções serverless",
+          "en": "Constant polling + extra Ably cost + serverless functions overhead"
+        },
+        "after": {
+          "ptBR": "NestJS + WebSocket + Postgres co-localizado + Redis",
+          "en": "NestJS + WebSocket + co-located Postgres + Redis"
+        },
+        "highlight": {
+          "ptBR": "Menor latência, custo previsível e controle total da arquitetura",
+          "en": "Lower latency, predictable cost, and full architectural control"
         }
       }
     ]
