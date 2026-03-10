@@ -7,6 +7,7 @@ import content from "@/utils/content.json";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Footer } from "@/components/footer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -89,7 +90,6 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Toaster position="top-right" expand={false} theme="dark" />
         <GoogleAnalytics />
-        <CookieConsent />
         <Script id="jsonld-person" type="application/ld+json" strategy="afterInteractive">
           {`
               {
@@ -105,8 +105,11 @@ export default function RootLayout({
               }
             `}
         </Script>
-        {children}
-        <Footer />
+        <TooltipProvider>
+          <CookieConsent />
+          {children}
+          <Footer />
+        </TooltipProvider>
       </body>
     </html>
   );
