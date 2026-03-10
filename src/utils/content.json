@@ -15,7 +15,7 @@
       "en": "Full-stack Developer • Product Builder"
     },
     "hello": { "ptBR": "Olá, eu sou", "en": "Hi, I'm" },
-    "name": "Thalyson Rafael",
+    "name": "Thalyson Ribeiro",
     "tagline": {
       "ptBR": "Transformo visão técnica em produtos escaláveis e experiências de alto impacto.",
       "en": "I turn technical vision into scalable products and high-impact experiences."
@@ -141,7 +141,7 @@
     ],
     "metrics": [
       {
-        "value": "5+",
+        "value": "Fullstack",
         "label": { "ptBR": "Projetos end-to-end", "en": "End-to-end projects" }
       },
       {
@@ -218,16 +218,15 @@
         "Next.js",
         "TypeScript",
         "shadcn",
-        "TailwindCSS",
-        "React Hook Form",
-        "Zod",
         "PostgreSQL (Neon)",
         "Prisma",
-        "Vercel",
-        "Docker",
         "Stripe",
+        "Docker",
+        "TailwindCSS",
+        "Zod",
+        "Auth.js",
         "Cloudinary",
-        "Auth.js"
+        "Vercel"
       ],
       "links": {
         "github": "https://github.com/ThalysonRibeiro/equilibrium-center",
@@ -245,117 +244,40 @@
     },
     {
       "id": "03",
-      "title": "BarberPro 💈",
-      "projectType": "Fullstack",
-      "category": { "ptBR": "Gestão / Negócios", "en": "Management / Business" },
-      "description": {
-        "ptBR": "Sistema web para gestão de barbearias com clientes, serviços e planos.",
-        "en": "A web system for barbershop management with clients, services, and plans."
-      },
-      "tech": [
-        "Next.js",
-        "Chakra UI",
-        "TypeScript",
-        "Axios",
-        "Express",
-        "Prisma",
-        "PostgreSQL (Neon)",
-        "Stripe",
-        "Node.js"
+      "title": "Vexiun Theme — Official VSCode Theme",
+      "projectType": "VSCode Theme",
+      "category": { "ptBR": "Ferramenta / Tema", "en": "Tool / Theme" },
+      "status": { "ptBR": "Publicado", "en": "Published" },
+      "highlights": [
+        {
+          "ptBR": "Publicado no Visual Studio Marketplace",
+          "en": "Published on the Visual Studio Marketplace"
+        },
+        { "ptBR": "220+ downloads", "en": "220+ downloads" },
+        {
+          "ptBR": "Três variações oficiais (Gray, Sakura, Strawberry)",
+          "en": "Three official variants (Gray, Sakura, Strawberry)"
+        },
+        {
+          "ptBR": "Influenciou a identidade visual do Vexiun",
+          "en": "Influenced Vexiun's visual identity"
+        }
       ],
-      "links": {
-        "github": "https://github.com/ThalysonRibeiro/barberpro-web",
-        "githubBackend": "https://github.com/ThalysonRibeiro/barberpro-backend",
-        "app": "",
-        "live": "https://barberpro-web.vercel.app/"
-      },
-      "images": [
-        { "title": "photo-barberpro-photo-1", "image": "/barber-pro/1.webp" },
-        { "title": "photo-barberpro-photo-2", "image": "/barber-pro/2.webp" },
-        { "title": "photo-barberpro-photo-3", "image": "/barber-pro/3.webp" },
-        { "title": "photo-barberpro-photo-4", "image": "/barber-pro/4.webp" },
-        { "title": "photo-barberpro-photo-5", "image": "/barber-pro/5.webp" },
-        { "title": "photo-barberpro-photo-6", "image": "/barber-pro/6.webp" }
-      ]
-    },
-    {
-      "id": "04",
-      "title": "Blend House",
-      "projectType": "Fullstack",
-      "category": { "ptBR": "Restaurante / Delivery", "en": "Restaurant / Delivery" },
-      "app": "Mobile",
       "description": {
-        "ptBR": "Web app para pedidos + API backend + app mobile para atendentes registrarem pedidos.",
-        "en": "Orders web app + backend API + mobile app for staff to place orders."
+        "ptBR": "Antes de construir o Vexiun como SaaS, eu já explorava personalização de ferramentas do meu fluxo. Eu usava o tema Dracula no VSCode, mas queria uma paleta mais alinhada ao meu gosto — trocando o rosa por roxo e ajustando tons para foco e conforto visual. Passei cerca de 4 dias estudando a documentação oficial do VSCode e implementando praticamente todas as propriedades disponíveis para criar um tema consistente. O resultado foi publicado no Visual Studio Marketplace e hoje possui mais de 220 downloads. O tema tem três variações principais: Gray (meu padrão diário), Sakura (versão light) e Strawberry (versão mais recente com refinamentos). Esse projeto influenciou diretamente a identidade visual do Vexiun.",
+        "en": "Before building Vexiun as a SaaS, I was already customizing developer tooling. I used Dracula in VSCode but wanted a palette closer to my style — swapping pink for purple and refining tones for focus and long coding sessions. I spent ~4 days studying the official VSCode documentation and implementing most available theme properties to create a consistent theme. It's published on the Visual Studio Marketplace and has 220+ downloads. It includes three variants: Gray (my daily driver), Sakura (light version), and Strawberry (latest refinements). This project directly influenced Vexiun's visual identity."
       },
-      "tech": [
-        "Next.js",
-        "TypeScript",
-        "Axios",
-        "Sass",
-        "Sonner",
-        "Lucide React",
-        "Node.js",
-        "Express",
-        "Prisma",
-        "PostgreSQL (Neon)",
-        "Cloudinary",
-        "React Native",
-        "Expo",
-        "React Navigation",
-        "AsyncStorage"
-      ],
+      "tech": ["VSCode Theme API", "JSON", "Color Tokens", "UI Customization"],
       "links": {
-        "github": "https://github.com/ThalysonRibeiro/blend-house-frontend",
-        "githubBackend": "https://github.com/ThalysonRibeiro/blend-house-backend",
-        "app": "https://expo.dev/accounts/thalysonribeiro/projects/mobile-blend-house/builds/0aa905a2-8928-47e5-b17f-506de0310bba",
-        "live": "https://blend-house.vercel.app"
-      },
-      "images": [
-        { "title": "photo-blend-house-photo-1", "image": "/blend-house/1.webp" },
-        { "title": "photo-blend-house-photo-2", "image": "/blend-house/2.webp" },
-        { "title": "photo-blend-house-photo-3", "image": "/blend-house/3.webp" },
-        { "title": "photo-blend-house-photo-4", "image": "/blend-house/4.webp" },
-        { "title": "photo-blend-house-photo-5", "image": "/blend-house/5.webp" },
-        { "title": "photo-blend-house-photo-6", "image": "/blend-house/6.webp" },
-        { "title": "photo-blend-house-photo-7", "image": "/blend-house/7.webp" }
-      ]
-    },
-    {
-      "id": "05",
-      "title": "TicketFlow",
-      "projectType": "Fullstack",
-      "category": { "ptBR": "Suporte / Atendimento", "en": "Support / Customer Service" },
-      "description": {
-        "ptBR": "Sistema de chamados com cadastro de clientes, acompanhamento e fluxo de atendimento.",
-        "en": "Ticketing system with client registration, tracking, and support workflow."
-      },
-      "tech": [
-        "Next.js",
-        "TypeScript",
-        "Prisma",
-        "Mongodb",
-        "NextAuth",
-        "Tailwind CSS",
-        "Zod",
-        "React Hook Form"
-      ],
-      "links": {
-        "github": "https://github.com/ThalysonRibeiro/TicketFlow-g3",
+        "github": "https://github.com/ThalysonRibeiro/vexiun-theme",
         "githubBackend": "",
-        "app": "",
-        "live": "https://ticketflow-g3.vercel.app/"
+        "app": "https://marketplace.visualstudio.com/items?itemName=Rafinha-g3.vexiun-theme",
+        "live": ""
       },
       "images": [
-        { "title": "TicketFlow-photo-1", "image": "/ticketflow/1.webp" },
-        { "title": "TicketFlow-photo-2", "image": "/ticketflow/2.webp" },
-        { "title": "TicketFlow-photo-3", "image": "/ticketflow/3.webp" },
-        { "title": "TicketFlow-photo-4", "image": "/ticketflow/4.webp" },
-        { "title": "TicketFlow-photo-5", "image": "/ticketflow/5.webp" },
-        { "title": "TicketFlow-photo-6", "image": "/ticketflow/6.webp" },
-        { "title": "TicketFlow-photo-7", "image": "/ticketflow/7.webp" },
-        { "title": "TicketFlow-photo-8", "image": "/ticketflow/8.webp" },
-        { "title": "TicketFlow-photo-9", "image": "/ticketflow/9.webp" }
+        { "title": "Vexiun Theme Dark", "image": "/theme-vexiun/gray.png" },
+        { "title": "Vexiun Theme Light", "image": "/theme-vexiun/sakura.png" },
+        { "title": "Vexiun Theme Bloom", "image": "/theme-vexiun/bloom.png" }
       ]
     }
   ],
@@ -375,7 +297,7 @@
     ],
     "i18n": {
       "ptBR": {
-        "title": "Vexiun - Plataforma Moderna de Gestão de Projetos",
+        "title": "Vexiun — Gestão Moderna de Projetos",
         "status": "Beta Privado",
         "shortDescription": "Gestão técnica estruturada para times modernos que precisam de clareza, velocidade e controle.",
         "fullDescription": "Vexiun é uma plataforma projetada para reduzir o caos da gestão técnica. Estruture projetos rapidamente, mantenha times alinhados e evolua com uma arquitetura preparada para escala. Construído com foco em performance, segurança e organização inteligente de fluxos.",
@@ -402,7 +324,7 @@
         ]
       },
       "en": {
-        "title": "Vexiun - Modern Project Management Platform",
+        "title": "Vexiun — Modern Project Management",
         "status": "Private Beta",
         "shortDescription": "Structured technical management for modern teams that need clarity, speed, and control.",
         "fullDescription": "Vexiun is designed to reduce the chaos of technical project management. Set up projects fast, keep teams aligned, and evolve with an architecture built for scale — focusing on performance, security, and smart workflow organization.",
@@ -424,52 +346,7 @@
           { "label": "Safe Contract", "value": "100%", "detail": "Type-safe E2E" }
         ]
       }
-    },
-    "projects": [
-      {
-        "project": "Vexiun Theme",
-        "type": "VSCode Theme",
-        "stack": ["VSCode Theme API", "JSON", "Color Tokens", "UI Customization"],
-        "links": {
-          "marketplace": "https://marketplace.visualstudio.com/items?itemName=Rafinha-g3.vexiun-theme",
-          "github": "https://github.com/ThalysonRibeiro/vexiun-theme"
-        },
-        "images": [
-          { "title": "Vexiun Theme Dark", "image": "/theme-vexiun/gray.png" },
-          { "title": "Vexiun Theme Light", "image": "/theme-vexiun/sakura.png" }
-        ],
-        "status": { "ptBR": "Publicado", "en": "Published" },
-        "highlights": [
-          {
-            "ptBR": "Publicado no Visual Studio Marketplace",
-            "en": "Published on the Visual Studio Marketplace"
-          },
-          { "ptBR": "220+ downloads", "en": "220+ downloads" },
-          {
-            "ptBR": "Estudo aprofundado da documentação oficial do VSCode",
-            "en": "Deep dive into the official VSCode documentation"
-          },
-          {
-            "ptBR": "Três variações oficiais (Gray, Sakura, Strawberry)",
-            "en": "Three official variants (Gray, Sakura, Strawberry)"
-          },
-          {
-            "ptBR": "Influenciou a identidade visual do Vexiun",
-            "en": "Influenced Vexiun's visual identity"
-          }
-        ],
-        "description": {
-          "ptBR": {
-            "title": "Vexiun Theme — Tema Oficial para VSCode",
-            "fullDescription": "Antes de construir o Vexiun como SaaS, eu já explorava personalização de ferramentas do meu fluxo. Eu usava o tema Dracula no VSCode, mas queria uma paleta mais alinhada ao meu gosto — trocando o rosa por roxo e ajustando tons para foco e conforto visual. Passei cerca de 4 dias estudando a documentação oficial do VSCode e implementando praticamente todas as propriedades disponíveis para criar um tema consistente. O resultado foi publicado no Visual Studio Marketplace e hoje possui mais de 220 downloads. O tema tem três variações principais: Gray (meu padrão diário), Sakura (versão light) e Strawberry (versão mais recente com refinamentos). Esse projeto influenciou diretamente a identidade visual do Vexiun."
-          },
-          "en": {
-            "title": "Vexiun Theme — Official VSCode Theme",
-            "fullDescription": "Before building Vexiun as a SaaS, I was already customizing developer tooling. I used Dracula in VSCode but wanted a palette closer to my style — swapping pink for purple and refining tones for focus and long coding sessions. I spent ~4 days studying the official VSCode documentation and implementing most available theme properties to create a consistent theme. It's published on the Visual Studio Marketplace and has 220+ downloads. It includes three variants: Gray (my daily driver), Sakura (light version), and Strawberry (latest refinements). This project directly influenced Vexiun's visual identity."
-          }
-        }
-      }
-    ]
+    }
   },
 
   "technicalDecisions": {
@@ -570,6 +447,7 @@
       }
     ]
   },
+
   "contact": {
     "static": {
       "email": "rafinha.head@gmail.com",
@@ -679,12 +557,12 @@
 
   "metadata": {
     "siteName": {
-      "ptBR": "Thalyson Rafael",
-      "en": "Thalyson Rafael"
+      "ptBR": "Thalyson Ribeiro",
+      "en": "Thalyson Ribeiro"
     },
     "title": {
-      "ptBR": "Thalyson Rafael | Full-stack Developer & Product Builder",
-      "en": "Thalyson Rafael | Full-stack Developer & Product Builder"
+      "ptBR": "Thalyson Ribeiro | Full-stack Developer & Product Builder",
+      "en": "Thalyson Ribeiro | Full-stack Developer & Product Builder"
     },
     "description": {
       "ptBR": "Full-stack com Next.js, NestJS e TypeScript. Construo aplicações escaláveis com foco em performance, custo e experiência do usuário.",
@@ -699,23 +577,24 @@
       "en": "I build full-stack products focused on performance and outcomes."
     }
   },
+
   "privacyPolicy": {
     "metadata": {
       "title": {
-        "ptBR": "Política de Privacidade | Thalyson Rafael",
-        "en": "Privacy Policy | Thalyson Rafael"
+        "ptBR": "Política de Privacidade | Thalyson Ribeiro",
+        "en": "Privacy Policy | Thalyson Ribeiro"
       },
       "description": {
         "ptBR": "Entenda como este site coleta, usa e protege seus dados, incluindo o uso de cookies e Google Analytics.",
         "en": "Understand how this site collects, uses, and protects your data, including the use of cookies and Google Analytics."
       },
       "ogTitle": {
-        "ptBR": "Política de Privacidade | Thalyson Rafael",
-        "en": "Privacy Policy | Thalyson Rafael"
+        "ptBR": "Política de Privacidade | Thalyson Ribeiro",
+        "en": "Privacy Policy | Thalyson Ribeiro"
       },
       "twitterTitle": {
-        "ptBR": "Política de Privacidade | Thalyson Rafael",
-        "en": "Privacy Policy | Thalyson Rafael"
+        "ptBR": "Política de Privacidade | Thalyson Ribeiro",
+        "en": "Privacy Policy | Thalyson Ribeiro"
       },
       "twitterDescription": {
         "ptBR": "Informações sobre privacidade e cookies, incluindo Google Analytics e controles de consentimento.",
